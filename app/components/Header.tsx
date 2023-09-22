@@ -30,19 +30,19 @@ const Header = () => {
                 <Link href="/">HOME</Link>
               </li>
               <li className={styles.navLinks}>
-                <Link href="/">VISUAL ART</Link>
+                <Link href="/visual-art">VISUAL ART</Link>
               </li>
               <li className={styles.navLinks}>
-                <Link href="/">PERFORMANCE</Link>
+                <Link href="/performance">PERFORMANCE</Link>
               </li>
               <li className={styles.navLinks}>
-                <Link href="/">NIA INSTRUCTOR</Link>
+                <Link href="/nia-instruction">NIA INSTRUCTOR</Link>
               </li>
               <li className={styles.navLinks}>
-                <Link href="/">ABOUT</Link>
+                <Link href="/about">ABOUT</Link>
               </li>
               <li className={styles.navLinks}>
-                <Link href="/">CONTACT</Link>
+                <Link href="/contact">CONTACT</Link>
               </li>
             </ul>
           </div>
@@ -67,11 +67,11 @@ const Header = () => {
             <div className="flex-col py-4">
               <ul>
                 <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/">HOME</Link></li>
-                <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/">VISUAL ART</Link></li>
-                <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/">PERFORMANCE</Link></li>
-                <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/">NIA INSTRUCTOR</Link></li>
-                <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/">ABOUT</Link></li>
-                <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/">CONTACT</Link></li>
+                <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/visual-art">VISUAL ART</Link></li>
+                <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/performance">PERFORMANCE</Link></li>
+                <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/nia-instruction">NIA INSTRUCTOR</Link></li>
+                <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/about">ABOUT</Link></li>
+                <li onClick={() => setMenuOpen(false)}className="py-4 hover:underline hover:decoration-[#F6B519]"><Link href="/contact">CONTACT</Link></li>
               </ul>
             </div>
             {/* social media links */}
