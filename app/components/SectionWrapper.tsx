@@ -1,11 +1,9 @@
-import React, { Children } from 'react'
+import React, { PropsWithChildren } from 'react'
 import SectionTitle from "../components/SectionTitle";
 
-interface Props {
+interface Props extends PropsWithChildren {
   title: string;
-  children: React.ReactNode;
 }
-
 
 const SectionWrapper: React.FC< Props > = ({ title, children} : Props ) => {
   return (
