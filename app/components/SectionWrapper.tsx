@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react'
-import SectionTitle from "../components/SectionTitle";
+import SectionTitle from "../components/SectionTitle"
+import '../globals.css'
 
 interface Props extends PropsWithChildren {
   title: string;
@@ -7,7 +8,7 @@ interface Props extends PropsWithChildren {
 
 const SectionWrapper: React.FC< Props > = ({ title, children} : Props ) => {
   return (
-    <section className="mx-6 md:mx-16 lg:mx-28 xl:mx-32">
+    <section className="margin-global">
       <SectionTitle
           title={title}
         />
