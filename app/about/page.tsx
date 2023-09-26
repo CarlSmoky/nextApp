@@ -1,15 +1,18 @@
 import React from "react";
-import SectionTitle from "../components/SectionTitle";
-import AboutContents from "../components/AboutContents";
+import ImageAndText from "../components/ImageAndText";
+import SectionWrapper from "../components/SectionWrapper";
 
-const AboutPage = () => {
+const AboutPage: React.FC = () => {
   return (
-    <div className="mx-6 md:mx-16 lg:mx-28 xl:mx-32">
-      <SectionTitle
-        title="Noriko Yamamoto"
+      <SectionWrapper title="Noriko Yamamoto!!!" >
+      <ImageAndText
+        src="/images/about_image.png"
+        alt="portrait"
+        paragraph="I’m a dreamer. I love life. I love cats. I’m a mime, dancer and
+        visual artist (sculpture & mixed-media). I grew up in Tokyo and now
+        live in Toronto."
       />
-      <AboutContents />
-    </div>
+      </SectionWrapper>
   );
 };
 

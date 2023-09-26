@@ -1,8 +1,10 @@
 import React from 'react'
+import SectionWrapper from "../components/SectionWrapper";
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
   return (
-    <div>ContactPage</div>
+    <SectionWrapper title="Contact">
+    </SectionWrapper>
   )
 }
 

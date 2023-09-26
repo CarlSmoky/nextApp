@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { BsInstagram, BsList, BsX, BsYoutube } from "react-icons/bs";
 
-const Header = () => {
+const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleMenu = () => setMenuOpen(!menuOpen)
 
