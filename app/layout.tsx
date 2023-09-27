@@ -2,6 +2,7 @@ import Header from './components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { childrenProps } from './types/Interfaces'
+import { orbitron  } from './fonts'
 
 export const metadata: Metadata = {
   title: 'Responsive nav',
@@ -11,8 +12,8 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<childrenProps> = ({children}: childrenProps) => {
   return (
-    <html lang="en"> 
-      <body className="bg-[#FAF5F2]">
+    <html lang="en" className={orbitron.variable}> 
+      <body className="bg-prime-100">
         <Header/>
         {children}
       </body>

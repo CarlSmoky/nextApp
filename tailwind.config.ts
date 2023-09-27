@@ -13,13 +13,20 @@ const config: Config = {
       lg: '976px',
       xl: '1440px',
     },
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+    colors: {
+      prime: {100: '#FAF5F2'},
+      grey: {
+        100: '#484349',
+        200: '#495159',
+        300: '#FFD090',
+        400: '#FDB866',
+        500: '#F89D3C',
+        600: '#F3841B',
       },
     },
+    fontFamily: {
+      orbitron: ['var(--font-orbitron)', 'san-serif'],
+    }
   },
   plugins: [],
 }
