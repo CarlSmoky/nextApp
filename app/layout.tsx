@@ -5,7 +5,10 @@ import { childrenProps } from './types/Interfaces'
 import { orbitron  } from './fonts'
 
 export const metadata: Metadata = {
-  title: 'Momo gallary',
+  title: {
+    default: 'Momo gallary',
+    template: '%s | Momo gallary'
+  },
   description: 'Artist & Dancer Noriko Yamamoto sites',
 }
 

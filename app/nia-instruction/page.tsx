@@ -6,7 +6,7 @@ import ImageWrapper from '../components/ImageWrapper';
 import ParagraphWrapper from '../components/ParagraphWrapper';
 
 export const metadata: Metadata = {
-  title: 'Nia instruction | Momo gallary',
+  title: 'Nia instruction',
 }
 
 const NiaInstructionPage: React.FC = () => {

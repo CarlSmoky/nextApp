@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import SectionWrapper from "../components/SectionWrapper";
 
 export const metadata: Metadata = {
-  title: 'Contact | Momo gallary',
+  title: 'Contact',
 }
 
 const ContactPage: React.FC = () => {

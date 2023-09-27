@@ -2,7 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Visual art | Momo gallary',
+  title: 'Visual art',
 }
 
 const VisualArtPage = () => {

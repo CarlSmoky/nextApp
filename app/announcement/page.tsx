@@ -6,7 +6,7 @@ import ImageWrapper from '../components/ImageWrapper';
 import ParagraphWrapper from '../components/ParagraphWrapper';
 
 export const metadata: Metadata = {
-  title: 'Anouncement | Momo gallary',
+  title: 'Anouncement',
 }
 
 const AnnouncementPage: React.FC = () => {
