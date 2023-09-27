@@ -1,8 +1,13 @@
 import React from 'react'
+import type { Metadata } from 'next'
 import ImageAndText from "../components/ImageAndText";
 import SectionWrapper from "../components/SectionWrapper";
 import ImageWrapper from '../components/ImageWrapper';
 import ParagraphWrapper from '../components/ParagraphWrapper';
+
+export const metadata: Metadata = {
+  title: 'Nia instruction | Momo gallary',
+}
 
 const NiaInstructionPage: React.FC = () => {
   return (

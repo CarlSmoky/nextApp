@@ -1,8 +1,13 @@
 import React from 'react'
+import type { Metadata } from 'next'
 import SectionWrapper from "../components/SectionWrapper";
 import ImageAndText from "../components/ImageAndText";
 import ImageWrapper from '../components/ImageWrapper';
 import ParagraphWrapper from '../components/ParagraphWrapper';
+
+export const metadata: Metadata = {
+  title: 'Anouncement | Momo gallary',
+}
 
 const AnnouncementPage: React.FC = () => {
   return (
