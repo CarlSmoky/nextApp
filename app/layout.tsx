@@ -1,5 +1,6 @@
-import Header from './components/Header'
 import './globals.css'
+import Header from './components/Header'
+import Fotter from './components/Fotter'
 import type { Metadata } from 'next'
 import { childrenProps } from './types/Interfaces'
 import { orbitron  } from './fonts'
@@ -19,6 +20,7 @@ const RootLayout: React.FC<childrenProps> = ({children}: childrenProps) => {
       <body className="bg-prime-100">
         <Header/>
         {children}
+        <Fotter/>
       </body>
     </html>
   )

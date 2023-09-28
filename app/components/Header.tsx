@@ -55,7 +55,7 @@ const Header: React.FC = () => {
           <div
             className={
               menuOpen
-                ? "fixed top-0 left-0 w-[75%] lg:hidden h-screen bg-[#ecf0f3] p-10 ease-in-out duration-500" 
+                ? "fixed top-0 left-0 w-[75%] xl:hidden h-screen bg-[#ecf0f3] p-10 ease-in-out duration-500" 
                 : "fixed left-[-100%] top-0 p-10 ease-in-out duration-500"
             }
           >
