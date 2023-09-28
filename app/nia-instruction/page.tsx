@@ -13,7 +13,7 @@ const NiaInstructionPage: React.FC = () => {
   return (
     <SectionWrapper title="Nia Instruction">
       <ImageAndText>
-          <ImageWrapper src="/images/nia-photo.jpg"
+          <ImageWrapper src="/images/nia-instruction.jpg"
           alt="nia-photo"/>
           <ParagraphWrapper paragraph="Nia blends modern & ethnic dance with elements of martial arts, tai chi & yoga to give a low impact, full ‘mind, body & spirit’ workout.
           It’s fun & invigorating. No dance experience necessary. You need only enjoy moving to music…barefooted!!!
