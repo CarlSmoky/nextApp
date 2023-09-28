@@ -1,15 +1,25 @@
 import React from "react";
-import SectionTitle from "../components/SectionTitle";
-import AboutContents from "../components/AboutContents";
+import type { Metadata } from 'next'
+import ImageAndText from "../components/ImageAndText";
+import SectionWrapper from "../components/SectionWrapper";
+import ImageWrapper from '../components/ImageWrapper';
+import ParagraphWrapper from '../components/ParagraphWrapper';
 
-const AboutPage = () => {
+export const metadata: Metadata = {
+  title: 'About',
+}
+
+const AboutPage: React.FC = () => {
   return (
-    <div className="mx-6 md:mx-16 lg:mx-28 xl:mx-32">
-      <SectionTitle
-        title="Noriko Yamamoto"
-      />
-      <AboutContents />
-    </div>
+      <SectionWrapper title="Noriko Yamamoto!!!" >
+        <ImageAndText>
+          <ImageWrapper src="/images/about_image.png"
+          alt="portrait"/>
+          <ParagraphWrapper paragraph="I’m a dreamer. I love life. I love cats. I’m a mime, dancer and
+        visual artist (sculpture & mixed-media). I grew up in Tokyo and now
+        live in Toronto."/>
+        </ImageAndText>
+      </SectionWrapper>
   );
 };
 

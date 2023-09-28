@@ -1,8 +1,15 @@
 import React from 'react'
+import type { Metadata } from 'next'
+import SectionWrapper from "../components/SectionWrapper";
 
-const ContactPage = () => {
+export const metadata: Metadata = {
+  title: 'Contact',
+}
+
+const ContactPage: React.FC = () => {
   return (
-    <div>ContactPage</div>
+    <SectionWrapper title="Contact">
+    </SectionWrapper>
   )
 }
 

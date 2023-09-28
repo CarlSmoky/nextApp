@@ -1,8 +1,17 @@
 import Image from 'next/image'
+import AboutPage from './about/page'
+import NiaInstructionPage from './nia-instruction/page'
+import AnnouncementPage from './announcement/page'
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <div className='text-7xl text-blue-500'>Hello</div>
+    <>
+      <AnnouncementPage/>
+      <AboutPage/>
+      <NiaInstructionPage/>
+    </>
     
   )
 }
+
+export default Home;
