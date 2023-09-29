@@ -18,7 +18,7 @@ const ImageLink: React.FC<Props> = ({ src, alt }: Props)=> {
           </div>
         </div>
         <Image
-          className="object-cover aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
+          className="object-cover aspect-square -translate-y-12 sm:translate-y-0 group-hover:scale-110 transition duration-300 ease-in-out"
           src={src}
           alt={alt}
           width={300}
