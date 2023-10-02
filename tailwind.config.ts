@@ -14,7 +14,12 @@ const config: Config = {
       xl: '1440px',
     },
     colors: {
-      prime: {100: '#FAF5F2'},
+      prime: {
+        100: '#FAF5F2'
+      },
+      white: {
+        100: '#FFFFFF'
+      },
       grey: {
         100: '#484349',
         200: '#495159',
