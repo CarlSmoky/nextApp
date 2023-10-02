@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const RootLayout: React.FC<childrenProps> = ({children}: childrenProps) => {
   return (
     <html lang="en" className={orbitron.variable}> 
-      <body className="bg-prime-100">
+      <body className="bg-white-200">
         <Header/>
         {children}
         <Fotter/>

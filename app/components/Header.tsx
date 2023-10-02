@@ -49,13 +49,13 @@ const Header: React.FC = () => {
           </div>
 
           {/* mobile menu */}
-          <div onClick={toggleMenu} className="xl:hidden cursor-pointer pl-24">
+          <div onClick={toggleMenu} className="xl:hidden cursor-pointer pl-24 z-100">
             <BsList className="h-8 w-8 text-black" />
           </div>
           <div
             className={
               menuOpen
-                ? "fixed top-0 left-0 w-[75%] xl:hidden h-screen bg-[#ecf0f3] p-10 ease-in-out duration-500" 
+                ? "fixed top-0 left-0 w-[75%] xl:hidden h-screen bg-[#ecf0f3] p-10 ease-in-out duration-500 z-20" 
                 : "fixed left-[-100%] top-0 p-10 ease-in-out duration-500"
             }
           >
