@@ -1,6 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import ImageGrid from '../components/ImageGrid'
+import Gallery from '../components/GalleryWithStaticImage'
 
 export const metadata: Metadata = {
   title: 'Performance',
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 const PerformancePage = () => {
   return (
     <div>PerformancePage
-      <ImageGrid/>
+      <Gallery/>
     </div>
   )
 }

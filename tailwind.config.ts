@@ -32,7 +32,7 @@ const config: Config = {
       orbitron: ['var(--font-orbitron)', 'san-serif'],
     },
     gridTemplateColumns: {
-      "gallery": 'repeat(auto-fit, minmax(250px, 1fr))',
+      "gallery": 'repeat(auto-fit, minmax(300px, 1fr))',
     }
   },
   plugins: [],

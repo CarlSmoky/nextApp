@@ -14,7 +14,6 @@ const getBase64 = async (imageUrl: string) => {
     const buffer = await res.arrayBuffer()
 
     const { base64 } = await getPlaiceholder(Buffer.from(buffer))
-    console.log(base64)
     return base64
     
   } catch (e) {
@@ -24,7 +23,7 @@ const getBase64 = async (imageUrl: string) => {
 
 const addBlurredDataUrls = async (images: ImageResults): Promise<Photo[]> => {
   // Make all requests at once instead of awaiting each one -- avoiding a waterfall
-  console.log("Calling")
+
   const base64Promises = images.photos.map(photo => getBase64(photo.src.large))
 
   // Resove all requests in order
