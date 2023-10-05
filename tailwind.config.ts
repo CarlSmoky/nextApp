@@ -20,6 +20,9 @@ const config: Config = {
       white: {
         100: '#FFFFFF'
       },
+      black: {
+        100: '#000000'
+      },
       grey: {
         100: '#484349',
         200: '#495159',
@@ -27,6 +30,9 @@ const config: Config = {
     },
     fontFamily: {
       orbitron: ['var(--font-orbitron)', 'san-serif'],
+    },
+    gridTemplateColumns: {
+      "gallery": 'repeat(auto-fit, minmax(250px, 1fr))',
     }
   },
   plugins: [],

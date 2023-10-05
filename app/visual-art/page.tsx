@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import Gallery from '../components/Gallery'
 
 export const metadata: Metadata = {
   title: 'Visual art',
@@ -7,7 +8,9 @@ export const metadata: Metadata = {
 
 const VisualArtPage = () => {
   return (
-    <div>visualArtPage</div>
+    <div className='margin-global'>
+      <Gallery/>
+    </div>
   )
 }
 
