@@ -11,12 +11,12 @@ const Header: React.FC = () => {
 
   const styles = {
     navLinks:
-      "cursor-pointer ml-10 uppercase border-b border-grey-500 hover:border-pink-800 xl:text-lg"
+      "cursor-pointer ml-10 uppercase border-b border-grey-500 hover:border-pink-800 lg:text-sm"
   };
 
   return (
     <header>
-      <nav className="w-full h-24 shadow-xl">
+      <nav className="w-full h-24 shadow-xl whitespace-nowrap">
         <div className="margin-global flex items-center justify-between h-full">
           <Image
             src="https://res.cloudinary.com/demo/image/upload/pg_2/kitten_fighting.gif"
@@ -25,8 +25,8 @@ const Header: React.FC = () => {
             height={25}
             className="cursor-point"
           />
-          <div className="text-black hidden xl:flex">
-            <ul className="hidden xl:flex">
+          <div className="text-black hidden lg:flex">
+            <ul className="hidden lg:flex">
               <li className={styles.navLinks}>
                 <Link href="/">HOME</Link>
               </li>
@@ -49,13 +49,13 @@ const Header: React.FC = () => {
           </div>
 
           {/* mobile menu */}
-          <div onClick={toggleMenu} className="xl:hidden cursor-pointer pl-24 z-100">
+          <div onClick={toggleMenu} className="lg:hidden cursor-pointer pl-24 z-100">
             <BsList className="h-8 w-8 text-black" />
           </div>
           <div
             className={
               menuOpen
-                ? "fixed top-0 left-0 w-[75%] xl:hidden h-screen bg-[#ecf0f3] p-10 ease-in-out duration-500 z-20" 
+                ? "fixed top-0 left-0 w-[75%] lg:hidden h-screen bg-[#ecf0f3] p-10 ease-in-out duration-500 z-20" 
                 : "fixed left-[-100%] top-0 p-10 ease-in-out duration-500"
             }
           >
