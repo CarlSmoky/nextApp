@@ -11,7 +11,8 @@ const Header: React.FC = () => {
 
   const styles = {
     navLinks: "cursor-pointer ml-6 uppercase lg:text-xs xl:text-sm",
-    hover: "hover:border-b hover:border-grey-200 ease-in-out duration-200",
+    group: "group",
+    hoverAnimation: 'block max-w-full opacity-0 group-hover:opacity-100  transition-all duration-300 ease-in-out h-px bg-grey-100'
   };
 
   return (
@@ -25,36 +26,42 @@ const Header: React.FC = () => {
             height={25}
             className="cursor-point"
           />
-          <div className="text-black hidden lg:flex lg:items-center">
+          <div className="text-black hidden lg:flex lg:items-center transition duration-300">
             <ul className="hidden lg:flex lg:items-center">
               <li className={styles.navLinks}>
-                <Link className={styles.hover} href="/">
+                <Link className={styles.group} href="/">
                   HOME
+                  <span className={styles.hoverAnimation}></span>
                 </Link>
               </li>
               <li className={styles.navLinks}>
-                <Link className={styles.hover} href="/visual-art">
+                <Link className={styles.group} href="/">
                   VISUAL ART
+                  <span className={styles.hoverAnimation}></span>
                 </Link>
               </li>
               <li className={styles.navLinks}>
-                <Link className={styles.hover} href="/performance">
+                <Link className={styles.group} href="/performance">
                   PERFORMANCE
+                  <span className={styles.hoverAnimation}></span>
                 </Link>
               </li>
               <li className={styles.navLinks}>
-                <Link className={styles.hover} href="/nia-instruction">
+                <Link className={styles.group} href="/nia-instruction">
                   NIA INSTRUCTOR
+                  <span className={styles.hoverAnimation}></span>
                 </Link>
               </li>
               <li className={styles.navLinks}>
-                <Link className={styles.hover} href="/about">
+                <Link className={styles.group} href="/about">
                   ABOUT
+                  <span className={styles.hoverAnimation}></span>
                 </Link>
               </li>
               <li className={styles.navLinks}>
-                <Link className={styles.hover} href="/contact">
+                <Link className={styles.group} href="/contact">
                   CONTACT
+                  <span className={styles.hoverAnimation}></span>
                 </Link>
               </li>
               <li className={styles.navLinks}>
@@ -79,7 +86,7 @@ const Header: React.FC = () => {
           {/* mobile menu */}
           <div
             onClick={toggleMenu}
-            className="lg:hidden cursor-pointer pl-24 z-100"
+            className="lg:hidden cursor-pointer pl-24 z-100 hover:text-grey-100 ease-in-out duration-300"
           >
             <BsList className="h-8 w-8 text-black" />
           </div>
@@ -92,7 +99,7 @@ const Header: React.FC = () => {
           >
             <div className="flex w-full items-center justify-end">
               <div onClick={toggleMenu} className="cousor-pointer">
-                <BsX className="h-8 w-8 text-black" />
+                <BsX className="h-8 w-8 text-black hover:scale-125 transition-all duration-300" />
               </div>
             </div>
             {/* mobile menu links */}
@@ -100,37 +107,39 @@ const Header: React.FC = () => {
               <ul>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-[#F6B519]"
+                  className="py-4 hover:underline hover:decoration-grey-200"
                 >
                   <Link href="/">HOME</Link>
                 </li>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-[#F6B519]"
+                  className="py-4 hover:underline hover:decoration-grey-200"
                 >
-                  <Link href="/visual-art">VISUAL ART</Link>
+                  <Link href="/visual-art">
+                    VISUAL ART
+                  </Link>
                 </li>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-[#F6B519]"
+                  className="py-4 hover:underline hover:decoration-grey-200"
                 >
                   <Link href="/performance">PERFORMANCE</Link>
                 </li>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-[#F6B519]"
+                  className="py-4 hover:underline hover:decoration-grey-200"
                 >
                   <Link href="/nia-instruction">NIA INSTRUCTOR</Link>
                 </li>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-[#F6B519]"
+                  className="py-4 hover:underline hover:decoration-grey-200"
                 >
                   <Link href="/about">ABOUT</Link>
                 </li>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-[#F6B519]"
+                  className="py-4 hover:underline hover:decoration-grey-200"
                 >
                   <Link href="/contact">CONTACT</Link>
                 </li>
@@ -141,13 +150,13 @@ const Header: React.FC = () => {
               <Link href="/">
                 <BsInstagram
                   size={30}
-                  className="cursor-pointer hover:text-[#F6B519] ease-in-out duration-300"
+                  className="cursor-pointer hover:text-grey-200 ease-in-out duration-300"
                 />
               </Link>
               <Link href="/">
                 <BsYoutube
                   size={30}
-                  className="cursor-pointer hover:text-[#F6B519] ease-in-out duration-300"
+                  className="cursor-pointer hover:text-grey-200 ease-in-out duration-300"
                 />
               </Link>
             </div>
