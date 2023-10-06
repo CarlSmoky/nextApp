@@ -12,7 +12,8 @@ const Header: React.FC = () => {
   const styles = {
     navLinks: "cursor-pointer ml-6 uppercase lg:text-sm xl:text-base",
     group: "group",
-    hoverAnimation: 'block max-w-full opacity-0 group-hover:opacity-100  transition-all duration-300 ease-in-out h-px bg-grey-100'
+    hoverAnimation: 'block max-w-full opacity-0 group-hover:opacity-100  transition-all duration-300 ease-in-out h-px bg-grey-100',
+    mobileMenu: "py-4 hover:underline hover:decoration-grey-200 underline-offset-4"
   };
 
   return (
@@ -107,13 +108,13 @@ const Header: React.FC = () => {
               <ul>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-grey-200"
+                  className={styles.mobileMenu}
                 >
                   <Link href="/">HOME</Link>
                 </li>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-grey-200"
+                  className={styles.mobileMenu}
                 >
                   <Link href="/visual-art">
                     VISUAL ART
@@ -121,25 +122,25 @@ const Header: React.FC = () => {
                 </li>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-grey-200"
+                  className={styles.mobileMenu}
                 >
                   <Link href="/performance">PERFORMANCE</Link>
                 </li>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-grey-200"
+                  className={styles.mobileMenu}
                 >
                   <Link href="/nia-instruction">NIA INSTRUCTOR</Link>
                 </li>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-grey-200"
+                  className={styles.mobileMenu}
                 >
                   <Link href="/about">ABOUT</Link>
                 </li>
                 <li
                   onClick={() => setMenuOpen(false)}
-                  className="py-4 hover:underline hover:decoration-grey-200"
+                  className={styles.mobileMenu}
                 >
                   <Link href="/contact">CONTACT</Link>
                 </li>

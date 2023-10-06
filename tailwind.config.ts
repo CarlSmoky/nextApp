@@ -27,6 +27,9 @@ const config: Config = {
         100: '#484349',
         200: '#495159',
       },
+      red: {
+        100: '#DF2935'
+      }
     },
     fontFamily: {
       orbitron: ['var(--font-orbitron)', 'san-serif'],
