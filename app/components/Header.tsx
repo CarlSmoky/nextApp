@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const styles = {
-    navLinks: "cursor-pointer ml-6 uppercase lg:text-xs xl:text-sm",
+    navLinks: "cursor-pointer ml-6 uppercase lg:text-sm xl:text-base",
     group: "group",
     hoverAnimation: 'block max-w-full opacity-0 group-hover:opacity-100  transition-all duration-300 ease-in-out h-px bg-grey-100'
   };
