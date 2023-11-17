@@ -2,50 +2,50 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-// import Logo from "../../Logo.png";
-// import Button from "../Button";
 import NavLinks from "./NavLinks";
+import Logo from "../../../public/images/Logo.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
-import { BsInstagram, BsList, BsX, BsYoutube } from "react-icons/bs";
+import { BsInstagram, BsYoutube } from "react-icons/bs";
 
+const Navbar: React.FC = () => {
+  const [open, setOpen] = useState<boolean>(false);
 
-
-
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const handleToggle = () => {
+    setOpen(!open);
+  };
 
   const styles = {
-    navLinks: "cursor-pointer ml-6 uppercase lg:text-sm xl:text-base",
-    group: "group",
-    hoverAnimation:
-      "block max-w-full opacity-0 group-hover:opacity-100  transition-all duration-300 ease-in-out h-px bg-grey-100",
-    mobileMenu:
-      "py-4 hover:underline hover:decoration-grey-200 underline-offset-4",
+    navLinks: "py-7 px-3 uppercase inline-block text-grey-200 hover:text-black-100 transition-all duration-300 ease-in-out"
   };
 
   return (
-    <nav className="bg-white">
-      <div className="flex items-center font-medium justify-around">
-        <div className="z-50 p-5 md:w-auto w-full flex justify-between">
-          {/* <Image src={Logo} alt="logo" className="md:cursor-pointer h-9" /> */}
-          <div className="cursor-pointer text-3xl md:hidden text-black" onClick={() => setOpen(!open)}>
+    <nav className="margin-global whitespace-nowrap">
+      <div className="flex items-center font-medium justify-between">
+        <div className="z-20 py-5 lg:w-auto w-full flex justify-between">
+          <Image src={Logo} alt="logo" className="lg:cursor-pointer h-9" />
+          <div className="cursor-pointer text-3xl lg:hidden text-black-100" onClick={handleToggle}>
             {open ? <AiOutlineClose/> : <AiOutlineMenu/> }
           </div>
         </div>
-        <ul className="md:flex hidden uppercase items-center gap-8 font-[Poppins]">
+        <ul className="lg:flex hidden uppercase items-center">
           <li>
-            <Link href="/" className="py-7 px-3 inline-block text-black">
+            <Link href="/" className={styles.navLinks}>
               Home
             </Link>
           </li>
-          <NavLinks />
+          <NavLinks onToggle={handleToggle}/>
           <li>
-            <Link href="/about" className="py-7 px-3 inline-block text-black">
+            <Link href="/nia-instruction" className={styles.navLinks}>
+              Nia Instrutcion
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" className={styles.navLinks}>
               About
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="py-7 px-3 inline-block text-black">
+            <Link href="/contact" className={styles.navLinks}>
               Contact
             </Link>
           </li>
@@ -53,7 +53,6 @@ const Navbar = () => {
             <Link href="">
               <BsInstagram
                 size={25}
-                className="cursor-pointer hover:text-grey-100 ease-in-out duration-300"
               />
             </Link>
           </li>
@@ -61,30 +60,52 @@ const Navbar = () => {
             <Link href="">
               <BsYoutube
                 size={25}
-                className="cursor-pointer hover:text-grey-100 ease-in-out duration-300"
               />
             </Link>
           </li>
         </ul>
-        <div className="md:block hidden">
-          {/* <Button /> */}
-        </div>
         {/* Mobile nav */}
         <ul
           className={`
-        md:hidden bg-white fixed w-full top-0 overflow-y-auto bottom-0 py-24 pl-4
-        duration-500 ${open ? "left-0" : "left-[-100%]"}
+        lg:hidden bg-white-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24 pl-4
+        duration-500 ${open ? "left-0 z-10" : "left-[-100%] z-10"}
         `}
         >
-          <li>
-            <Link href="/" className="py-7 px-3 inline-block">
+          <li onClick={handleToggle}>
+            <Link href="/" className={styles.navLinks}>
               Home
             </Link>
           </li>
-          <NavLinks />
-          <div className="py-5">
-            {/* <Button /> */}
-          </div>
+          <NavLinks onToggle={handleToggle} isOpen={open}/>
+          <li onClick={() => setOpen(!open)}>
+            <Link href="/nia-instruction" className={styles.navLinks}>
+              Nia Instrutcion
+            </Link>
+          </li>
+          <li onClick={handleToggle}>
+            <Link href="/about" className={styles.navLinks}>
+              About
+            </Link>
+          </li>
+          <li onClick={handleToggle}>
+            <Link href="/contact" className={styles.navLinks}>
+              Contact
+            </Link>
+          </li>
+          <li className={styles.navLinks} onClick={handleToggle}>
+            <Link href="">
+              <BsInstagram
+                size={25}
+              />
+            </Link>
+          </li>
+          <li className={styles.navLinks} onClick={handleToggle}>
+            <Link href="">
+              <BsYoutube
+                size={25}
+              />
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

@@ -1,21 +1,23 @@
 export const links = [
   {
     name: "VISUAL ART",
+    link: "/visual-art",
     submenu: true,
     sublinks: [
-          { name: "Washi", link: "/" },
-          { name: "Mix media", link: "/" },
-          { name: "Scalpture", link: "/" },
+          { name: "Washi", link: "/visual-art" },
+          { name: "Mix media", link: "/visual-art" },
+          { name: "Scalpture", link: "/visual-art" },
         ],
   },
   {
     name: "PERFORMANCE",
+    link: "/performance",
     submenu: true,
     sublinks: [
-          { name: "mime dance", link: "/" },
-          { name: "dance", link: "/" },
-          { name: "silent story telling", link: "/" },
-          { name: "mime", link: "/" },
+          { name: "mime dance", link: "/performance" },
+          { name: "dance", link: "/performance" },
+          { name: "silent story telling", link: "/performance" },
+          { name: "mime", link: "/performance" },
         ],
   },
 ];

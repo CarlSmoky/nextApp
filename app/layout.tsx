@@ -1,5 +1,5 @@
 import './globals.css'
-import Header from './components/Header'
+import Navbar from './components/Navbar/Navbar'
 import Fotter from './components/Fotter'
 import type { Metadata } from 'next'
 import { childrenProps } from './types/Interfaces'
@@ -13,12 +13,11 @@ export const metadata: Metadata = {
   description: 'Artist & Dancer Noriko Yamamoto sites',
 }
 
-
 const RootLayout: React.FC<childrenProps> = ({children}: childrenProps) => {
   return (
     <html lang="en" className={orbitron.variable}> 
       <body className="bg-white-200">
-        <Header/>
+        <Navbar/>
         {children}
         <Fotter/>
       </body>
