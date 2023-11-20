@@ -35,7 +35,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle, isOpen }) => {
         <div key={i}>
           <div className="text-left md:cursor-pointer group">
             <h1
-              className="py-7 px-3 flex text-grey-200 text-sm justify-between align-baseline lg:pr-0 pr-5 group hover:text-black-100 transition-all duration-300 ease-in-out"
+              className="py-7 px-3 lg:pr-0 pr-5 flex justify-between align-baseline text-grey-200 text-sm uppercase   hover:text-black-100 transition-all duration-300 ease-in-out"
             >
               <Link onClick={clickHandler} href={link.link}>{link.name}</Link>
               {link.submenu && (<span className="text-lg lg:text-sm lg:hidden inline" onClick={() => {
@@ -47,7 +47,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle, isOpen }) => {
                   <RiArrowDownSLine />
                 )}
               </span>)}
-              {link.submenu && (<span className="text-lg lg:text-sm lg:mt-1 lg:ml-2  lg:block hidden group-hover:rotate-180 group-hover:-mt-2 hover:text-black-100 transition-all duration-300 ease-in-out">
+              {link.submenu && (<span className="hidden text-lg lg:text-sm lg:mt-1 lg:ml-2 lg:block group-hover:rotate-180 group-hover:-mt-2 group-hover:text-black-100">
               <RiArrowDownSLine />
               </span>
               )}
@@ -83,7 +83,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle, isOpen }) => {
             {link.sublinks.map((slinks, i) => (
               <div key={i}>
                 <div>
-                  <li onClick={clickHandler} className="text-grey-200 text-sm py-3 pl-14 uppercase hover:text-black-100 transition-all duration-300 ease-in-out">
+                  <li onClick={clickHandler} className="py-3 pl-14 text-grey-200 text-sm  uppercase hover:text-black-100 transition-all duration-300 ease-in-out">
                     <Link href={slinks.link}>{slinks.name}</Link>
                   </li>
                 </div>
