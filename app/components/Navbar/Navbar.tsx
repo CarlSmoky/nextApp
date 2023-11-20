@@ -18,11 +18,13 @@ const Navbar: React.FC = () => {
     <nav className="margin-global whitespace-nowrap">
       <div className="flex items-center font-medium justify-between">
         <div className="z-20 py-3 lg:w-auto w-full flex justify-between">
-          <Image
-            src={Logo}
-            alt="logo"
-            className="sm:cursor-pointer w-28 lg:h-14 lg:w-full"
-          />
+          <Link href="/">
+            <Image
+              src={Logo}
+              alt="logo"
+              className="sm:cursor-pointer w-28 lg:h-14 lg:w-full"
+            />
+          </Link>
           <div
             className="cursor-pointer text-3xl lg:hidden text-black-100"
             onClick={handleToggle}
@@ -35,11 +37,13 @@ const Navbar: React.FC = () => {
           <li className="nav-sns">
             <Link href="https://www.instagram.com/noriko_toronto/">
               <BsInstagram size={25} />
+              <span className="sr-only">instagram</span>
             </Link>
           </li>
           <li className="nav-sns">
             <Link href="https://www.youtube.com/@norikoyamamoto7147">
               <BsYoutube size={25} />
+              <span className="sr-only">youtube</span>
             </Link>
           </li>
         </ul>
@@ -55,11 +59,13 @@ const Navbar: React.FC = () => {
             <li className="nav-sns" onClick={handleToggle}>
               <Link href="https://www.instagram.com/noriko_toronto/">
                 <BsInstagram size={25} />
+                <span className="sr-only">instagram</span>
               </Link>
             </li>
             <li className="nav-sns" onClick={handleToggle}>
               <Link href="https://www.youtube.com/@norikoyamamoto7147">
                 <BsYoutube size={25} />
+                <span className="sr-only">youtube</span>
               </Link>
             </li>
           </div>
