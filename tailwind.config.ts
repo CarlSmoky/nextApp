@@ -32,7 +32,8 @@ const config: Config = {
       }
     },
     fontFamily: {
-      orbitron: ['var(--font-orbitron)', 'san-serif'],
+      title: ['var(--font-titleFont)', 'san-serif'],
+      paragraph: ['var(--font-paragraphFont)', 'san-serif'],
     },
     gridTemplateColumns: {
       "gallery": 'repeat(auto-fit, minmax(300px, 1fr))',
