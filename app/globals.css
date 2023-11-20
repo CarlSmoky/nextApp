@@ -4,7 +4,7 @@
 
 @layer utilities {
   .margin-global {
-    @apply mx-2 md:mx-4 lg:mx-14 xl:mx-20
+    @apply mx-2 lg:mx-14 xl:mx-20
   }
 }
 
