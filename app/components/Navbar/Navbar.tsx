@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
         duration-500 ${open ? "left-0 z-10" : "left-[-100%] z-10"}
         `}
         >
-          <NavLinks onToggle={handleToggle} isOpen={open} />
+          <NavLinks onToggle={handleToggle} />
           <div className="flex justify-center">
             <li className="nav-sns" onClick={handleToggle}>
               <Link href="https://www.instagram.com/noriko_toronto/">
