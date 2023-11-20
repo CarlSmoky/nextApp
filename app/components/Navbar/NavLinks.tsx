@@ -34,7 +34,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
         <div key={i}>
           <div className="text-left md:cursor-pointer group">
             <h1
-              className="py-7 px-3 lg:pr-0 pr-5 flex justify-between align-baseline text-grey-200 text-sm uppercase   hover:text-black-100 transition-all duration-300 ease-in-out"
+              className="py-7 px-3 lg:pr-0 pr-5 flex justify-between align-baseline text-grey-200 text-sm uppercase font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out"
             >
               <Link onClick={clickHandler} href={link.link}>{link.name}</Link>
               {link.submenu && (<span className="text-lg lg:text-sm lg:hidden inline" onClick={() => {
@@ -57,7 +57,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
                   <div className="bg-prime-100 rounded-sm grid grid-cols-3 px-5 ">
                     {link.sublinks.map((slink, i) => (
                       <div key={i}>
-                        <li className="text-sm text-grey-200 my-2.5">
+                        <li className="text-sm font-paragraph text-grey-200 my-2.5">
                           <Link
                             href={slink.link}
                             className="hover:text-black-100 transition-all duration-300 ease-in-out"
@@ -82,7 +82,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
             {link.sublinks.map((slinks, i) => (
               <div key={i}>
                 <div>
-                  <li onClick={clickHandler} className="py-3 pl-14 text-grey-200 text-sm  uppercase hover:text-black-100 transition-all duration-300 ease-in-out">
+                  <li onClick={clickHandler} className="py-3 pl-14 text-grey-200 text-sm  uppercase font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out">
                     <Link href={slinks.link}>{slinks.name}</Link>
                   </li>
                 </div>
