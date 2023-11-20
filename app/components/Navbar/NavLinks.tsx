@@ -6,10 +6,9 @@ import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 
 interface ChildComponentProps {
   onToggle: () => void;
-  isOpen?: boolean;
 }
 
-const NavLinks: React.FC<ChildComponentProps> = ({ onToggle, isOpen }) => {
+const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
   const [heading, setHeading] = useState<string>("");
 
   interface Link {
