@@ -1,0 +1,97 @@
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+// import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { AiOutlineVerticalRight, AiOutlineVerticalLeft } from "react-icons/ai";
+import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import { RxDotFilled } from "react-icons/rx";
+
+let count: number = 0;
+let slideInterval: undefined | ReturnType<typeof setTimeout>
+
+const Slider: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const slideRef = useRef(document.createElement("div"))
+
+  const featuredImages = [
+    "/images/performance.jpg",
+    "/images/revealing_shadows.jpg",
+    "/images/dance.jpg",
+  ];
+
+  const removeAnimation = () => {
+    slideRef.current.classList.remove("fade-anim");
+  };
+
+  const handleOnNextClick = () => {
+    count = (count + 1) % featuredImages.length;
+    setCurrentIndex(count);
+    slideRef.current.classList.add("fade-anim");
+  };
+
+  const handleOnPrevClick = () => {
+    const productsLength = featuredImages.length;
+    count = (currentIndex + productsLength - 1) % productsLength;
+    setCurrentIndex(count);
+    slideRef.current.classList.add("fade-anim");
+  };
+
+  const startSlider = () => {
+    slideInterval = setInterval(() => {
+      handleOnNextClick();
+    }, 3000);
+  };
+
+  const pauseSlider = () => {
+    clearInterval(slideInterval);
+  };
+
+  const goToSlide = (slideIndex: number) => {
+    setCurrentIndex(slideIndex);
+  };
+
+  useEffect(() => {
+    startSlider();
+    slideRef.current.addEventListener("animationend", removeAnimation);
+    slideRef.current.addEventListener("mouseenter", pauseSlider);
+    slideRef.current.addEventListener("mouseleave", startSlider);
+
+    return () => {
+      clearInterval(slideInterval);
+    };
+  }, []);
+
+  return (
+    <div ref={slideRef} className="margin-global max-w-screen-2xl m-auto">
+      <div className="w-full relative select-none">
+        <div className="aspect-video">
+          <Image
+            src={featuredImages[currentIndex]}
+            alt=""
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+          />
+        </div>
+        <div className="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between items-start px-3 text-white-100">
+          <button onClick={handleOnPrevClick} ><GrFormPrevious size={35}/></button>
+          <button onClick={handleOnNextClick} ><GrFormNext size={35} /></button>
+        </div>
+        <div className="flex top-4 justify-center py-2">
+          {featuredImages.map((slide, slideIndex) => (
+            <div
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+              className="text-2xl cursor-pointer"
+            >
+              <RxDotFilled />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Slider;
