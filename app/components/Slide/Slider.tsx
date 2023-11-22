@@ -1,12 +1,17 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+// import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { AiOutlineVerticalRight, AiOutlineVerticalLeft } from "react-icons/ai";
+import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import { RxDotFilled } from "react-icons/rx";
 
-let count = 0;
-let slideInterval;
-const Slider = () => {
+let count: number = 0;
+let slideInterval: undefined | ReturnType<typeof setTimeout>
+
+const Slider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const slideRef = useRef<HTMLInputElement>(null);
+  const slideRef = useRef(document.createElement("div"))
 
   const featuredImages = [
     "/images/performance.jpg",
@@ -31,8 +36,18 @@ const Slider = () => {
     slideRef.current.classList.add("fade-anim");
   };
 
+  const startSlider = () => {
+    slideInterval = setInterval(() => {
+      handleOnNextClick();
+    }, 3000);
+  };
+
   const pauseSlider = () => {
     clearInterval(slideInterval);
+  };
+
+  const goToSlide = (slideIndex: number) => {
+    setCurrentIndex(slideIndex);
   };
 
   useEffect(() => {
@@ -45,14 +60,6 @@ const Slider = () => {
       clearInterval(slideInterval);
     };
   }, []);
-
-  const startSlider = () => {
-    slideInterval = setInterval(() => {
-      handleOnNextClick();
-    }, 3000);
-  };
-
-  console.log(slideRef);
 
   return (
     <div ref={slideRef} className="margin-global max-w-screen-2xl m-auto">
@@ -67,9 +74,20 @@ const Slider = () => {
             style={{ width: "100%", height: "auto" }}
           />
         </div>
-        <div className="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between items-start px-3">
-          <button onClick={handleOnPrevClick}>Previous</button>
-          <button onClick={handleOnNextClick}>Next</button>
+        <div className="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between items-start px-3 text-white-100">
+          <button onClick={handleOnPrevClick} ><GrFormPrevious size={35}/></button>
+          <button onClick={handleOnNextClick} ><GrFormNext size={35} /></button>
+        </div>
+        <div className="flex top-4 justify-center py-2">
+          {featuredImages.map((slide, slideIndex) => (
+            <div
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+              className="text-2xl cursor-pointer"
+            >
+              <RxDotFilled />
+            </div>
+          ))}
         </div>
       </div>
     </div>
