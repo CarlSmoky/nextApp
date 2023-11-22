@@ -27,7 +27,7 @@ export const links = [
         ],
   },
   {
-    name: "Nia Instrutcion",
+    name: "Nia Instruction",
     link: "/nia-instruction",
     submenu: false,
     sublinks: [],
