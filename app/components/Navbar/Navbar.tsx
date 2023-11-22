@@ -17,12 +17,12 @@ const Navbar: React.FC = () => {
   return (
     <nav className="margin-global whitespace-nowrap">
       <div className="flex items-center font-medium justify-between">
-        <div className="z-20 py-3 lg:w-auto w-full flex justify-between">
+        <div className="z-50 py-3 lg:w-auto w-full flex justify-between">
           <Link href="/">
             <Image
               src={Logo}
               alt="logo"
-              className="sm:cursor-pointer w-28 lg:h-14 lg:w-full"
+              className="sm:cursor-pointer w-28 lg:h-20 lg:w-full"
             />
           </Link>
           <div
@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
         <ul
           className={`
         lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24
-        duration-500 ${open ? "left-0 z-10" : "left-[-100%] z-10"}
+        duration-500 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
         `}
         >
           <NavLinks onToggle={handleToggle} />
