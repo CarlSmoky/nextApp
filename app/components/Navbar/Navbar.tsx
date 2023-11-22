@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
     <nav className="margin-global whitespace-nowrap">
       <div className="flex items-center font-medium justify-between">
         <div className="z-50 py-3 lg:w-auto w-full flex justify-between">
-          <Link href="/">
+          <Link href="/" onClick={() => setOpen(false)}>
             <Image
               src={Logo}
               alt="logo"

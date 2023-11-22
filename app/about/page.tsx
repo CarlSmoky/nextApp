@@ -13,7 +13,7 @@ const AboutPage: React.FC = () => {
   return (
       <SectionWrapper title="Noriko Yamamoto!!!" >
         <ImageAndText>
-          <ImageWrapper src="/images/about_image.png"
+          <ImageWrapper src="/images/about-noriko.jpg"
           alt="portrait"/>
           <ParagraphWrapper paragraph="I’m a dreamer. I love life. I love cats. I’m a mime, dancer and
         visual artist (sculpture & mixed-media). I grew up in Tokyo and now
