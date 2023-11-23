@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic'
 import AboutPage from './about/page'
-// import AnnouncementPage from './announcement/page'
-import ImageLinkSection from './components/Work/ImageLinkSection'
+import Work from './components/Work/Work'
 import ContactPage from './contact/page'
 
 const DynamicComponentWithNoSSR = dynamic(
@@ -13,9 +12,8 @@ const Home: React.FC = () => {
   return (
     <>
       <DynamicComponentWithNoSSR/>
-      {/* <AnnouncementPage/> */}
       <AboutPage/>
-      <ImageLinkSection/>
+      <Work/>
       <ContactPage/>
     </>
     

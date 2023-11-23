@@ -3,7 +3,7 @@ import Link from "next/link";
 import SectionWrapper from "../SectionWrapper";
 import ImageLinkAnimation from "./ImageLinkAnimation";
 
-const ImageLinkSection: React.FC = () => {
+const Work: React.FC = () => {
   return (
     <SectionWrapper title="work">
       <div className="flex flex-col gap-6 justify-between md:flex-row">
@@ -24,4 +24,4 @@ const ImageLinkSection: React.FC = () => {
   );
 };
 
-export default ImageLinkSection;
+export default Work;
