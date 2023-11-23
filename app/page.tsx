@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import AboutPage from './about/page'
 // import AnnouncementPage from './announcement/page'
-import ImageLinkSection from './components/ImageLinkSection'
+import ImageLinkSection from './components/Work/ImageLinkSection'
 import ContactPage from './contact/page'
 
 const DynamicComponentWithNoSSR = dynamic(
