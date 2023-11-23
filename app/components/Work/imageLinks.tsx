@@ -1,17 +1,17 @@
-export const links = [
+export const imageLinks = [
   {
     name: "VISUAL ART",
-    link: "/visual-art",
+    linkTo: "/visual-art",
     src: "/images/visual-art.jpg"
   },
   {
     name: "PERFORMANCE",
-    link: "/performance",
+    linkTo: "/performance",
     src: "/images/performance.jpg"
   },
   {
     name: "Nia Instruction",
-    link: "/nia-instruction",
+    linkTo: "/nia-instruction",
     src: "/images/nia-instruction.jpg"
   },
 ];

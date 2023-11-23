@@ -6,7 +6,7 @@ interface Props {
   alt: string;
 }
 
-const ImageLink: React.FC<Props> = ({ src, alt }: Props)=> {
+const ImageLinkAnimation: React.FC<Props> = ({ src, alt }: Props)=> {
   return (
     <div className="flex items-center justify-center from-teal-100 via-teal-300 to-teal-500 bg-gradient-to-br">
       <div className="overflow-hidden aspect-video md:aspect-square cursor-pointer rounded-xl relative group transition duration-300 ease-in-out hover:shadow-lg md:active:translate-y-2">
@@ -18,7 +18,7 @@ const ImageLink: React.FC<Props> = ({ src, alt }: Props)=> {
           </div>
         </div>
         <Image
-          className="object-cover aspect-square -translate-y-12 md:translate-y-0 group-hover:scale-110 transition duration-300 ease-in-out"
+          className="object-cover aspect-square -translate-y-12 md:translate-y-0 group-hover:scale-110 transition duration-300 ease-in-out "
           src={src}
           alt={alt}
           width={500}
@@ -29,5 +29,5 @@ const ImageLink: React.FC<Props> = ({ src, alt }: Props)=> {
   )
 }
 
-export default ImageLink
+export default ImageLinkAnimation
 
