@@ -1,6 +1,6 @@
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
-import Fotter from "./components/Fotter";
+import Fotter from "./components/Footer/Fotter";
 import type { Metadata } from "next";
 import { childrenProps } from "./types/Interfaces";
 import { orbitron, raleway, sofiaSans, montserrat, nunito ,quicksand, oswald, paragraphFont, titleFont } from "./fonts";
