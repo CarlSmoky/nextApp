@@ -6,7 +6,7 @@ export const links = [
     sublinks: [],
   },
   {
-    name: "VISUAL ART",
+    name: "Visual Art",
     link: "/visual-art",
     submenu: true,
     sublinks: [
@@ -16,7 +16,7 @@ export const links = [
         ],
   },
   {
-    name: "PERFORMANCE",
+    name: "Peformance",
     link: "/performance",
     submenu: true,
     sublinks: [
