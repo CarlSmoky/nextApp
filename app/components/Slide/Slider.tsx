@@ -4,6 +4,7 @@ import Image from "next/image";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { RxDotFilled } from "react-icons/rx";
 import { featuredImages } from "./Images";
+import {blurData} from "../Gallery/BlurData"
 
 let count: number = 0;
 let slideInterval: undefined | ReturnType<typeof setTimeout>
@@ -55,7 +56,7 @@ const Slider: React.FC = () => {
   }, []);
 
   return (
-    <div ref={slideRef} className="margin-global max-w-screen-2xl m-auto">
+    <section ref={slideRef} className="margin-global max-w-screen-2xl m-auto">
       <div className="w-full relative select-none">
         <div className="aspect-video" >
           <Image
@@ -67,6 +68,8 @@ const Slider: React.FC = () => {
             sizes="100vw"
             priority={true}
             style={{width: "100%", objectFit:"cover"}}
+            placeholder="blur"
+            blurDataURL={blurData}
           />
         </div>
         <div className="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between items-start px-3 text-white-100">
@@ -91,7 +94,7 @@ const Slider: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
