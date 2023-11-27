@@ -11,13 +11,18 @@ export const metadata: Metadata = {
 
 const AboutPage: React.FC = () => {
   return (
-      <SectionWrapper title="Noriko Yamamoto!!!" >
+      <SectionWrapper title="Noriko Yamamoto" >
         <ImageAndText>
           <ImageWrapper src="/images/about-noriko.jpg"
           alt="portrait"/>
-          <ParagraphWrapper paragraph="I’m a dreamer. I love life. I love cats. I’m a mime, dancer and
-        visual artist (sculpture & mixed-media). I grew up in Tokyo and now
-        live in Toronto."/>
+          <ParagraphWrapper paragraph="Noriko Yamamoto’s visual art life has been greatly influenced by her performance career as a
+        dancer, mime, clown, choreographer, and Silent Storyteller.
+        A great part of her visual art expresses movement, often shown through nature or the human body.
+        She subtly uses lines, layers, shadows, and colour to create texture-rich sculptures and mixed-media
+        works. She strives to evoke motion and emotion in stillness.
+        In 2019 at the Promise of Sekishu Washi exhibition at Propeller Gallery, Noriko's piece, Sora,
+        received an Honourable Mention from the judges and won the Audience Choice Award. It was at
+        this point that Noriko joined the collective, Washi Sisters."/>
         </ImageAndText>
       </SectionWrapper>
   );
