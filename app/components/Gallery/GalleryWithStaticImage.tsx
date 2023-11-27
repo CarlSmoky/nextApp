@@ -1,7 +1,7 @@
 import React from 'react'
 import ImgContainerWithStaticImage from "./ImgContainerWithStaticImage"
 import { images } from '../../types/Interfaces'
-import addBlurredDataUrls from '../../lib/getBase64'
+// import addBlurredDataUrls from '../../lib/getBase64'
 
 
 const GalleryWithStaticImage = async () => {
@@ -9,7 +9,7 @@ const GalleryWithStaticImage = async () => {
   // const photosWithBlur = await addBlurredDataUrls(images)
 
   return (
-   <section className="px-2 my-3 grid gap-2 grid-cols-gallery">
+   <section className="px-2 my-3 flex flex-wrap justify-center">
     
       {images.map(photo => (
         <ImgContainerWithStaticImage photo={photo} key={photo.id}/>
