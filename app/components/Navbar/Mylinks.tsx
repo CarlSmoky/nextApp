@@ -12,7 +12,7 @@ export const links = [
     sublinks: [
           { name: "Washi", link: "/visual-art" },
           { name: "Mix media", link: "/visual-art" },
-          { name: "Scalpture", link: "/visual-art" },
+          { name: "Sculpture", link: "/visual-art" },
         ],
   },
   {
@@ -25,7 +25,7 @@ export const links = [
           { name: "silent story telling", link: "/performance" },
           { name: "mime", link: "/performance" },
         ],
-  },
+  },  
   {
     name: "Nia Instruction",
     link: "/nia-instruction",
