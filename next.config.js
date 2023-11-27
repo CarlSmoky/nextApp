@@ -9,7 +9,7 @@ const nextConfig = {
         pathname: '/photos/**'
       }
     ],
-    domains: ['res.cloudinary.com']
+    domains: []
   }
 }
 

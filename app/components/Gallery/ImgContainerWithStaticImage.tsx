@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { PhotoSchema } from "../types/Interfaces";
-import type { Photo } from '../models/images'
+import { PhotoSchema } from "../../types/Interfaces";
+import {blurData} from "./BlurData"
 
 type Props = {
   photo: PhotoSchema;
@@ -18,6 +18,8 @@ const ImgContainer = ({ photo }: Props) => {
           fill={true}
           className="object-contain group-hover:opacity-75"
           sizes="(min-width: 1280px) 278px, (min-width: 1040px) calc(12.73vw + 118px), (min-width: 800px) 33.18vw, (min-width: 540px) 50vw, calc(100vw - 16px)"
+          placeholder="blur"
+          blurDataURL={blurData}
         />
       </div>
     </div>
