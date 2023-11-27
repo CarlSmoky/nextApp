@@ -46,7 +46,26 @@ export const images = [
   url: '/images/revealing_shadows.jpg',
   src: '/images/revealing_shadows.jpg',
   alt: 'dance'
-}]
+},
+{
+  id: 4,
+  url: '/images/revealing_shadows.jpg',
+  src: '/images/revealing_shadows.jpg',
+  alt: 'dance'
+},
+{
+  id: 3,
+  url: '/images/sweet_dream.jpg',
+  src: '/images/sweet_dream.jpg',
+  alt: 'dance'
+},
+{
+  id: 4,
+  url: '/images/revealing_shadows.jpg',
+  src: '/images/revealing_shadows.jpg',
+  alt: 'dance'
+}
+]
 
 
 // {
