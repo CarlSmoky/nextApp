@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ContactInfo = () => {
   return (
-    <div className="w-full lg:-mt-[500px] lg:w-2/6 px-8 py-12 ml-auto bg-grey-100 rounded-2xl">
+    <div className="w-full lg:-mt-[500px] lg:w-2/6 px-8 py-12 ml-auto bg-grey-100 rounded-lg">
       <div className="flex flex-col text-prime-100">
         <h1 className="font-bold uppercase text-2xl lg:text-3xl my-4 font-title">
           Drop in my gallery
