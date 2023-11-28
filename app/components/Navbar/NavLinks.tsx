@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, Dispatch, SetStateAction } from "react";
 import Link from "next/link";
-import { links } from "./Mylinks";
+import { links } from "./links";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 
 interface ChildComponentProps {

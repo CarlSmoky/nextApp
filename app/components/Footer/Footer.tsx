@@ -5,7 +5,7 @@ import { BsInstagram, BsYoutube } from "react-icons/bs";
 import FooterNav from "./FooterNav";
 import Logo from "../../../public/images/Logo.png";
 
-const Fotter = () => {
+const Footer = () => {
   return (
     <footer className="margin-global bottom-0 border-t border-grey-200">
       <div className="flex flex-col md:flex-row justify-between">
@@ -38,4 +38,4 @@ const Fotter = () => {
   );
 };
 
-export default Fotter;
+export default Footer;

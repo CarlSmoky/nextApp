@@ -33,7 +33,7 @@ const ContactForm = () => {
       </div>
       <div className="my-2 w-1/2 md:w-1/3 font-paragraph">
         <button
-          className="uppercase text-sm sm:text-base whitespace-nowrap font-bold tracking-wide bg-grey-100 text-prime-100 p-3 rounded-lg w-full hover:bg-grey-100/80 focus:outline-none focus:shadow-outline active:ring active:ring-grey-100 active:bg-grey-100 transition-all"
+          className="uppercase text-sm sm:text-base whitespace-nowrap font-bold tracking-wide bg-grey-100/80 text-prime-100 p-3 rounded-lg w-full hover:bg-grey-100 focus:outline-none focus:shadow-outline active:ring active:ring-grey-100 active:bg-grey-100 transition-all"
         >
           Send Message
         </button>

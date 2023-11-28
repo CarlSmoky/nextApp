@@ -18,7 +18,7 @@ export const links = [
   {
     name: "Peformance",
     link: "/performance",
-    submenu: true,
+    submenu: false,
     sublinks: [
           { name: "mime dance", link: "/performance" },
           { name: "dance", link: "/performance" },

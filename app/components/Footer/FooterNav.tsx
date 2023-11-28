@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { links } from "../Navbar/Mylinks";
+import { links } from "../Navbar/links";
 
 interface Link {
   name: string;

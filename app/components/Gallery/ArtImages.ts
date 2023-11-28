@@ -1,0 +1,72 @@
+export const artImages = [
+  {
+    id: 1,
+    src: '/images/fading_memories.jpg',
+    alt: 'fading memories',
+    category: 'washi',
+    updateTime: 'string',
+  },
+  {
+    id: 2,
+    src: '/images/shadow_impression_1.jpg',
+    alt: 'shadow impression_1',
+    category: 'washi',
+    updateTime: 'string',
+  },
+  {
+    id: 3,
+    src: '/images/shadow_impression_2.jpg',
+    alt: 'shadow impression_2',
+    category: 'washi',
+    updateTime: 'string',
+  },
+  {
+    id: 4,
+    src: '/images/shadow_impression_3.jpg',
+    alt: 'shadow impression_3',
+    category: 'washi',
+    updateTime: 'string',
+  },
+  {
+    id: 5,
+    src: '/images/shadow_impression_4.jpg',
+    alt: 'shadow impression_4',
+    category: 'washi',
+    updateTime: 'string',
+  },
+  {
+    id: 6,
+    src: '/images/shadow_impression_5.jpg',
+    alt: 'shadow impression_5',
+    category: 'washi',
+    updateTime: 'string',
+  },
+  {
+    id: 7,
+    src: '/images/shadow_impression_6.jpg',
+    alt: 'shadow impression_6',
+    category: 'washi',
+    updateTime: 'string',
+  },
+  {
+    id: 8,
+    src: '/images/revealing_shadows.jpg',
+    alt: 'revealing_shadows',
+    category: 'washi',
+    updateTime: 'string',
+  },
+  {
+    id: 9,
+    src: '/images/sweet_dream.jpg',
+    alt: 'sweet_dream',
+    category: 'sculpture',
+    updateTime: 'string',
+  },
+  {
+    id: 10,
+    src: '/images/water.jpg',
+    alt: 'water',
+    category: 'washi',
+    updateTime: 'string',
+  }
+  ]

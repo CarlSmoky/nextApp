@@ -1,6 +1,6 @@
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
-import Fotter from "./components/Footer/Fotter";
+import Footer from "./components/Footer/Footer";
 import type { Metadata } from "next";
 import { childrenProps } from "./types/Interfaces";
 import { orbitron, raleway, sofiaSans, montserrat, nunito ,quicksand, oswald, paragraphFont, titleFont } from "./fonts";
@@ -20,7 +20,7 @@ const RootLayout: React.FC<childrenProps> = ({ children }: childrenProps) => {
         <main className={`${titleFont.variable} ${raleway.variable} ${sofiaSans.variable} ${paragraphFont.variable}`}>
           <Navbar />
           {children}
-          <Fotter />
+          <Footer />
         </main>
       </body>
     </html>
