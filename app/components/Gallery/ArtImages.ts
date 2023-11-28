@@ -1,56 +1,72 @@
 export const artImages = [
   {
     id: 1,
-    url: '/images/fading_memories.jpg',
     src: '/images/fading_memories.jpg',
-    alt: 'fading memories'
+    alt: 'fading memories',
+    category: 'washi',
+    updateTime: 'string',
   },
   {
     id: 2,
-    url: '/images/shadow_impression_2.jpg',
-    src: '/images/shadow_impression_2.jpg',
-    alt: 'shadow impression'
+    src: '/images/shadow_impression_1.jpg',
+    alt: 'shadow impression_1',
+    category: 'washi',
+    updateTime: 'string',
   },
   {
     id: 3,
-    url: '/images/shadow_impression_3.jpg',
-    src: '/images/shadow_impression_3.jpg',
-    alt: 'shadow impression'
+    src: '/images/shadow_impression_2.jpg',
+    alt: 'shadow impression_2',
+    category: 'washi',
+    updateTime: 'string',
   },
   {
     id: 4,
-    url: '/images/shadow_impression_4.jpg',
-    src: '/images/shadow_impression_4.jpg',
-    alt: 'shadow impression'
+    src: '/images/shadow_impression_3.jpg',
+    alt: 'shadow impression_3',
+    category: 'washi',
+    updateTime: 'string',
   },
   {
     id: 5,
-    url: '/images/shadow_impression_5.jpg',
-    src: '/images/shadow_impression_5.jpg',
-    alt: 'shadow impression'
+    src: '/images/shadow_impression_4.jpg',
+    alt: 'shadow impression_4',
+    category: 'washi',
+    updateTime: 'string',
   },
   {
     id: 6,
-    url: '/images/shadow_impression_6.jpg',
-    src: '/images/shadow_impression_6.jpg',
-    alt: 'shadow impression'
+    src: '/images/shadow_impression_5.jpg',
+    alt: 'shadow impression_5',
+    category: 'washi',
+    updateTime: 'string',
   },
   {
     id: 7,
-    url: '/images/revealing_shadows.jpg',
-    src: '/images/revealing_shadows.jpg',
-    alt: 'dance'
+    src: '/images/shadow_impression_6.jpg',
+    alt: 'shadow impression_6',
+    category: 'washi',
+    updateTime: 'string',
   },
   {
     id: 8,
-    url: '/images/sweet_dream.jpg',
-    src: '/images/sweet_dream.jpg',
-    alt: 'dance'
+    src: '/images/revealing_shadows.jpg',
+    alt: 'revealing_shadows',
+    category: 'washi',
+    updateTime: 'string',
   },
   {
     id: 9,
-    url: '/images/water.jpg',
+    src: '/images/sweet_dream.jpg',
+    alt: 'sweet_dream',
+    category: 'sculpture',
+    updateTime: 'string',
+  },
+  {
+    id: 10,
     src: '/images/water.jpg',
-    alt: 'water'
+    alt: 'water',
+    category: 'washi',
+    updateTime: 'string',
   }
   ]

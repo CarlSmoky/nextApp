@@ -4,8 +4,9 @@ export interface childrenProps {
 
 export interface PhotoSchema {
   id: number;
-  url: string;
   src: string;
   alt: string;
+  category: string;
+  updateTime: string;
   blurredDataUrl?: string;
 }
