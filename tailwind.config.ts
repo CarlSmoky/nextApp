@@ -37,7 +37,11 @@ const config: Config = {
     },
     gridTemplateColumns: {
       "gallery": 'repeat(auto-fit, minmax(300px, 1fr))',
-    }
+    },
+    variants: {
+        extend: {
+        },
+      }
   },
   plugins: [],
 }
