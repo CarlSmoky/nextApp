@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { BsInstagram, BsYoutube } from "react-icons/bs";
 
 const ContactInfo = () => {
   return (
@@ -21,7 +22,7 @@ const ContactInfo = () => {
           <div className="flex flex-col">
             <h2 className="text-xl font-title">Gallery</h2>
             <p className="text-base font-paragraph">
-            692 St Clarens Ave #8, Toronto, ON M6H 3X1
+              692 St Clarens Ave #8, Toronto, ON M6H 3X1
             </p>
           </div>
         </div>
@@ -35,28 +36,20 @@ const ContactInfo = () => {
             <p className="text-base font-paragraph">
               <Link href="mailto:performernoriko@gmail.com?subject=Mail from our Website">
                 performernoriko@gmail.com
-              </ Link>
+              </Link>
             </p>
           </div>
         </div>
 
         <div className="flex my-4 w-2/3 lg:w-1/2">
-          <a
-            href="https://www.facebook.com/ENLIGHTENEERING/"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full bg-white h-8 w-8 inline-block mx-1 text-center pt-1"
-          >
-            <i className="fab fa-facebook-f text-blue-900" />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/enlighteneering-inc-"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full bg-white h-8 w-8 inline-block mx-1 text-center pt-1"
-          >
-            <i className="fab fa-linkedin-in text-blue-900" />
-          </a>
+          <Link href="https://www.instagram.com/noriko_toronto/" className="p-2 m-2">
+            <BsInstagram size={25} />
+            <span className="sr-only">instagram</span>
+          </Link>
+          <Link href="https://www.youtube.com/@norikoyamamoto7147" className="p-2 m-2">
+            <BsYoutube size={25} />
+            <span className="sr-only">youtube</span>
+          </Link>
         </div>
       </div>
     </div>
