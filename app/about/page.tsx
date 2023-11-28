@@ -13,7 +13,7 @@ const AboutPage: React.FC = () => {
   return (
       <SectionWrapper title="Noriko Yamamoto" >
         <ImageAndText>
-          <ImageWrapper src="/images/about-noriko.jpg"
+          <ImageWrapper src="/images/noriko.jpg"
           alt="portrait"/>
           <ParagraphWrapper paragraph="Noriko Yamamoto’s visual art life has been greatly influenced by her performance career as a
         dancer, mime, clown, choreographer, and Silent Storyteller.

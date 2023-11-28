@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import ImageGrid from '../components/ImageGrid'
-import Gallery from '../components/Gallery/GalleryWithStaticImage'
+import SectionWrapper from "../components/SectionWrapper";
 
 export const metadata: Metadata = {
   title: 'Performance',
@@ -9,9 +8,9 @@ export const metadata: Metadata = {
 
 const PerformancePage = () => {
   return (
-    <div>PerformancePage
-      <Gallery/>
-    </div>
+    <SectionWrapper title="performance">
+      <p className='text-center font-paragraph'>Coming soon...</p>
+    </SectionWrapper>
   )
 }
 
