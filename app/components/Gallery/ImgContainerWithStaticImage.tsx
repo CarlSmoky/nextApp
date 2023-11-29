@@ -10,7 +10,7 @@ type Props = {
 
 const ImgContainer = ({ photo }: Props) => {
   return (
-    <div className="w-[300px] h-[300px] m-2 lg:m-4 relative bg-black-100 rounded-xl overflow-hidden group">
+    <div className="w-[300px] h-[300px] m-2 lg:m-4 relative bg-black-100 overflow-hidden group">
       <div className={`w-[280px] h-[280px] relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}>
         <Image
           src={photo.src}

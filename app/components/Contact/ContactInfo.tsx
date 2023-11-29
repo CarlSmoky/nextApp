@@ -4,7 +4,7 @@ import { BsInstagram, BsYoutube } from "react-icons/bs";
 
 const ContactInfo = () => {
   return (
-    <div className="w-full lg:-mt-[500px] lg:w-2/6 px-8 py-12 ml-auto bg-grey-100 rounded-lg">
+    <div className="w-full lg:-mt-[500px] lg:w-2/6 px-8 py-12 ml-auto bg-grey-100">
       <div className="flex flex-col text-prime-100">
         <h1 className="font-bold uppercase text-2xl lg:text-3xl my-4 font-title">
           Drop in my gallery
@@ -28,9 +28,6 @@ const ContactInfo = () => {
         </div>
 
         <div className="flex my-4 w-2/3 lg:w-1/2">
-          <div className="flex flex-col">
-            <i className="fas fa-phone-alt pt-2 pr-2" />
-          </div>
           <div className="flex flex-col">
             <h2 className="text-xl font-title">Email Address</h2>
             <p className="text-base font-paragraph">
