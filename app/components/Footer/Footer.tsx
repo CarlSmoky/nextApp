@@ -6,6 +6,8 @@ import FooterNav from "./FooterNav";
 import Logo from "../../../public/images/Logo.png";
 
 const Footer = () => {
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
   return (
     <footer className="margin-global bottom-0 border-t border-grey-200">
       <div className="flex flex-col md:flex-row justify-between">
@@ -25,13 +27,18 @@ const Footer = () => {
               </Link>
             </li>
           </ul>
-          <Link href="/" className="p-6 m-auto">
-            <Image
-              src={Logo}
-              alt="logo"
-              className="sm:cursor-pointer w-36 "
-            />
-          </Link>
+          <div className="flex flex-col my-3">
+            <Link href="/" className="p-3 m-auto">
+              <Image
+                src={Logo}
+                alt="logo"
+                className="sm:cursor-pointer w-36 "
+              />
+            </Link>
+            <h3 className="text-center font-paragraph text-xs text-grey-100 whitespace-nowrap">
+              ©{currentYear} Momo gallery all rights reserved
+            </h3>
+          </div>
         </div>
       </div>
     </footer>
