@@ -56,7 +56,7 @@ const Slider: React.FC = () => {
   }, []);
 
   return (
-    <section ref={slideRef} className="max-w-screen-2xl m-auto">
+    <section ref={slideRef} className="margin-global max-w-screen-2xl m-auto">
       <div className="w-full relative select-none">
         <div className="aspect-video" >
           <Image
@@ -67,7 +67,7 @@ const Slider: React.FC = () => {
             fill={true}
             sizes="100vw"
             priority={true}
-            style={{width: "100%", objectFit:"cover"}}
+            style={{width: "100%", objectFit:"contain"}}
             placeholder="blur"
             blurDataURL={blurData}
           />
