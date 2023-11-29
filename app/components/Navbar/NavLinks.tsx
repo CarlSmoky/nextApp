@@ -34,7 +34,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
         <div key={i}>
           <div className="text-left md:cursor-pointer group">
             <h1
-              className="py-7 px-3 lg:pr-0 pr-5 flex justify-between align-baseline text-grey-200 text-sm uppercase font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out"
+              className="py-7 px-3 lg:p-2 flex justify-between align-baseline text-grey-200 text-sm uppercase font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out"
             >
               <Link onClick={clickHandler} href={link.link}>{link.name}</Link>
               {link.submenu && (<span className="text-lg lg:text-sm lg:hidden inline" onClick={() => {
