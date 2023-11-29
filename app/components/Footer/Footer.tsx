@@ -14,13 +14,13 @@ const Footer = () => {
         <FooterNav />
         <div className="flex flex-col lg:flex-row">
           <ul className="m-auto">
-            <li className="nav-sns px-7">
+            <li className="nav-sns">
               <Link href="https://www.instagram.com/noriko_toronto/">
                 <BsInstagram size={25} />
                 <span className="sr-only">instagram</span>
               </Link>
             </li>
-            <li className="nav-sns px-7">
+            <li className="nav-sns">
               <Link href="https://www.youtube.com/@norikoyamamoto7147">
                 <BsYoutube size={25} />
                 <span className="sr-only">youtube</span>
