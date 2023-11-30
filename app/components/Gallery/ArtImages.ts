@@ -3,7 +3,7 @@ export const artImages = [
     id: 1,
     src: '/images/fading_memories.jpg',
     alt: 'fading memories',
-    category: 'washi',
+    category: 'mixmedia',
     updateTime: 'string',
   },
   {
@@ -119,7 +119,7 @@ export const artImages = [
     updateTime: 'string',
   },
   {
-    id: 17,
+    id: 18,
     src: '/images/Flower_Power_A.jpg',
     alt: 'Flower_Power_A',
     category: 'washi',
@@ -157,14 +157,14 @@ export const artImages = [
     id: 23,
     src: '/images/Flower_Power_F.jpg',
     alt: 'Flower_Power_F',
-    category: 'washi',
+    category: '',
     updateTime: 'string',
   },
   {
     id: 24,
     src: '/images/revealing_shadows.jpg',
     alt: 'revealing_shadows',
-    category: 'washi',
+    category: 'sculpture',
     updateTime: 'string',
   },
   {
@@ -175,10 +175,10 @@ export const artImages = [
     updateTime: 'string',
   },
   {
-    id: 27,
+    id: 26,
     src: '/images/water.jpg',
     alt: 'water',
-    category: 'washi',
+    category: 'sculpture',
     updateTime: 'string',
   },
   ]
