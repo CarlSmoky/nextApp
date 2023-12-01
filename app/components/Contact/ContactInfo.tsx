@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
+import { IoIosPin } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
 
 const ContactInfo = () => {
   return (
@@ -16,8 +18,8 @@ const ContactInfo = () => {
         </p>
 
         <div className="flex my-4 w-2/3 lg:w-1/2">
-          <div className="flex flex-col">
-            <i className="fas fa-map-marker-alt pt-2 pr-2" />
+          <div className="flex flex-col p-1">
+            <IoIosPin/>
           </div>
           <div className="flex flex-col">
             <h2 className="text-xl font-title">Gallery</h2>
@@ -30,6 +32,9 @@ const ContactInfo = () => {
         </div>
 
         <div className="flex my-4 w-2/3 lg:w-1/2">
+        <div className="flex flex-col p-1">
+            <MdEmail />
+          </div>
           <div className="flex flex-col">
             <h2 className="text-xl font-title">Email Address</h2>
             <Link href="mailto:performernoriko@gmail.com?subject=Mail from our Website">
