@@ -36,7 +36,7 @@ const ContactInfo = () => {
             <MdEmail />
           </div>
           <div className="flex flex-col">
-            <h2 className="text-xl font-title">Email Address</h2>
+            <h2 className="text-xl font-title">Email</h2>
             <Link href="mailto:performernoriko@gmail.com?subject=Mail from our Website">
               <p className="text-base font-paragraph">
                 performernoriko@gmail.com

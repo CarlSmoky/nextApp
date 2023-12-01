@@ -127,10 +127,12 @@ const ContactForm = () => {
         {showFailureMessage && <span className="text-red-100">Fail to send message, try gain</span>}
       </div>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5 font-paragraph">
+        <label htmlFor="fullname" className="sr-only">full name</label>
         <input
           className={`w-full bg-gray-100 text-gray-200 mt-2 p-3 focus:outline-none focus:shadow-outline caret-grey-100/70 ${
             errors.fullname ? "ring-1 ring-red-100" : ""
           }`}
+          id="fullname"
           type="text"
           placeholder="Full Name*"
           name="fullname"
@@ -139,10 +141,12 @@ const ContactForm = () => {
             updateFields({ fullname: e.target.value });
           }}
         />
+        <label htmlFor="email" className="sr-only">email</label>
         <input
           className={`w-full bg-gray-100 text-gray-200 mt-2 p-3 focus:outline-none focus:shadow-outline caret-grey-100/70 ${
             errors.email ? "ring-1 ring-red-100" : ""
           }`}
+          id='email'
           type="email"
           placeholder="Email*"
           name="email"
@@ -151,10 +155,12 @@ const ContactForm = () => {
             updateFields({ email: e.target.value });
           }}
         />
+        <label htmlFor="subject" className="sr-only">subject</label>
         <input
           className={`w-full bg-gray-100 text-gray-200 mt-2 p-3 focus:outline-none focus:shadow-outline caret-grey-100/70 ${
             errors.subject ? "ring-1 ring-red-100" : ""
           }`}
+          id='subject'
           type="text"
           placeholder="Subject*"
           name="subject"
@@ -165,11 +171,13 @@ const ContactForm = () => {
         />
       </div>
       <div className="my-4 font-paragraph">
+      <label htmlFor="message" className="sr-only">message</label>
         <textarea
           placeholder="Message*"
           className={`w-full bg-gray-100 text-gray-200 mt-2 p-3 focus:outline-none focus:shadow-outline caret-grey-100/70 ${
             errors.message ? "ring-1 ring-red-100" : ""
           }`}
+          id='message'
           name="message"
           value={data.message}
           onChange={(e) => {
