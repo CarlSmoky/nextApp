@@ -35,7 +35,6 @@ const ContactForm = () => {
     });
   };
 
-
   const handleValidation = () => {
     let tempErrors: Partial<tempError> = {};
     let isValid = true;
@@ -64,10 +63,8 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSendStatus(true)
 
     let isValidForm = handleValidation();
-    console.log(isValidForm);
 
     if (!isValidForm) {
       setSendStatus(false);
@@ -76,38 +73,39 @@ const ContactForm = () => {
 
 
     if (isValidForm) {
-      //   setButtonText("Sending");
-      //   const res = await fetch("/api/sendgrid", {
-      //     body: JSON.stringify({
-      //       email: email,
-      //       fullname: fullname,
-      //       subject: subject,
-      //       message: message,
-      //     }),
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     method: "POST",
-      //   });
+      setSendStatus(false);
+  
+      const res = await fetch("/api/sendgrid", {
+        body: JSON.stringify({
+          email: data.email,
+          fullname: data.fullname,
+          subject: data.subject,
+          message: data.message,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+      
+      const { error} = await res.json();
 
-      //   const { error } = await res.json();
-      const error = null;
       if (error) {
         console.log(error);
         setShowSuccessMessage(false);
         setShowFailureMessage(true);
         return;
       }
-      setShowSuccessMessage(true);
-      setShowFailureMessage(false);
-      setErrors({});
-      setData(initialData)
-      setSendStatus(false)
+      if (res.status === 200) {
+        setShowSuccessMessage(true);
+        setShowFailureMessage(false);
+        setErrors({});
+        setData(initialData);
+      }
     }
-    // console.log(data);
   };
 
-  const errorFileds = Object.keys(errors).join(', ');
+  const errorFileds = Object.keys(errors).join(", ");
 
   return (
     <form
@@ -124,10 +122,14 @@ const ContactForm = () => {
           <span className="text-red-100">Please fill in {errorFileds}. </span>
         )}
         {showSuccessMessage && <span>Your message has been sent</span>}
-        {showFailureMessage && <span className="text-red-100">Fail to send message, try gain</span>}
+        {showFailureMessage && (
+          <span className="text-red-100">Fail to send message, try gain</span>
+        )}
       </div>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5 font-paragraph">
-        <label htmlFor="fullname" className="sr-only">full name</label>
+        <label htmlFor="fullname" className="sr-only">
+          full name
+        </label>
         <input
           className={`w-full bg-gray-100 text-gray-200 mt-2 p-3 focus:outline-none focus:shadow-outline caret-grey-100/70 ${
             errors.fullname ? "ring-1 ring-red-100" : ""
@@ -141,12 +143,14 @@ const ContactForm = () => {
             updateFields({ fullname: e.target.value });
           }}
         />
-        <label htmlFor="email" className="sr-only">email</label>
+        <label htmlFor="email" className="sr-only">
+          email
+        </label>
         <input
           className={`w-full bg-gray-100 text-gray-200 mt-2 p-3 focus:outline-none focus:shadow-outline caret-grey-100/70 ${
             errors.email ? "ring-1 ring-red-100" : ""
           }`}
-          id='email'
+          id="email"
           type="email"
           placeholder="Email*"
           name="email"
@@ -155,12 +159,14 @@ const ContactForm = () => {
             updateFields({ email: e.target.value });
           }}
         />
-        <label htmlFor="subject" className="sr-only">subject</label>
+        <label htmlFor="subject" className="sr-only">
+          subject
+        </label>
         <input
           className={`w-full bg-gray-100 text-gray-200 mt-2 p-3 focus:outline-none focus:shadow-outline caret-grey-100/70 ${
             errors.subject ? "ring-1 ring-red-100" : ""
           }`}
-          id='subject'
+          id="subject"
           type="text"
           placeholder="Subject*"
           name="subject"
@@ -171,13 +177,15 @@ const ContactForm = () => {
         />
       </div>
       <div className="my-4 font-paragraph">
-      <label htmlFor="message" className="sr-only">message</label>
+        <label htmlFor="message" className="sr-only">
+          message
+        </label>
         <textarea
           placeholder="Message*"
           className={`w-full bg-gray-100 text-gray-200 mt-2 p-3 focus:outline-none focus:shadow-outline caret-grey-100/70 ${
             errors.message ? "ring-1 ring-red-100" : ""
           }`}
-          id='message'
+          id="message"
           name="message"
           value={data.message}
           onChange={(e) => {
@@ -190,7 +198,7 @@ const ContactForm = () => {
           className="uppercase text-sm sm:text-base whitespace-nowrap font-bold tracking-wide bg-grey-100/80 text-prime-100 p-3 w-full hover:bg-grey-100 focus:outline-none focus:shadow-outline active:ring active:ring-grey-100 active:bg-grey-100 transition-all"
           type="submit"
         >
-          {sendStatus ? 'Sending' : 'Send Message'}
+          {sendStatus ? "Sending" : "Send Message"}
         </button>
       </div>
     </form>
