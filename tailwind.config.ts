@@ -18,7 +18,8 @@ const config: Config = {
         100: '#FAF5F2'
       },
       white: {
-        100: '#FFFFFF'
+        100: '#FFFFFF',
+        200: '#C1B6AB'
       },
       black: {
         100: '#000000'

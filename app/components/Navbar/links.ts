@@ -8,7 +8,7 @@ export const links = [
   {
     name: "Visual Art",
     link: "/visual-art",
-    submenu: true,
+    submenu: false,
     sublinks: [
           { name: "Washi", link: "/visual-art" },
           { name: "Mix media", link: "/visual-art" },
