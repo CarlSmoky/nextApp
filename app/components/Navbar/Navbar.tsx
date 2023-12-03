@@ -35,13 +35,13 @@ const Navbar: React.FC = () => {
         <ul className="lg:flex hidden uppercase items-center">
           <NavLinks onToggle={handleToggle} />
           <li className="nav-sns">
-            <Link href="https://www.instagram.com/noriko_toronto/">
+            <Link href="https://www.instagram.com/noriko_toronto/" target="_blank">
               <BsInstagram size={25} />
               <span className="sr-only">instagram</span>
             </Link>
           </li>
           <li className="nav-sns">
-            <Link href="https://www.youtube.com/@norikoyamamoto7147">
+            <Link href="https://www.youtube.com/@norikoyamamoto7147" target="_blank">
               <BsYoutube size={25} />
               <span className="sr-only">youtube</span>
             </Link>
@@ -57,13 +57,13 @@ const Navbar: React.FC = () => {
           <NavLinks onToggle={handleToggle} />
           <div className="flex justify-center">
             <li className="nav-sns" onClick={handleToggle}>
-              <Link href="https://www.instagram.com/noriko_toronto/">
+              <Link href="https://www.instagram.com/noriko_toronto/" target="_blank">
                 <BsInstagram size={25} />
                 <span className="sr-only">instagram</span>
               </Link>
             </li>
             <li className="nav-sns" onClick={handleToggle}>
-              <Link href="https://www.youtube.com/@norikoyamamoto7147">
+              <Link href="https://www.youtube.com/@norikoyamamoto7147" target="_blank">
                 <BsYoutube size={25} />
                 <span className="sr-only">youtube</span>
               </Link>

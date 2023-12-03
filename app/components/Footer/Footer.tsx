@@ -15,13 +15,13 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row">
           <ul className="m-auto">
             <li className="nav-sns">
-              <Link href="https://www.instagram.com/noriko_toronto/">
+              <Link href="https://www.instagram.com/noriko_toronto/" target="blank">
                 <BsInstagram size={25} />
                 <span className="sr-only">instagram</span>
               </Link>
             </li>
             <li className="nav-sns">
-              <Link href="https://www.youtube.com/@norikoyamamoto7147">
+              <Link href="https://www.youtube.com/@norikoyamamoto7147" target="blank">
                 <BsYoutube size={25} />
                 <span className="sr-only">youtube</span>
               </Link>
@@ -36,7 +36,7 @@ const Footer = () => {
               />
             </Link>
             <h3 className="text-center font-paragraph text-xs text-grey-100 whitespace-nowrap">
-              ©{currentYear} Momo gallery all rights reserved
+              ©{currentYear} Momo gallery All rights reserved
             </h3>
           </div>
         </div>
