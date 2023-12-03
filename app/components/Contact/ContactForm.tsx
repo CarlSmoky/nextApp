@@ -57,7 +57,6 @@ const ContactForm = () => {
     }
 
     setErrors({ ...tempErrors });
-    console.log("errors", errors);
     return isValid;
   };
 
@@ -91,7 +90,6 @@ const ContactForm = () => {
       const { error} = await res.json();
 
       if (error) {
-        console.log(error);
         setShowSuccessMessage(false);
         setShowFailureMessage(true);
         return;
