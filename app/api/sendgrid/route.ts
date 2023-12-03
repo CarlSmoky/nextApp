@@ -2,9 +2,14 @@ import sendgrid from "@sendgrid/mail";
 import { NextResponse } from 'next/server';
 
 const {SENDGRID_API_KEY, SEND_TO, FROM } = process.env
+
+if (!SENDGRID_API_KEY) {
+  throw new Error("Unexpected error: Missing API key");
+}
+
 sendgrid.setApiKey(SENDGRID_API_KEY);
 
-export async function POST(req) {
+export async function POST(req: Response) {
   const body = await req.json();
   try {
     await sendgrid.send({
@@ -37,7 +42,7 @@ export async function POST(req) {
     });
   } catch (error) {
     // console.log(error);
-    return NextResponse.json({ error: error.message });
+    return NextResponse.json({ error: (error as Error).message });
   }
 
   return NextResponse.json({ error: "" });
