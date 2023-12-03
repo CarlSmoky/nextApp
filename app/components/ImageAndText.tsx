@@ -3,7 +3,7 @@ import { childrenProps } from '../types/Interfaces'
 
 const ImageAndText: React.FC<childrenProps> = ({ children }: childrenProps) => {
   return (
-    <div className="flex flex-col justify-between md:flex-row pt-3 md:pt-6 pb-20">
+    <div className="flex flex-col justify-between md:flex-row pt-3 md:pt-6">
       {children}
     </div>
   );

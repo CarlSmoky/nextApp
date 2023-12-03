@@ -40,7 +40,7 @@ export const links = [
   },
   {
     name: "Contact",
-    link: "/contact",
+    link: "/#contact",
     submenu: false,
     sublinks: [],
   },

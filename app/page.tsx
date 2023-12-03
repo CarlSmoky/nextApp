@@ -1,8 +1,8 @@
-import dynamic from 'next/dynamic'
+import Slider from './components/Slide/Slider'
 import AboutPage from './about/page'
 import Work from './components/Work/Work'
-import ContactPage from './contact/page'
-import Slider from './components/Slide/Slider'
+import ContactWrapper from './components/Contact/ContactWrapper'
+
 
 const Home: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const Home: React.FC = () => {
       <Slider/>
       <AboutPage/>
       <Work/>
-      <ContactPage/>
+      <ContactWrapper/>
     </>
     
   )
