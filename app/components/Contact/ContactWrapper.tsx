@@ -5,8 +5,8 @@ import ContactInfo from "./ContactInfo";
 const ContactWrapper: React.FC = () => {
   return (
     <>
-      <div className="margin-global flex justify-center items-center mb-10">
-        <div className="mx-auto w-full">
+      <div className="margin-global mb-10 shadow-2xl">
+        <div className="flex flex-col lg:flex-row justify-center items-center">
           <ContactForm/>
           <ContactInfo/>
         </div>
