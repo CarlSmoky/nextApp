@@ -56,9 +56,9 @@ const Slider: React.FC = () => {
   }, []);
 
   return (
-    <section ref={slideRef} className="margin-global max-w-screen-2xl m-auto">
-      <div className="w-full relative select-none">
-        <div className="aspect-video" >
+    <section ref={slideRef} className="max-w-screen-2xl m-auto">
+      <div className="margin-global">
+        <div className="w-full aspect-video relative select-none" >
           <Image
             src={featuredImages[currentIndex]}
             alt={`image_${currentIndex + 1}`}
@@ -71,7 +71,6 @@ const Slider: React.FC = () => {
             placeholder="blur"
             blurDataURL={blurData}
           />
-        </div>
         <div className="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between items-start px-3 text-white-100">
           <button onClick={handleOnPrevClick}>
             <GrFormPrevious size={25} />
@@ -81,6 +80,7 @@ const Slider: React.FC = () => {
             <GrFormNext size={25} />
             <span className="sr-only">next</span>
           </button>
+        </div>
         </div>
         <div className="flex top-4 justify-center py-2">
           {featuredImages.map((slide, slideIndex) => (

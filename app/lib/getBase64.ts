@@ -1,6 +1,6 @@
 import { getPlaiceholder } from "plaiceholder";
-// import type { PhotoSchema } from '../types/Interfaces'
-import type { Photo, ImageResults } from '../models/images'
+import type { PhotoSchema } from '../types/Interfaces'
+import type { Photo, ImageResults } from '../types/Images'
 
 
 const getBase64 = async (imageUrl: string) => {
