@@ -12,7 +12,7 @@ interface ChildComponentProps {
 
 const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
   const [heading, setHeading] = useState<string>("");
-  const navContext = useContext(DisplayNavContext)
+  const navContext = useContext(DisplayNavContext);
 
   const clickHandler = (link: LinkInfo) => {
     onToggle();
