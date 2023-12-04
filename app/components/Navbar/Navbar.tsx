@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             <Image
               src={Logo}
               alt="logo"
-              className="sm:cursor-pointer w-28 lg:h-20 lg:w-full"
+              className="sm:cursor-pointer w-36 lg:h-20 lg:w-full"
             />
           </Link>
           <div
