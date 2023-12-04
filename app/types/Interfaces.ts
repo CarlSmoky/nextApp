@@ -31,4 +31,11 @@ export interface LinkInfo {
 export interface Sublink {
   name: string;
   link: string;
-} 
+}
+
+export interface WorkLink {
+  name: string;
+  linkTo: string;
+  src: string;
+  navState: NavState;
+}
