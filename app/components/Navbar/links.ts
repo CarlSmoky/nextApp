@@ -1,9 +1,12 @@
+import { NavState　} from "../../types/Interfaces";
+
 export const links = [
   {
     name: "Home",
     link: "/",
     submenu: false,
     sublinks: [],
+    navState: NavState.home
   },
   {
     name: "Visual Art",
@@ -14,6 +17,7 @@ export const links = [
           { name: "Mix media", link: "/visual-art" },
           { name: "Sculpture", link: "/visual-art" },
         ],
+    navState: NavState.visualArt
   },
   {
     name: "Peformance",
@@ -25,23 +29,27 @@ export const links = [
           { name: "silent story telling", link: "/performance" },
           { name: "mime", link: "/performance" },
         ],
+    navState: NavState.peformance
   },  
   {
     name: "Nia Instruction",
     link: "/nia-instruction",
     submenu: false,
     sublinks: [],
+    navState: NavState.nia
   },
   {
     name: "About",
     link: "/about",
     submenu: false,
     sublinks: [],
+    navState: NavState.about
   },
   {
     name: "Contact",
     link: "/#contact",
     submenu: false,
     sublinks: [],
+    navState: NavState.contact
   },
 ];
