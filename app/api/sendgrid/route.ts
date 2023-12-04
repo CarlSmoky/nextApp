@@ -9,7 +9,7 @@ if (!SENDGRID_API_KEY) {
 
 sendgrid.setApiKey(SENDGRID_API_KEY);
 
-export async function POST(req: Response) {
+export async function POST(req: Request) {
   const body = await req.json();
   try {
     await sendgrid.send({
