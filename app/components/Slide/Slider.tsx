@@ -65,7 +65,7 @@ const Slider: React.FC = () => {
               onClick={() => goToSlide(slideIndex)}
               className="z-10 text-2xl cursor-pointer"
             >
-              <RxDotFilled />
+              <RxDotFilled className={`${currentIndex === slideIndex ? "text-black-100" : "text-grey-100/50"}`}/>
             </div>
           ))}
         </div>
