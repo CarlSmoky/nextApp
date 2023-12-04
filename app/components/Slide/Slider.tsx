@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { RxDotFilled } from "react-icons/rx";
@@ -11,29 +11,16 @@ let slideInterval: undefined | ReturnType<typeof setTimeout>
 
 const Slider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const slideRef = useRef(document.createElement("div"))
-
-  const removeAnimation = () => {
-    slideRef.current.classList.remove("fade-anim");
-  };
 
   const handleOnNextClick = () => {
     count = (count + 1) % featuredImages.length;
     setCurrentIndex(count);
-    slideRef.current.classList.add("fade-anim");
   };
 
   const handleOnPrevClick = () => {
     const productsLength = featuredImages.length;
     count = (currentIndex + productsLength - 1) % productsLength;
     setCurrentIndex(count);
-    slideRef.current.classList.add("fade-anim");
-  };
-
-  const startSlider = () => {
-    slideInterval = setInterval(() => {
-      handleOnNextClick();
-    }, 3000);
   };
 
   const pauseSlider = () => {
@@ -44,19 +31,8 @@ const Slider: React.FC = () => {
     setCurrentIndex(slideIndex);
   };
 
-  useEffect(() => {
-    startSlider();
-    slideRef.current.addEventListener("animationend", removeAnimation);
-    slideRef.current.addEventListener("mouseenter", pauseSlider);
-    slideRef.current.addEventListener("mouseleave", startSlider);
-
-    return () => {
-      clearInterval(slideInterval);
-    };
-  }, []);
-
   return (
-    <section ref={slideRef} className="max-w-screen-2xl m-auto">
+    <section className="max-w-screen-2xl m-auto">
       <div className="margin-global">
         <div className="w-full aspect-video relative select-none" >
           <Image
