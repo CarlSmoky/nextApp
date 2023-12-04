@@ -1,6 +1,8 @@
 "use client";
-import React, { useState, Dispatch, SetStateAction } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
+import { DisplayNavContext} from "../../provider/DisplayNavProvider";
+import { NavState, LinkInfo, Sublink } from "@/app/types/Interfaces";
 import { links } from "./links";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 
@@ -10,33 +12,26 @@ interface ChildComponentProps {
 
 const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
   const [heading, setHeading] = useState<string>("");
+  const navContext = useContext(DisplayNavContext)
 
-  interface Link {
-    name: string;
-    link: string;
-    submenu: boolean;
-    sublinks: Sublink[];
-  }
-
-  interface Sublink {
-    name: string;
-    link: string;
-  }
-
-  const clickHandler = () => {
+  const clickHandler = (link: LinkInfo) => {
     onToggle();
     setHeading("");
+
+    // redirect contact highlighting to home
+    const newHighlight = link.navState === NavState.contact ? NavState.home : link.navState
+    navContext?.setCurrentNav(newHighlight)
   }
   
   return (
     <>
-      {links.map((link: Link, i) => (
+      {links.map((link: LinkInfo, i) => (
         <div key={i}>
           <div className="text-left md:cursor-pointer group">
             <h1
-              className="py-7 px-3 lg:p-2 flex justify-between align-baseline text-grey-200 text-sm uppercase font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out"
+              className={`py-7 px-3 lg:p-2 flex justify-between align-baseline text-grey-200 text-sm uppercase font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out ${navContext?.currentNav ===  link.navState ? 'underline underline-offset-4' : ""}`}
             >
-              <Link onClick={clickHandler} href={link.link}>{link.name}</Link>
+              <Link onClick={() => clickHandler(link)} href={link.link}>{link.name}</Link>
               {link.submenu && (<span className="text-lg lg:text-sm lg:hidden inline" onClick={() => {
                 heading !== link.name ? setHeading(link.name) : setHeading("");
               }}>
@@ -55,7 +50,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
               <div>
                 <div className="absolute top-20 hidden group-hover:lg:block hover:lg:block z-10">
                   <div className="bg-prime-100 rounded-sm grid grid-cols-3 px-5 ">
-                    {link.sublinks.map((slink, i) => (
+                    {link.sublinks.map((slink: Sublink, i) => (
                       <div key={i}>
                         <li className="text-sm font-paragraph text-grey-200 my-2.5">
                           <Link
@@ -79,10 +74,10 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
           `}
           >
             {/* sublinks */}
-            {link.sublinks.map((slinks, i) => (
+            {link.sublinks.map((slinks: Sublink, i) => (
               <div key={i}>
                 <div>
-                  <li onClick={clickHandler} className="py-3 pl-14 text-grey-200 text-sm  uppercase font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out">
+                  <li className="py-3 pl-14 text-grey-200 text-sm  uppercase font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out">
                     <Link href={slinks.link}>{slinks.name}</Link>
                   </li>
                 </div>

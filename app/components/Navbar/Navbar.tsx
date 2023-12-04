@@ -1,14 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "./NavLinks";
 import Logo from "../../../public/images/Logo.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import {　DisplayNavContext　} from "../../provider/DisplayNavProvider";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const navContext = useContext(DisplayNavContext)
 
   const handleToggle = () => {
     setOpen(!open);
