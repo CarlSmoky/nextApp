@@ -2,7 +2,7 @@ export const imageLinks = [
   {
     name: "VISUAL ART",
     linkTo: "/visual-art",
-    src: "/images/Fading_Memories.jpg"
+    src: "/images/fading_memories.jpg"
   },
   {
     name: "PERFORMANCE",
