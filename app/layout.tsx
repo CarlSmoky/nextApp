@@ -9,8 +9,8 @@ import { paragraphFont, titleFont } from "./fonts";
 
 export const metadata: Metadata = {
   title: {
-    default: "Momo gallary",
-    template: "%s | Momo gallary",
+    default: "Momo gallery",
+    template: "%s | Momo gallery",
   },
   description: "Artist & Dancer Noriko Yamamoto sites",
 };
