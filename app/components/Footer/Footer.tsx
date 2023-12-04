@@ -1,6 +1,9 @@
-import React from "react";
+"use client"
+import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { DisplayNavContext} from "../../provider/DisplayNavProvider";
+import { NavState } from "../../types/Interfaces";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
 import FooterNav from "./FooterNav";
 import Logo from "../../../public/images/Logo.png";
@@ -8,6 +11,8 @@ import Logo from "../../../public/images/Logo.png";
 const Footer = () => {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
+  const navContext = useContext(DisplayNavContext);
+
   return (
     <footer className="margin-global bottom-0 border-t border-grey-200">
       <div className="flex flex-col md:flex-row justify-between">
@@ -28,7 +33,7 @@ const Footer = () => {
             </li>
           </ul>
           <div className="flex flex-col my-3">
-            <Link href="/" className="p-3 m-auto">
+            <Link onClick={() => navContext?.setCurrentNav(NavState.home)} href="/" className="p-3 m-auto">
               <Image
                 src={Logo}
                 alt="logo"

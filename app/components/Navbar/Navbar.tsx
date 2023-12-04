@@ -5,7 +5,8 @@ import Image from "next/image";
 import NavLinks from "./NavLinks";
 import Logo from "../../../public/images/Logo.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import {　DisplayNavContext　} from "../../provider/DisplayNavProvider";
+import { DisplayNavContext } from "../../provider/DisplayNavProvider";
+import { NavState } from "../../types/Interfaces";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
 
 const Navbar: React.FC = () => {
@@ -16,11 +17,16 @@ const Navbar: React.FC = () => {
     setOpen(!open);
   };
 
+  const clickHandler = () => {
+    setOpen(false)
+    navContext?.setCurrentNav(NavState.home)
+  }
+
   return (
     <nav className="margin-global whitespace-nowrap">
       <div className="flex items-center font-medium justify-between">
         <div className="z-50 py-3 lg:w-auto w-full flex justify-between">
-          <Link href="/" onClick={() => setOpen(false)}>
+          <Link href="/" onClick={clickHandler}>
             <Image
               src={Logo}
               alt="logo"

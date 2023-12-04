@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import { DisplayNavContext} from "../../provider/DisplayNavProvider";
 import { NavState, LinkInfo, Sublink } from "../../types/Interfaces";
-
 import { links } from "../Navbar/links";
 
 const FooterNav = () => {
