@@ -9,7 +9,7 @@ const ContactInfo = () => {
     <div className="w-full lg:w-1/3 px-4 py-12 bg-prime-100">
       <div className="flex flex-col text-grey-100">
         <h1 className="font-bold uppercase text-2xl lg:text-3xl my-4 font-title">
-          Drop in my gallery
+          Gallery hours: By appointment
         </h1>
         <div className="flex my-4 w-2/3 lg:w-1/2">
           <div className="flex flex-col pt-1 pr-1">
@@ -21,13 +21,15 @@ const ContactInfo = () => {
             </Link>
           </div>
           <div className="flex flex-col">
-            <h2 className="text-xl font-title">Gallery hours: By appointment</h2>
+            <h2 className="text-xl font-title">
+              Gallery
+            </h2>
             <Link
               href="https://maps.app.goo.gl/461nGG59xpnmvXNt7"
               target="_blank"
             >
               <p className="text-base font-paragraph">
-              692 St. Clarens Ave. Studio #8 Toronto, ON M6H 3X1 CANADA
+                692 St. Clarens Ave. Studio #8 Toronto, ON M6H 3X1 CANADA
               </p>
             </Link>
           </div>
