@@ -18,7 +18,7 @@ const FooterNav = () => {
         {links.map((link: LinkInfo, i) => (
           <li key={i} className="">
             <Link onClick={() => clickHandler(link)} href={link.link}>
-              <h3 className={`text-grey-200 py-3 px-0 md:px-1 lg:px-2 hover:text-black-100 transition-all duration-300 ease-in-out ${navContext?.currentNav ===  link.navState ? 'underline underline-offset-4' : ""}`}>{link.name}</h3>
+              <h3 className={`text-grey-200 m-2 py-3 px-0 md:px-1 lg:px-2 text-sm md:text-base hover:text-black-100 transition-all duration-300 ease-in-out ${navContext?.currentNav ===  link.navState ? 'underline underline-offset-4' : ""}`}>{link.name}</h3>
             </Link>
             {link.submenu && (
               <div className="flex flex-col text-grey-200/80 text-xs">
