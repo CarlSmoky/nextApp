@@ -17,7 +17,7 @@ const ContactInfo = () => {
               href="https://maps.app.goo.gl/461nGG59xpnmvXNt7"
               target="_blank"
             >
-              <IoIosPin size={20} />
+              <IoIosPin size={23} />
             </Link>
           </div>
           <div className="flex flex-col">
@@ -36,7 +36,7 @@ const ContactInfo = () => {
         <div className="flex my-4 w-2/3 lg:w-1/2">
           <div className="flex flex-col pt-1 pr-1">
             <Link href="mailto:performernoriko@gmail.com?subject=Mail from web site">
-              <MdEmail size={20} />
+              <MdEmail size={23} />
             </Link>
           </div>
           <div className="flex flex-col">
