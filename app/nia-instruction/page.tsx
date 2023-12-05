@@ -15,9 +15,7 @@ const NiaInstructionPage: React.FC = () => {
       <ImageAndText>
           <ImageWrapper src="/images/nia-instruction.jpg"
           alt="nia-photo"/>
-          <ParagraphWrapper paragraph="Nia blends modern & ethnic dance with elements of martial arts, tai chi & yoga to give a low impact, full ‘mind, body & spirit’ workout.
-          It’s fun & invigorating. No dance experience necessary. You need only enjoy moving to music…barefooted!!!
-          Noriko has been a certified Nia Instructor since 2000 and normally runs two 75 minute-classes a week in Toronto. One is at the Japanese Canadian Cultural Centre >> 6 Garamond Ct. on Wednesday at 6:15pm; the other is at momo gallery >> 692 St. Clarens Avenue, Studio 8 on Thursdays at 10:15am."/>
+          <ParagraphWrapper paragraph="Nia blends modern & ethnic dance with elements of martial arts, tai chi & yoga to give a low impact, full ‘mind, body & spirit’ workout. It’s fun & invigorating. No dance experience necessary. You need only enjoy moving to music…barefooted!!! Noriko has been a certified Nia Instructor since 2000, and since the beginning of the pandemic, she’s shifted her classes to just one online (Zoom) class on Thursday mornings at 9:15am EST. You're welcome to join any time – just email me for more details."/>
         </ImageAndText>
     </SectionWrapper>
   )
