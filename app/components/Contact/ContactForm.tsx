@@ -107,7 +107,7 @@ const ContactForm = () => {
 
   return (
     <form
-      className="w-full lg:w-2/3 p-4 my-3 mr-auto text-grey-100"
+      className="w-full lg:w-2/3 p-8  my-3 mr-auto text-grey-100"
       onSubmit={handleSubmit}
     >
       <div className="flex">

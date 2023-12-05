@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 
 const ContactInfo = () => {
   return (
-    <div className="w-full lg:w-1/3 px-4 py-12 bg-prime-100">
+    <div className="w-full lg:w-1/3 px-8 py-12 bg-prime-100">
       <div className="flex flex-col text-grey-100">
         <h1 className="font-bold uppercase text-2xl lg:text-3xl my-4 font-title">
           Gallery hours: By appointment
