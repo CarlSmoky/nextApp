@@ -17,7 +17,7 @@ const Footer = () => {
     <footer className="margin-global bottom-0 border-t border-grey-200">
       <div className="flex flex-col md:flex-row justify-between">
         <FooterNav />
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col xl:flex-row">
           <ul className="m-auto">
             <li className="nav-sns">
               <Link href="https://www.instagram.com/noriko_toronto/" target="blank">

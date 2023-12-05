@@ -32,8 +32,8 @@ const Slider: React.FC = () => {
   };
 
   return (
-    <section className="max-w-screen-2xl m-auto">
-      <div className="margin-global">
+    <section className="md:margin-global max-w-screen-2xl m-auto ">
+      <div className="md:p-4 lg:p-6 xl:p-10">
         <div className="w-full aspect-video relative select-none" >
           <Image
             src={featuredImages[currentIndex]}
@@ -47,7 +47,7 @@ const Slider: React.FC = () => {
             placeholder="blur"
             blurDataURL={blurData}
           />
-        <div className="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between items-start px-3 text-white-100">
+        <div className="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between items-start text-white-100">
           <button onClick={handleOnPrevClick}>
             <GrFormPrevious size={25} />
             <span className="sr-only">previous</span>
