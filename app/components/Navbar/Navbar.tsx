@@ -11,30 +11,30 @@ import { BsInstagram, BsYoutube } from "react-icons/bs";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const navContext = useContext(DisplayNavContext)
+  const navContext = useContext(DisplayNavContext);
 
   const handleToggle = () => {
     setOpen(!open);
   };
 
   const clickHandler = () => {
-    setOpen(false)
-    navContext?.setCurrentNav(NavState.home)
-  }
+    setOpen(false);
+    navContext?.setCurrentNav(NavState.home);
+  };
 
   return (
     <nav className="margin-global whitespace-nowrap">
-      <div className="flex items-center font-medium justify-between">
-        <div className="z-50 py-3 lg:w-auto w-full flex justify-between">
+      <div className="flex justify-between">
+        <div className="z-50 py-3 w-full flex justify-between">
           <Link href="/" onClick={clickHandler}>
             <Image
               src={Logo}
               alt="logo"
-              className="sm:cursor-pointer w-36 lg:h-20 lg:w-full"
+              className="sm:cursor-pointer w-36 md:w-48 lg:w-56"
             />
           </Link>
           <div
-            className="cursor-pointer text-3xl lg:hidden text-black-100"
+            className="cursor-pointer text-3xl lg:hidden text-black-100 my-auto"
             onClick={handleToggle}
           >
             {open ? <AiOutlineClose /> : <AiOutlineMenu />}
@@ -43,13 +43,19 @@ const Navbar: React.FC = () => {
         <ul className="lg:flex hidden uppercase items-center">
           <NavLinks onToggle={handleToggle} />
           <li className="nav-sns">
-            <Link href="https://www.instagram.com/noriko_toronto/" target="_blank">
+            <Link
+              href="https://www.instagram.com/noriko_toronto/"
+              target="_blank"
+            >
               <BsInstagram size={25} />
               <span className="sr-only">instagram</span>
             </Link>
           </li>
           <li className="nav-sns">
-            <Link href="https://www.youtube.com/@norikoyamamoto7147" target="_blank">
+            <Link
+              href="https://www.youtube.com/@norikoyamamoto7147"
+              target="_blank"
+            >
               <BsYoutube size={25} />
               <span className="sr-only">youtube</span>
             </Link>
@@ -65,13 +71,19 @@ const Navbar: React.FC = () => {
           <NavLinks onToggle={handleToggle} />
           <div className="flex justify-center">
             <li className="nav-sns" onClick={handleToggle}>
-              <Link href="https://www.instagram.com/noriko_toronto/" target="_blank">
+              <Link
+                href="https://www.instagram.com/noriko_toronto/"
+                target="_blank"
+              >
                 <BsInstagram size={25} />
                 <span className="sr-only">instagram</span>
               </Link>
             </li>
             <li className="nav-sns" onClick={handleToggle}>
-              <Link href="https://www.youtube.com/@norikoyamamoto7147" target="_blank">
+              <Link
+                href="https://www.youtube.com/@norikoyamamoto7147"
+                target="_blank"
+              >
                 <BsYoutube size={25} />
                 <span className="sr-only">youtube</span>
               </Link>
