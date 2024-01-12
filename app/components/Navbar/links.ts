@@ -20,7 +20,7 @@ export const links = [
     navState: NavState.visualArt
   },
   {
-    name: "Peformance",
+    name: "Performance",
     link: "/performance",
     submenu: false,
     sublinks: [
