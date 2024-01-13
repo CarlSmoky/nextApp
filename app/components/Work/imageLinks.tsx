@@ -2,13 +2,13 @@ import { NavState } from "@/app/types/Interfaces";
 
 export const imageLinks = [
   {
-    name: "VISUAL ART",
+    name: "Visual Art",
     linkTo: "/visual-art",
     src: "/images/fading_memories.jpg",
     navState: NavState.visualArt
   },
   {
-    name: "PERFORMANCE",
+    name: "Performance",
     linkTo: "/performance",
     src: "/images/performance.jpg",
     navState: NavState.peformance
