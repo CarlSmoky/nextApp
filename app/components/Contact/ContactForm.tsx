@@ -70,10 +70,9 @@ const ContactForm = () => {
       return;
     }
 
-
     if (isValidForm) {
       setSendStatus(false);
-  
+
       const res = await fetch("/api/sendgrid", {
         body: JSON.stringify({
           email: data.email,
@@ -86,8 +85,8 @@ const ContactForm = () => {
         },
         method: "POST",
       });
-      
-      const { error} = await res.json();
+
+      const { error } = await res.json();
 
       if (error) {
         setShowSuccessMessage(false);
@@ -110,11 +109,9 @@ const ContactForm = () => {
       className="w-full lg:w-2/3 p-8  my-3 mr-auto text-grey-100"
       onSubmit={handleSubmit}
     >
-      <div className="flex">
-        <h1 className="font-bold text-2xl lg:text-3xl font-title">
-          Send me a <br /> message
-        </h1>
-      </div>
+      <h1 className="font-bold text-2xl lg:text-3xl font-title">
+        Send me a message
+      </h1>
       <div className="font-paragraph">
         {Object.entries(errors).some(([k, v]) => v === true) && (
           <span className="text-red-100">Please fill in {errorFileds}. </span>
