@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
             {open ? <AiOutlineClose /> : <AiOutlineMenu />}
           </div>
         </div>
-        <ul className="lg:flex hidden uppercase items-center">
+        <ul className="lg:flex hidden items-center">
           <NavLinks onToggle={handleToggle} />
           <li className="nav-sns">
             <Link

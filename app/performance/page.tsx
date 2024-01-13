@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const PerformancePage = () => {
   return (
-    <SectionWrapper title="performance">
+    <SectionWrapper title="Performance">
       <p className='text-center font-paragraph'>Coming soon...</p>
     </SectionWrapper>
   )

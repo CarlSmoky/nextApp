@@ -11,7 +11,7 @@ const Work: React.FC = () => {
   const navContext = useContext(DisplayNavContext);
 
   return (
-    <SectionWrapper title="work">
+    <SectionWrapper title="Work">
       <div className="flex flex-col sm:flex-row gap-6 xl:gap-28 pt-3 md:pt-6 justify-between">
         {imageLinks.map((imageLink: WorkLink, i) => (
           <Link onClick={() => navContext?.setCurrentNav(imageLink.navState)} href={imageLink.linkTo} key={i}>
