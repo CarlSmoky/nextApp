@@ -14,7 +14,7 @@ const FooterNav = () => {
     navContext?.setCurrentNav(newHighlight)
   }
   return (
-      <ul className="flex flex-col lg:flex-row px-4 md:px-0 uppercase font-paragraph text-sm whitespace-nowrap">
+      <ul className="flex flex-col lg:flex-row px-4 md:px-0 font-paragraph text-sm whitespace-nowrap">
         {links.map((link: LinkInfo, i) => (
           <li key={i} className="">
             <Link onClick={() => clickHandler(link)} href={link.link}>

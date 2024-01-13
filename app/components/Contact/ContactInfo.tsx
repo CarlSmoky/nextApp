@@ -8,7 +8,7 @@ const ContactInfo = () => {
   return (
     <div className="w-full lg:w-1/3 px-8 py-12 bg-prime-100">
       <div className="flex flex-col text-grey-100">
-        <h1 className="font-bold uppercase text-2xl lg:text-3xl my-4 font-title">
+        <h1 className="font-bold text-2xl lg:text-3xl my-4 font-title">
           Gallery hours: By appointment
         </h1>
         <div className="flex my-4 w-2/3 lg:w-1/2">
