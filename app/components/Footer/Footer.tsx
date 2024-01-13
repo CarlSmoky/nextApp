@@ -40,8 +40,8 @@ const Footer = () => {
                 className="sm:cursor-pointer w-36 "
               />
             </Link>
-            <h3 className="text-center font-paragraph text-xs text-grey-100 whitespace-nowrap">
-              ©{currentYear} Momo gallery All rights reserved
+            <h3 className="text-center font-paragraph text-sm text-grey-100 whitespace-nowrap">
+              © {currentYear} Momo gallery All rights reserved
             </h3>
           </div>
         </div>
