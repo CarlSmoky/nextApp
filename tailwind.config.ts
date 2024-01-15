@@ -42,8 +42,15 @@ const config: Config = {
     variants: {
         extend: {
         },
-      }
+    },
+    extend: {
+      lineClamp: {
+        12: '12',
+      },
+    }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }
 export default config
