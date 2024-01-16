@@ -2,7 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import ImageAndText from "../components/ImageAndText";
 import SectionWrapper from "../components/SectionWrapper";
-import ImageWrapper from '../components/ImageWrapper';
+import VideoWrapper from '../components/VideoWrapper';
 import ParagraphWrapper from '../components/ParagraphWrapper';
 
 export const metadata: Metadata = {
@@ -15,8 +15,7 @@ const NiaInstructionPage: React.FC = () => {
   return (
     <SectionWrapper title="Nia Instruction">
       <ImageAndText>
-          <ImageWrapper src="/images/nia-instruction.jpg"
-          alt="nia-photo"/>
+          <VideoWrapper src="https://www.youtube.com/embed/fLJ0Piaqk3Y?si=YqTbBbs2TGV2GoA5" title="Nia Instruction"/>
           <ParagraphWrapper paragraph={paragraph}/>
         </ImageAndText>
     </SectionWrapper>
