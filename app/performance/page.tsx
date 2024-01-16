@@ -1,17 +1,28 @@
-import React from 'react'
-import type { Metadata } from 'next'
+import React from "react";
+import type { Metadata } from "next";
 import SectionWrapper from "../components/SectionWrapper";
+import { performanceData } from "./performanceData";
+import { Performance } from "../types/Interfaces";
+import ImageAndText from "../components/ImageAndText";
+import VideoWrapper from "../components/VideoWrapper";
+import PerformanceInfo from "../components/PerformanceInfo";
 
 export const metadata: Metadata = {
-  title: 'Performance',
-}
+  title: "Performance",
+};
 
 const PerformancePage = () => {
   return (
     <SectionWrapper title="Performance">
-      <p className='text-center font-paragraph'>Coming soon...</p>
+      {performanceData.map((performance: Performance, i) => (
+        
+        <ImageAndText key={i}>
+          <VideoWrapper src={performance.url} title={performance.title} />
+          <PerformanceInfo title={performance.title} category={performance.category} event={performance.event} location={performance.location} date={performance.date} url={performance.url}/>
+        </ImageAndText>
+      ))}
     </SectionWrapper>
-  )
-}
+  );
+};
 
-export default PerformancePage
+export default PerformancePage;
