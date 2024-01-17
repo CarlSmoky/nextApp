@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: 'About Noriko Yamamoto',
 }
 
-const paragraph = `loves...
-cats cello sky watching crescent moons
-Charlie Chaplin Jean-Louis Barrault Alberto Giacometti Isamu Noguchi
+const paragraph = `\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0loves ...
+cats\u00A0\u00A0cello\u00A0\u00A0skywatching\u00A0\u00A0crescent moons
+Charlie Chaplin\u00A0\u00A0Jean-Louis Barrault\u00A0\u00A0Alberto Giacometti\u00A0\u00A0Isamu Noguchi
 
 After a long successful performance career in Tokyo, Noriko Yamamoto moved to Toronto in 1994 to be with her husband. She initially came with two suitcases, her son, cat, and rice cooker. (the gallery is named after this cat)
 
