@@ -13,7 +13,7 @@ const VideoWrapper: React.FC<Props> = ({ src, title }: Props) => {
         height="100%"
         src={src}
         title={title}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
       ></iframe>
     </div>
   );
