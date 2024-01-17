@@ -10,7 +10,7 @@ const PerformanceInfo: React.FC<Performance> = ({
 }: Performance) => {
   return (
     <div className="w-auto mt-4 mb-10 md:mt-0 md:ml-8 md:w-1/2 text-left text-grey-100  tracking-wide">
-      <h3 className="font-title font-bold text-2xl">{title}</h3>
+      <h3 className="font-title font-bold text-lg md:text-xl lg:text-2xl">{title}</h3>
       <div className="text-base lg:text-lg font-paragraph">
         <p>
           <span className="text-sm">Type: </span> 
