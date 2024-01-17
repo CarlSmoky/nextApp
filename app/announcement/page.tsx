@@ -1,24 +1,43 @@
-import React from 'react'
-import type { Metadata } from 'next'
+import React from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
 import SectionWrapper from "../components/SectionWrapper";
 import ImageAndText from "../components/ImageAndText";
-import ImageWrapper from '../components/ImageWrapper';
-import ParagraphWrapper from '../components/ParagraphWrapper';
+import VideoWrapper from "../components/VideoWrapper";
+import ParagraphWrapper from "../components/ParagraphWrapper";
+import BorderlineButton from "../components/BorderlineButton";
+import { IoTicketOutline } from "react-icons/io5";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
 export const metadata: Metadata = {
-  title: 'Anouncement',
-}
+  title: "Anouncement",
+};
 
 const AnnouncementPage: React.FC = () => {
   return (
     <SectionWrapper title="Announcement">
-        <ImageAndText>
-          <ImageWrapper src="/images/about_image.png"
-          alt="portrait"/>
-          <ParagraphWrapper paragraph="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus dicta, natus adipisci cupiditate accusantium consequuntur voluptas nisi perspiciatis rem alias animi error sapiente tenetur voluptates doloribus. Inventore sit quam non?"/>
-        </ImageAndText>
+      <ImageAndText>
+        <VideoWrapper
+          src="https://www.youtube.com/embed/1ggLRXBEy8Y?si=o7scucBmC3yvmtv"
+          title="Mime-Dance by Noriko Yamamoto: Fading Memories"
+        />
+        <ParagraphWrapper paragraph="March 8 - 13, 2024: Fading Memories art exhibition + performance in Tokyo, Japan.">
+          <BorderlineButton
+            url="https://norikoyamamoto.themedia.jp/posts/50633765?categoryIds=618885"
+            text="More Information (Japanese)"
+          >
+            <IoIosInformationCircleOutline size={20} className="m-2" />
+          </BorderlineButton>
+          <BorderlineButton
+            url="https://docs.google.com/forms/d/e/1FAIpQLScJ6ctBBgKpjJf4qX3Eg-13dqZi7AX3D1ejaVgBzcT7fZ-Hng/viewform?vc=0&c=0&w=1&flr=0"
+            text="Reserve Ticket (Japanese)"
+          >
+            <IoTicketOutline size={20} className="m-2" />
+          </BorderlineButton>
+        </ParagraphWrapper>
+      </ImageAndText>
     </SectionWrapper>
-  )
-}
+  );
+};
 
-export default AnnouncementPage
+export default AnnouncementPage;
