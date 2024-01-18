@@ -4,6 +4,8 @@ export const performanceData = [
       {
         id: 1,
         title: "Flower Dance - Spring",
+        additionalTitle: "",
+        subTitle: "",
         description: "",
         category: PerformanceType["Mime-Dance"],
         event: "A Night at the Eclipse",
@@ -13,7 +15,9 @@ export const performanceData = [
       },
       {
         id: 2,
-        title: "Life Cycle - Forest (excerpt)",
+        title: "Life Cycle - Forest",
+        additionalTitle: "(excerpt)",
+        subTitle: "",
         description: "",
         category: PerformanceType["Mime-Dance"],
         date: "Sep 2021",
@@ -24,6 +28,8 @@ export const performanceData = [
       {
         id: 3,
         title: "The Swan",
+        additionalTitle: "",
+        subTitle: "",
         description: "",
         category: PerformanceType["Mime-Dance"],
         date: "various",
@@ -33,7 +39,9 @@ export const performanceData = [
       },
       {
         id: 4,
-        title: "3-11-11 (excerpt)",
+        title: "3-11-11",
+        additionalTitle: "(excerpt)",
+        subTitle: "",
         description: "",
         category: PerformanceType["Mime-Dance"],
         date: "Feb 2020",
@@ -44,6 +52,8 @@ export const performanceData = [
       // {
       //   id: 5,
       //   title: "Washi",
+      //   additionalTitle: "",
+      //   subTitle: "",
       //   description: "",
       //   category: PerformanceType["Mime-Dance"],
       //   date: "Oct 2019",
@@ -53,7 +63,9 @@ export const performanceData = [
       // },
       {
         id: 6,
-        title: "Lotus Flower (excerpt)",
+        title: "Lotus Flower",
+        additionalTitle: "(excerpt)",
+        subTitle: "",
         description: "",
         category: PerformanceType["Mime-Dance"],
         date: "Mar 2019",
@@ -64,6 +76,8 @@ export const performanceData = [
       // {
       //   id: 7,
       //   title: "untitled (improv) (excerpt)",
+      //   additionalTitle: "",
+      //   subTitle: "",
       //   description: "",
       //   category: PerformanceType.Dance,
       //   date: "Feb 2020",
@@ -73,7 +87,9 @@ export const performanceData = [
       // },
       {
         id: 8,
-        title: "Imprint (excerpt)(choreography by Meredith Thompson)",
+        title: "Imprint",
+        additionalTitle: "(excerpt)",
+        subTitle: "(choreography by Meredith Thompson)",
         description: "",
         category: PerformanceType.Dance,
         date: "Aug 2019",
@@ -84,6 +100,8 @@ export const performanceData = [
       {
         id: 9,
         title: "The Funny Little Woman",
+        additionalTitle: "",
+        subTitle: "",
         description: "",
         category: PerformanceType["Silent Storytelling"],
         date: "Jul 2003",
@@ -94,6 +112,8 @@ export const performanceData = [
       {
         id: 10,
         title: "Grandmother",
+        additionalTitle: "",
+        subTitle: "",
         description: "",
         category: PerformanceType["Silent Storytelling"],
         date: "Feb 1996",
@@ -104,6 +124,8 @@ export const performanceData = [
       {
         id: 11,
         title: "Mime, Magic & Bubbles Show",
+        additionalTitle: "",
+        subTitle: "",
         description: "",
         category: PerformanceType["Mime/Clowning"],
         date: "May 2000",
@@ -114,6 +136,8 @@ export const performanceData = [
       {
         id: 12,
         title: "The Violinist",
+        additionalTitle: "",
+        subTitle: "",
         description: "",
         category: PerformanceType["Mime/Clowning"],
         date: "Feb 1996",
@@ -124,6 +148,8 @@ export const performanceData = [
       {
         id: 13,
         title: "TV Commercial",
+        additionalTitle: "",
+        subTitle: "",
         description: "",
         category: PerformanceType["Mime/Clowning"],
         date: "1990",

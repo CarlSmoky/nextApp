@@ -49,6 +49,8 @@ export enum PerformanceType {
 
 export interface Performance {
   title: string;
+  additionalTitle?: string;
+  subTitle?: string;
   description?: string;
   category: PerformanceType;
   date?: string;
