@@ -18,7 +18,7 @@ const PerformancePage = () => {
         
         <ImageAndText key={i}>
           <VideoWrapper src={performance.url} title={performance.title} />
-          <PerformanceInfo title={performance.title} category={performance.category} event={performance.event} location={performance.location} date={performance.date} url={performance.url}/>
+          <PerformanceInfo title={performance.title} additionalTitle={performance.additionalTitle} subTitle={performance.subTitle} category={performance.category} event={performance.event} location={performance.location} date={performance.date} url={performance.url}/>
         </ImageAndText>
       ))}
     </SectionWrapper>
