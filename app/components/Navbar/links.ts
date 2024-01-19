@@ -24,10 +24,10 @@ export const links = [
     link: "/performance",
     submenu: false,
     sublinks: [
-          { name: "mime dance", link: "/performance" },
-          { name: "dance", link: "/performance" },
-          { name: "silent story telling", link: "/performance" },
-          { name: "mime", link: "/performance" },
+          { name: "Mime dance", link: "/performance" },
+          { name: "Dance", link: "/performance" },
+          { name: "Silent story telling", link: "/performance" },
+          { name: "Mime", link: "/performance" },
         ],
     navState: NavState.peformance
   },  
