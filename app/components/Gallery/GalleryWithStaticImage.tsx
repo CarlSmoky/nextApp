@@ -1,18 +1,18 @@
 import React from 'react'
 import ImgContainerWithStaticImage from "./ImgContainerWithStaticImage"
-import { artImages } from './ArtImages'
+import { visualArtData } from '../../visual-art/VisualArtData'
 // import addBlurredDataUrls from '../../lib/getBase64'
 
 
 const GalleryWithStaticImage = async () => {
-  if (!artImages) return <h2 className="m-4 text-sxl font-bold">No images Found</h2>
+  if (!visualArtData) return <h2 className="m-4 text-sxl font-bold">No images Found</h2>
   // const photosWithBlur = await addBlurredDataUrls(images)
 
   return (
    <section className="px-2 my-3 flex flex-wrap justify-center">
     
-      {artImages.map(photo => (
-        <ImgContainerWithStaticImage photo={photo} key={photo.id}/>
+      {visualArtData.map(series => (
+        <ImgContainerWithStaticImage image={series.images[0]} numberOfImage={series.images.length} title={series.title} key={series.id}/>
       ))}
     
    </section>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { RxDotFilled } from "react-icons/rx";
 import { featuredImages } from "./Images";
-import {blurData} from "../Gallery/BlurData"
+import { blurData } from "../Gallery/BlurData"
 
 let count: number = 0;
 let slideInterval: undefined | ReturnType<typeof setTimeout>
