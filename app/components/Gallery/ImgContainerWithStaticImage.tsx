@@ -16,9 +16,9 @@ const ImgContainer = ({ image, numberOfImage, title }: Props) => {
       <Link href={`/visual-art/${title}`}>
         <div className="w-[280px] h-[280px] md:w-[380px] md:h-[380px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           {numberOfImage > 1 && (
-            <p className="absolute right-0 p-1 text-white-100 font-paragraph text-sm bg-grey-200/30 rounded-lg z-10">
+            <span className="absolute right-0 p-1 text-white-100 font-title text-sm bg-grey-200/30 rounded-xl z-10">
               1/{numberOfImage}
-            </p>
+            </span>
           )}
 
           <Image
