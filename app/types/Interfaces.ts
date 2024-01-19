@@ -50,7 +50,7 @@ export enum PerformanceType {
 export interface Performance {
   title: string;
   additionalTitle?: string;
-  subTitle?: string;
+  subTitle?: string
   description?: string;
   category: PerformanceType;
   date?: string;
@@ -58,3 +58,27 @@ export interface Performance {
   location: string;
   url: string;
 }
+
+export enum VisualArtType {
+  "Washi",
+  "Mix-media",
+  "Sculpture"
+}
+
+export interface VisualArtSeries {
+  id: number;
+  title: string;
+  descriptions? : string;
+  category: VisualArtType;
+  images: VisualArtImage[];
+}
+export interface VisualArtImage {
+  id: number;
+  src: string;
+  alt: string;
+  size?: string;
+  price: number;
+  date?: string;
+}
+
+
