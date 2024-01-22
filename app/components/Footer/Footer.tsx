@@ -41,7 +41,7 @@ const Footer = () => {
               />
             </Link>
             <h3 className="text-center font-paragraph text-sm text-grey-100 whitespace-nowrap">
-              © {currentYear} Momo gallery All rights reserved
+              © {currentYear} Momo gallery. All rights reserved
             </h3>
           </div>
         </div>
