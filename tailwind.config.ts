@@ -45,7 +45,7 @@ const config: Config = {
     },
     extend: {
       lineClamp: {
-        12: '12',
+        7: '7',
       },
     }
   },
