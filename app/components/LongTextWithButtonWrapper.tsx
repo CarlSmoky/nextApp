@@ -10,16 +10,16 @@ const LongTextWithButtonWrapper: React.FC<childrenProps> = ({ children }: childr
     setOpen(!open);
   };
   return (
-    <>
-      <div
+    <div>
+      <p
         className={`${
           open ? "line-clamp-none" : "line-clamp-7"
         } text-left text-grey-100 text-base md:text-lg lg:text-xl font-paragraph tracking-wide`}
       >
         {children}
-      </div>
+      </p>
       <UnderlineButton onClick={handleToggle} open={open} />
-      </>
+      </div>
   )
 }
 
