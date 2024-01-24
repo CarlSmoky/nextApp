@@ -13,7 +13,7 @@ type Props = {
 const ImgContainer = ({ image, numberOfImage, title }: Props) => {
   return (
     <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] m-1 relative bg-white-200/40 overflow-hidden group">
-      <Link href={`/visual-art/${title}`}>
+      <Link href={`/visual-art/${title}`} target="_blank">
         <div className="w-[280px] h-[280px] md:w-[380px] md:h-[380px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           {numberOfImage > 1 && (
             <span className="absolute right-0 p-1 text-white-100 font-title text-sm bg-grey-200/30 rounded-xl z-10">
