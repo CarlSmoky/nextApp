@@ -40,7 +40,7 @@ const AboutPage: React.FC = () => {
           </ItalicWrapper>
           <LongTextWithButtonWrapper>
             <br />
-            After a long successful performance career in Tokyo, Noriko Yamamoto moved to Toronto in 1994 to be with her husband. She initially came with two suitcases, her son, cat, and rice cooker. <span className="italic text-sm md:text-base lg:text-lg">(the gallery is named after this cat)</span>
+            After a long successful performance career in Tokyo, Noriko Yamamoto moved to Toronto in 1994 to be with her husband. She initially came with two suitcases, her son, cat, and rice cooker. <span className="italic text-sm md:text-base lg:text-lg">(the gallery is named after this special cat)</span>
             <br />
             <br />
             She has continued this career in Toronto with hundreds of performances at venues ranging from schools and libraries to festivals, galleries, and theatres.
