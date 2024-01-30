@@ -1,5 +1,7 @@
 import React from 'react'
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
+import SectionWrapper from "../components/SectionWrapper";
+import ItalicWrapper from "../components/ItalicWrapper";
 import GalleryWithStaticImage from '../components/Gallery/GalleryWithStaticImage'
 
 export const metadata: Metadata = {
@@ -8,9 +10,10 @@ export const metadata: Metadata = {
 
 const VisualArtPage = () => {
   return (
-    <div className='margin-global'>
+    <SectionWrapper title="Visual Art">
+      <ItalicWrapper>Page under construction&nbsp;&nbsp;. . .&nbsp;&nbsp;more coming</ItalicWrapper>
       <GalleryWithStaticImage/>
-    </div>
+    </SectionWrapper>
   )
 }
 
