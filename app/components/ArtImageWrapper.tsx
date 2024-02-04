@@ -11,7 +11,7 @@ interface Props {
 const ArtImageWrapper: React.FC<Props> = ({ src, alt, i }: Props) => {
   return (
     <div className="w-full md:w-1/2 bg-white-200/40 aspect-square relative">
-      <div className="w-[99%] h-[99%] overflow-hidden group m-auto">
+      <div className="w-[99%] h-[99%] m-auto">
         <div className="w-[96%] h-[96%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Image
             src={src}
