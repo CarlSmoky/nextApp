@@ -30,11 +30,12 @@ const page = ({ params }: { params: { seriesTitle: string } }) => {
         .filter((series) => series.title === params.seriesTitle)[0]
         .images.map((image, i) => (
           <ImageAndText key={i}>
-            <ArtImageWrapper src={image.src} alt={image.alt} />
+            <ArtImageWrapper src={image.src} alt={image.alt} i={i}/>
             <ArtInfo
               alt={toTitleCase(image.alt)}
               size={image.size}
-              price={image.price}
+              media={image.media}
+              year={image.year}
             />
           </ImageAndText>
         ))}

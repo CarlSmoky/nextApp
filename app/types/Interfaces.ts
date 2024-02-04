@@ -76,8 +76,8 @@ export interface VisualArtImage {
   src: string;
   alt: string;
   size?: string;
-  price: number;
-  date?: string;
+  media?: string;
+  year?: number;
 }
 
 
