@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from "react";
+import { toTitleCase } from "../utils/textFormat";
 
 interface Props {
   alt: string;
@@ -16,7 +17,7 @@ const ArtInfo: React.FC<Props> = ({ alt, size, media, year }: Props) => {
       {media && (
         <p>
           <span className="text-sm">Media: </span>
-          {media}
+          {toTitleCase(media)}
         </p>
       )}
       {size && (
