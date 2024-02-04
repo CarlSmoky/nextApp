@@ -11,8 +11,8 @@ const GalleryWithStaticImage = async () => {
   return (
    <section className="flex flex-col md:flex-row flex-wrap">
     
-      {visualArtData.map(series => (
-        <ImgContainerWithStaticImage image={series.images[0]} numberOfImage={series.images.length} title={series.title} key={series.id}/>
+      {visualArtData.map((series, i) => (
+        <ImgContainerWithStaticImage image={series.images[0]} numberOfImage={series.images.length} title={series.title} key={i} i={i}/>
       ))}
     
    </section>

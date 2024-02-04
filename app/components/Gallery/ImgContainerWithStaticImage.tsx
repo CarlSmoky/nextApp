@@ -8,9 +8,10 @@ type Props = {
   image: VisualArtImage;
   numberOfImage: number;
   title: string;
+  i: number;
 };
 
-const ImgContainer = ({ image, numberOfImage, title }: Props) => {
+const ImgContainer = ({ image, numberOfImage, title, i }: Props) => {
   return (
     <div className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.3%-8px)] bg-white-200/40 aspect-square relative my-1 md:m-1">
       <div className="w-[99%] h-[99%] m-auto">
@@ -29,6 +30,7 @@ const ImgContainer = ({ image, numberOfImage, title }: Props) => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               placeholder="blur"
               blurDataURL={blurData}
+              priority={i === 0 ? true : false}
             />
           </div>
         </Link>
