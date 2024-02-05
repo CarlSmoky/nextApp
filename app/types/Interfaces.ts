@@ -74,7 +74,7 @@ export interface VisualArtSeries {
 export interface VisualArtImage {
   id: number;
   src: string;
-  alt: string;
+  title: string;
   size?: string;
   media?: string;
   year?: number;
