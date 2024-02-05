@@ -442,4 +442,28 @@ export const visualArtData = [
       }
     ]
   },
+  {
+    id: 11,
+    title: "wavelets",   
+    category: VisualArtType.Washi,
+    descriptions: "",
+    images: [
+      {
+        id: 1,
+        src: "/images/wavelets_01.jpg",
+        title: "wavelets_#1",
+        size: "30.5 in x 12 in",
+        media:"Sekishu Banshi Tsuru washi, string, pigments. acrylic gel",
+        year: 2021,
+      },
+      {
+        id: 2,
+        src: "/images/wavelets_02.jpg",
+        title: "wavelets_#2",
+        size: "30.5 in x 12 in",
+        media:"Sekishu Banshi Tsuru washi, string, pigments. acrylic gel",
+        year: 2021,
+      }
+    ]
+  },
 ]
