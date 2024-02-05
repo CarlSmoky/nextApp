@@ -362,4 +362,28 @@ export const visualArtData = [
       }
     ]
   },
+  {
+    id: 8,
+    title: "imperfection",   
+    category: VisualArtType.Washi,
+    descriptions: "",
+    images: [
+      {
+        id: 1,
+        src: "/images/imperfection_01.jpg",
+        title: "imperfection_#1",
+        size: "49 in x 14 in",
+        media:"Hosokawa Kozo washi, copper wire, water colour, konnyaku powder, string, wood",
+        year: 2023,
+      },
+      {
+        id: 2,
+        src: "/images/imperfection_02.jpg",
+        title: "imperfection_#2",
+        size: "50.5 in x 14.5 in",
+        media:"Hosokawa Kozo washi, copper wire, water colour, konnyaku powder, string, wood",
+        year: 2023,
+      }
+    ]
+  },
 ]
