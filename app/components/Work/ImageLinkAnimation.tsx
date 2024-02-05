@@ -1,33 +1,50 @@
-import React from 'react'
+"use client";
+import React, { useContext } from "react";
+import { DisplayNavContext } from "@/app/provider/DisplayNavProvider";
 import Image from "next/image";
+import Link from "next/link";
+import { NavState } from "../../types/Interfaces";
+import { blurData } from "../Gallery/BlurData";
 
 interface Props {
   src: string;
-  alt: string;
+  name: string;
+  linkTo: string;
+  navState: NavState;
+  i: number;
 }
 
-const ImageLinkAnimation: React.FC<Props> = ({ src, alt }: Props)=> {
+const ImageLinkAnimation: React.FC<Props> = ({
+  src,
+  name,
+  linkTo,
+  navState,
+  i,
+}: Props) => {
+  const navContext = useContext(DisplayNavContext);
   return (
-    <div className="flex items-center justify-center from-teal-100 via-teal-300 to-teal-500 bg-gradient-to-br">
-      <div className="overflow-hidden aspect-video sm:aspect-square cursor-pointer relative group shadow-2xl">
-        <div className="z-10 opacity-100 lg:opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black-100/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white-100 flex items-end ">
-          <div>
+    <Link href={linkTo} onClick={() => navContext?.setCurrentNav(navState)} className="w-full">
+      <div className="flex from-teal-100 via-teal-300 to-teal-500 bg-gradient-to-br shadow-2xl cursor-pointer">
+        <div className="relative w-full aspect-video sm:aspect-square overflow-hidden group">
+          <div className="absolute z-10 opacity-100 lg:opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out from-black-100/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white-100 flex items-end ">
             <div className="transform-gpu p-4 space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transition duration-300 ease-in-out">
-              <div className="font-bold text-sm md:text-lg">{alt}</div>
+              <div className="font-bold text-sm md:text-lg">{name}</div>
             </div>
           </div>
+          <Image
+            className="object-cover group-hover:scale-110 transition duration-300 ease-in-out"
+            src={src}
+            alt={name}
+            fill={true}
+            sizes="(max-width: 480px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            placeholder="blur"
+            blurDataURL={blurData}
+            priority={i === 0 ? true : false}
+          />
         </div>
-        <Image
-          className="object-cover aspect-square -translate-y-12 sm:translate-y-0 group-hover:scale-110 transition duration-300 ease-in-out"
-          src={src}
-          alt={alt}
-          width={380}
-          height={380}
-        />
       </div>
-    </div>
-  )
-}
+    </Link>
+  );
+};
 
-export default ImageLinkAnimation
-
+export default ImageLinkAnimation;
