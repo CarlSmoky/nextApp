@@ -386,4 +386,28 @@ export const visualArtData = [
       }
     ]
   },
+  {
+    id: 9,
+    title: "still_waters_run_deep",   
+    category: VisualArtType.Washi,
+    descriptions: "",
+    images: [
+      {
+        id: 1,
+        src: "/images/still_waters_run_deep_01.jpg",
+        title: "still_waters_run_deep_#1",
+        size: "58  in x 14.5 in",
+        media:"Fukunishi Udagami & Oguni Snow bleached washi, sumi ink, konnyaku powder",
+        year: 2023,
+      },
+      {
+        id: 2,
+        src: "/images/still_waters_run_deep_02.jpg",
+        title: "still_waters_run_deep_#2",
+        size: "58.5 in x 14.5 in",
+        media:"Fukunishi Udagami & Oguni Snow bleached washi, sumi ink, konnyaku powder",
+        year: 2023,
+      }
+    ]
+  },
 ]
