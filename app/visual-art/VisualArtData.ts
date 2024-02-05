@@ -466,4 +466,28 @@ export const visualArtData = [
       }
     ]
   },
+  {
+    id: 12,
+    title: "spirit",   
+    category: VisualArtType.Washi,
+    descriptions: "",
+    images: [
+      {
+        id: 1,
+        src: "/images/spirit_01.jpg",
+        title: "spirit_#1",
+        size: "23.5 in x 11.25 in",
+        media:"pure silk, Gampi 7.5g washi, konnyaku powder",
+        year: 2021,
+      },
+      {
+        id: 2,
+        src: "/images/spirit_02.jpg",
+        title: "spirit_#2",
+        size: "23.5 in x 11.25 in",
+        media:"pure silk, Gampi 7.5g washi, konnyaku powder",
+        year: 2021,
+      }
+    ]
+  },
 ]
