@@ -5,21 +5,26 @@ import { blurData } from "./Gallery/BlurData";
 interface Props {
   src: string;
   alt: string;
+  i: number;
 }
 
-const ArtImageWrapper: React.FC<Props> = ({ src, alt }: Props) => {
+const ArtImageWrapper: React.FC<Props> = ({ src, alt, i }: Props) => {
   return (
-    <div className="m-auto md:mt-0 md:ml-0 w-full md:w-1/2 bg-white-200/40">
-      <Image
-        src={src}
-        alt={alt}
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        placeholder="blur"
-        blurDataURL={blurData}
-      />
+    <div className="w-full md:w-1/2 bg-white-200/40 aspect-square relative">
+      <div className="w-[99%] h-[99%] m-auto">
+        <div className="w-[96%] h-[96%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <Image
+            src={src}
+            alt={alt}
+            fill={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+            className="object-contain"
+            placeholder="blur"
+            blurDataURL={blurData}
+            priority={i === 0 ? true : false}
+          />
+        </div>
+      </div>
     </div>
   );
 };

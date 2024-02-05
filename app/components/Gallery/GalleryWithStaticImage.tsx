@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import ImgContainerWithStaticImage from "./ImgContainerWithStaticImage"
 import { visualArtData } from '../../visual-art/VisualArtData'
 // import addBlurredDataUrls from '../../lib/getBase64'
@@ -9,10 +9,10 @@ const GalleryWithStaticImage = async () => {
   // const photosWithBlur = await addBlurredDataUrls(images)
 
   return (
-   <section className="px-2 my-3 flex flex-wrap justify-center">
+   <section className="flex flex-col md:flex-row flex-wrap">
     
-      {visualArtData.map(series => (
-        <ImgContainerWithStaticImage image={series.images[0]} numberOfImage={series.images.length} title={series.title} key={series.id}/>
+      {visualArtData.map((series, i) => (
+        <ImgContainerWithStaticImage image={series.images[0]} numberOfImage={series.images.length} title={series.title} key={i} i={i}/>
       ))}
     
    </section>

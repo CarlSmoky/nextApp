@@ -10,7 +10,7 @@ import PageNotFound from "../../components/PageNotFound";
 
 const page = ({ params }: { params: { seriesTitle: string } }) => {
   const seriesInfo = visualArtData.filter(
-    (series) => series.title === params.seriesTitle
+    (series) => series.title.toLowerCase() === params.seriesTitle.toLowerCase()
   )[0];
   if (!seriesInfo)
     return (
@@ -27,14 +27,15 @@ const page = ({ params }: { params: { seriesTitle: string } }) => {
         {seriesInfo.descriptions && <p>{seriesInfo.descriptions}</p>}
       </div>
       {visualArtData
-        .filter((series) => series.title === params.seriesTitle)[0]
+        .filter((series) => series.title.toLowerCase() === params.seriesTitle.toLowerCase())[0]
         .images.map((image, i) => (
           <ImageAndText key={i}>
-            <ArtImageWrapper src={image.src} alt={image.alt} />
+            <ArtImageWrapper src={image.src} alt={image.title} i={i}/>
             <ArtInfo
-              alt={toTitleCase(image.alt)}
+              title={toTitleCase(image.title)}
               size={image.size}
-              price={image.price}
+              media={image.media}
+              year={image.year}
             />
           </ImageAndText>
         ))}
