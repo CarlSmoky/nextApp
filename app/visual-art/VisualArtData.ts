@@ -245,21 +245,21 @@ export const visualArtData = [
         src: "/images/whispering_lights_01.jpg",
         title: "whispering_lights_#1",
         size: "",
-        media:"",
+        media:""
       },
       {
         id: 2,
         src: "/images/whispering_lights_02.jpg",
         title: "whispering_lights_#2",
         size: "",
-        media:"",
+        media:""
       },
       {
         id: 3,
         src: "/images/whispering_lights_03.jpg",
         title: "whispering_lights_#3",
         size: "",
-        media:"",
+        media:""
       }
     ]
   },
