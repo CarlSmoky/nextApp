@@ -298,5 +298,68 @@ export const visualArtData = [
       }
     ]
   },
-  
+  {
+    id: 7,
+    title: "visual_haiku",   
+    category: VisualArtType.Washi,
+    descriptions: "",
+    images: [
+      {
+        id: 1,
+        src: "/images/visual_haiku_01.jpg",
+        title: "visual_haiku_#1",
+        size: "19.5 in x 5 in",
+        media:"Kurotani & Oguni Snowbleached wash, water colur, konnyaku powder",
+        year: 2023,
+      },
+      {
+        id: 2,
+        src: "/images/visual_haiku_02.jpg",
+        title: "visual_haiku_#2",
+        size: "19.5 in x 5 in",
+        media:"Kurotani & Oguni Snowbleached wash, water colur, konnyaku powder",
+        year: 2023,
+      },
+      {
+        id: 3,
+        src: "/images/visual_haiku_03.jpg",
+        title: "visual_haiku_#3",
+        size: "19.5 in x 5 in",
+        media:"Kurotani & Oguni Snowbleached wash, water colur, konnyaku powder",
+        year: 2023,
+      },
+      {
+        id: 4,
+        src: "/images/visual_haiku_04.jpg",
+        title: "visual_haiku_#4",
+        size: "19.5 in x 5 in",
+        media:"Kurotani & Oguni Snowbleached wash, water colur, konnyaku powder",
+        year: 2023,
+      },
+      {
+        id: 5,
+        src: "/images/visual_haiku_05.jpg",
+        title: "visual_haiku_#5",
+        size: "19.5 in x 5 in",
+        media:"Kurotani & Oguni Snowbleached wash, water colur, konnyaku powder",
+        year: 2023,
+      },
+      {
+        id: 6,
+        src: "/images/visual_haiku_06.jpg",
+        title: "visual_haiku_#6",
+        size: "19.5 in x 5 in",
+        media:"Kurotani & Oguni Snowbleached wash, water colur, konnyaku powder",
+        year: 2023,
+      },
+      {
+        id: 7,
+        src: "/images/visual_haiku_07.jpg",
+        title: "visual_haiku_#7",
+        size: "19.5 in x 5 in",
+        media:"Kurotani & Oguni Snowbleached wash, water colur, konnyaku powder",
+        year: 2023,
+      }
+    ]
+  },
 ]
