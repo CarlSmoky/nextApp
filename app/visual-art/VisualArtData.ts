@@ -374,7 +374,7 @@ export const visualArtData = [
         title: "imperfection_#1",
         size: "49 in x 14 in",
         media:"Hosokawa Kozo washi, copper wire, water colour, konnyaku powder, string, wood",
-        year: 2023,
+        year: 2021,
       },
       {
         id: 2,
@@ -382,7 +382,7 @@ export const visualArtData = [
         title: "imperfection_#2",
         size: "50.5 in x 14.5 in",
         media:"Hosokawa Kozo washi, copper wire, water colour, konnyaku powder, string, wood",
-        year: 2023,
+        year: 2021,
       }
     ]
   },
@@ -398,7 +398,7 @@ export const visualArtData = [
         title: "still_waters_run_deep_#1",
         size: "58  in x 14.5 in",
         media:"Fukunishi Udagami & Oguni Snow bleached washi, sumi ink, konnyaku powder",
-        year: 2023,
+        year: 2021,
       },
       {
         id: 2,
@@ -406,7 +406,39 @@ export const visualArtData = [
         title: "still_waters_run_deep_#2",
         size: "58.5 in x 14.5 in",
         media:"Fukunishi Udagami & Oguni Snow bleached washi, sumi ink, konnyaku powder",
-        year: 2023,
+        year: 2021,
+      }
+    ]
+  },
+  {
+    id: 10,
+    title: "differential_space",   
+    category: VisualArtType.Washi,
+    descriptions: "",
+    images: [
+      {
+        id: 1,
+        src: "/images/differential_space_01.jpg",
+        title: "differential_space_#1",
+        size: "25 in x 13.5 in",
+        media:"Sekishu Banshi Tsuru washi, konnnyaku powder, wood",
+        year: 2021,
+      },
+      {
+        id: 2,
+        src: "/images/differential_space_02.jpg",
+        title: "differential_space_#2",
+        size: "25 in x 13.5 in",
+        media:"Sekishu Banshi Tsuru washi, konnnyaku powder, wood",
+        year: 2021,
+      },
+      {
+        id: 3,
+        src: "/images/differential_space_03.jpg",
+        title: "differential_space_#3",
+        size: "25 in x 13.5 in",
+        media:"Sekishu Banshi Tsuru washi, konnnyaku powder, wood",
+        year: 2021,
       }
     ]
   },
