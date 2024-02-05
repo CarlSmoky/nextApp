@@ -266,5 +266,37 @@ export const visualArtData = [
       }
     ]
   },
+  {
+    id: 6,
+    title: "namida_(tears)",   
+    category: VisualArtType.Washi,
+    descriptions: "",
+    images: [
+      {
+        id: 1,
+        src: "/images/namida_(tears)_01.jpg",
+        title: "namida_(tears)_#1",
+        size: "12.5 in x 7 in x 2.5 in",
+        media:"Sekishu banshi Tsuru & Gampi washi, konnyaku powder, copper, wire, wood",
+        year: 2023,
+      },
+      {
+        id: 2,
+        src: "/images/namida_(tears)_02.jpg",
+        title: "namida_(tears)_#2",
+        size: "12.5 in x 6.5 in x 2.5 in",
+        media:"Sekishu banshi Tsuru & Gampi washi, konnyaku powder, copper, wire, wood",
+        year: 2023,
+      },
+      {
+        id: 3,
+        src: "/images/namida_(tears)_03.jpg",
+        title: "namida_(tears)_#3",
+        size: "12.5 in x 6.5 in x 2.75 in",
+        media:"Sekishu banshi Tsuru & Gampi washi, konnyaku powder, copper, wire, wood",
+        year: 2023,
+      }
+    ]
+  },
   
 ]
