@@ -234,35 +234,38 @@ export const visualArtData = [
       }
     ]
   },
-  {
-    id: 5,
-    title: "whispering_lights",   
-    category: VisualArtType.Washi,
-    descriptions: "",
-    images: [
-      {
-        id: 1,
-        src: "/images/whispering_lights_01.jpg",
-        title: "whispering_lights_#1",
-        size: "",
-        media:""
-      },
-      {
-        id: 2,
-        src: "/images/whispering_lights_02.jpg",
-        title: "whispering_lights_#2",
-        size: "",
-        media:""
-      },
-      {
-        id: 3,
-        src: "/images/whispering_lights_03.jpg",
-        title: "whispering_lights_#3",
-        size: "",
-        media:""
-      }
-    ]
-  },
+  // {
+  //   id: 5,
+  //   title: "whispering_lights",   
+  //   category: VisualArtType.Washi,
+  //   descriptions: "",
+  //   images: [
+  //     {
+  //       id: 1,
+  //       src: "/images/whispering_lights_01.jpg",
+  //       title: "whispering_lights_#1",
+  //       size: "",
+  //       media:"",
+  //       year: 2023,
+  //     },
+  //     {
+  //       id: 2,
+  //       src: "/images/whispering_lights_02.jpg",
+  //       title: "whispering_lights_#2",
+  //       size: "",
+  //       media:"",
+  //       year: 2023,
+  //     },
+  //     {
+  //       id: 3,
+  //       src: "/images/whispering_lights_03.jpg",
+  //       title: "whispering_lights_#3",
+  //       size: "",
+  //       media:"",
+  //       year: 2023,
+  //     }
+  //   ]
+  // },
   {
     id: 6,
     title: "namida_(tears)",   
