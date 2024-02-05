@@ -246,7 +246,6 @@ export const visualArtData = [
         title: "whispering_lights_#1",
         size: "",
         media:"",
-        year: 2023,
       },
       {
         id: 2,
@@ -254,7 +253,6 @@ export const visualArtData = [
         title: "whispering_lights_#2",
         size: "",
         media:"",
-        year: 2023,
       },
       {
         id: 3,
@@ -262,7 +260,6 @@ export const visualArtData = [
         title: "whispering_lights_#3",
         size: "",
         media:"",
-        year: 2023,
       }
     ]
   },
