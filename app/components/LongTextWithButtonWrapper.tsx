@@ -13,7 +13,7 @@ const LongTextWithButtonWrapper: React.FC<childrenProps> = ({ children }: childr
     <div>
       <p
         className={`${
-          open ? "line-clamp-none" : "line-clamp-7"
+          open ? "line-clamp-none" : "line-clamp-10"
         } text-left text-grey-100 text-base md:text-lg lg:text-xl font-paragraph tracking-wide`}
       >
         {children}
