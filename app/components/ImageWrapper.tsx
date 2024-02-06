@@ -1,13 +1,17 @@
 import React from "react";
 import Image from "next/image";
-import { blurData } from "./Gallery/BlurData";
+import { getPlaiceholder } from "plaiceholder";
+import fs from "node:fs/promises";
 
 interface Props {
   src: string;
   alt: string;
 }
 
-const ImageWrapper: React.FC<Props> = ({ src, alt }: Props) => {
+const ImageWrapper: React.FC<Props> = async ({ src, alt }: Props) => {
+
+  const buffer = await fs.readFile(`./public/${src}`);
+  const { base64 } = await getPlaiceholder(buffer);
   return (
     <div className="w-2/3 sm:w-1/2 md:w-1/3 aspect-square m-auto md:mt-0 relative">
       <Image
@@ -17,7 +21,7 @@ const ImageWrapper: React.FC<Props> = ({ src, alt }: Props) => {
         fill={true}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
         placeholder="blur"
-        blurDataURL={blurData}
+        blurDataURL={base64}
       />
     </div>
   );
