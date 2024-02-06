@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import { DisplayNavContext } from "@/app/provider/DisplayNavProvider";
 import { VisualArtImage, NavState } from "../../types/Interfaces";
-import { blurData } from "./BlurData";
 import Link from "next/link";
 
 type Props = {
@@ -31,9 +30,7 @@ const ImgContainer = ({ image, numberOfImage, title, i }: Props) => {
               fill={true}
               className="object-contain"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              placeholder="blur"
-              blurDataURL={blurData}
-              priority={i === 0 ? true : false}
+              priority={i < 3 ? true : false}
             />
           </div>
         </Link>
