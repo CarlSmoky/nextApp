@@ -29,7 +29,7 @@ const ImgContainer = ({ image, numberOfImage, title, i }: Props) => {
               alt={image.title}
               fill={true}
               className="object-contain"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 976px) 50vw, 33vw"
               priority={i < 3 ? true : false}
             />
           </div>

@@ -31,6 +31,7 @@ const Navbar: React.FC = () => {
               src={Logo}
               alt="logo"
               className="sm:cursor-pointer w-36 md:w-48 lg:w-56"
+              sizes="33vw"
             />
           </Link>
           <div
