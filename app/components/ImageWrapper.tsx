@@ -19,7 +19,7 @@ const ImageWrapper: React.FC<Props> = async ({ src, alt }: Props) => {
         src={src}
         alt={alt}
         fill={true}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+        sizes="(max-width: 480px) 66vw, (max-width: 768px) 50vw, 33vw"
         placeholder="blur"
         blurDataURL={base64}
       />
