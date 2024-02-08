@@ -36,7 +36,7 @@ const ImageLinkAnimation: React.FC<Props> = ({
             src={src}
             alt={name}
             fill={true}
-            sizes="(max-width: 480px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 480px) 100vw, 33vw"
             placeholder="blur"
             blurDataURL={blurData}
             priority={i === 0 ? true : false}
