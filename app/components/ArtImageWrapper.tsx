@@ -16,7 +16,7 @@ const ArtImageWrapper: React.FC<Props> = ({ src, alt, i }: Props) => {
             src={src}
             alt={alt}
             fill={true}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-contain"
             priority={i === 0 ? true : false}
           />
