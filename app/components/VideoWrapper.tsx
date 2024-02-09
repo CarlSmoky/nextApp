@@ -23,19 +23,22 @@ const VideoWrapper: React.FC<Props> = ({ src, title }: Props) => {
             html,body {
               height:  100%
             }
-            img,span {
-              position: absolute; 
-              width:  100%;
+            img, svg {
+              position: absolute;
+              width: 100%;
               top: 0;
               bottom: 0;
-              margin: auto
+              margin: auto;
             }
-            span {
-              height: 1.5em;
-              text-align:center;
-              font: 48px/1.5 sans-serif;
-              color: white;
-              text-shadow: 0 0 0.5em black
+            
+            svg {
+              filter: drop-shadow(1px 1px 10px hsl(206.5, 70.7%, 8%));
+              transition: all 250ms ease-in-out;
+            }
+            
+            body:hover svg {
+              filter: drop-shadow(1px 1px 10px hsl(206.5, 0%, 10%));
+              transform: scale(1.1);
             }
           </style>
           <a href=https://www.youtube.com/embed/${src}?autoplay=1&fs=0>
@@ -43,7 +46,7 @@ const VideoWrapper: React.FC<Props> = ({ src, title }: Props) => {
               src=https://img.youtube.com/vi/${src}/hqdefault.jpg
               alt=${title}
             >
-            <span>▶</span>
+            <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
           </a>`
         }
           loading="lazy"
