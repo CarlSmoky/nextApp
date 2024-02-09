@@ -18,7 +18,7 @@ const AnnouncementPage: React.FC = () => {
     <SectionWrapper title="Announcement">
       <ImageAndText>
         <VideoWrapper
-          src="https://www.youtube.com/embed/1ggLRXBEy8Y?si=o7scucBmC3yvmtv"
+          src="1ggLRXBEy8Y"
           title="Mime-Dance by Noriko Yamamoto: Fading Memories"
         />
         <ParagraphWrapper paragraph="March 8 - 13, 2024: Fading Memories art exhibition + performance in Tokyo, Japan.">
