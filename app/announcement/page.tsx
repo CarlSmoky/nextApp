@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import SectionWrapper from "../components/SectionWrapper";
 import ImageAndText from "../components/ImageAndText";
 import VideoWrapper from "../components/VideoWrapper";
@@ -18,7 +17,7 @@ const AnnouncementPage: React.FC = () => {
     <SectionWrapper title="Announcement">
       <ImageAndText>
         <VideoWrapper
-          src="1ggLRXBEy8Y"
+          VideoId="1ggLRXBEy8Y"
           title="Mime-Dance by Noriko Yamamoto: Fading Memories"
         />
         <ParagraphWrapper paragraph="March 8 - 13, 2024: Fading Memories art exhibition + performance in Tokyo, Japan.">
