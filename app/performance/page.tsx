@@ -17,8 +17,8 @@ const PerformancePage = () => {
       {performanceData.map((performance: Performance, i) => (
         
         <ImageAndText key={i}>
-          <VideoWrapper src={performance.url} title={performance.title} />
-          <PerformanceInfo title={performance.title} subTitle={performance.subTitle} category={performance.category} event={performance.event} location={performance.location} date={performance.date} url={performance.url}/>
+          <VideoWrapper src={performance.srcId} title={performance.title} />
+          <PerformanceInfo title={performance.title} subTitle={performance.subTitle} category={performance.category} event={performance.event} location={performance.location} date={performance.date} srcId={performance.srcId}/>
         </ImageAndText>
       ))}
     </SectionWrapper>
