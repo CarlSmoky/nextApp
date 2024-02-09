@@ -1,11 +1,11 @@
 import React from "react";
 
 interface Props {
-  src: string;
+  VideoId: string;
   title: string;
 }
 
-const VideoWrapper: React.FC<Props> = ({ src, title }: Props) => {
+const VideoWrapper: React.FC<Props> = ({ VideoId, title }: Props) => {
   return (
     <div className="m-auto md:mt-0 w-full aspect-video md:w-1/2">
       <iframe
@@ -41,9 +41,9 @@ const VideoWrapper: React.FC<Props> = ({ src, title }: Props) => {
               transform: scale(1.1);
             }
           </style>
-          <a href=https://www.youtube.com/embed/${src}?autoplay=1&fs=0>
+          <a href=https://www.youtube.com/embed/${VideoId}?autoplay=1&fs=0>
             <img
-              src=https://img.youtube.com/vi/${src}/hqdefault.jpg
+              src=https://img.youtube.com/vi/${VideoId}/hqdefault.jpg
               alt=${title}
             >
             <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>

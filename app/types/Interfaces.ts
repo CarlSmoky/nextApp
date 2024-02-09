@@ -55,7 +55,7 @@ export interface Performance {
   date?: string;
   event: string;
   location: string;
-  srcId: string;
+  VideoId: string;
 }
 
 export enum VisualArtType {

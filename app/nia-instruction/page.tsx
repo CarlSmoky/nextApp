@@ -14,7 +14,7 @@ const NiaInstructionPage: React.FC = () => {
     <SectionWrapper title="Nia Instruction">
       <ImageAndText>
         <VideoWrapper
-          src="fLJ0Piaqk3Y"
+          VideoId="fLJ0Piaqk3Y"
           title="Nia Instruction"
         />
         <TextWithVideoWrapper>

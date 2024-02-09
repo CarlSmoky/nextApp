@@ -10,7 +10,7 @@ export const performanceData = [
         date: "Feb 2022",
         event: "A Night at the Eclipse",
         location: "Huntsville, ON",
-        srcId: "UUvLMgf1AQo",
+        VideoId: "UUvLMgf1AQo",
       },
       {
         id: 12,
@@ -21,7 +21,7 @@ export const performanceData = [
         date: "Sep 2021",
         event: "Dance Rx3",
         location: "Haliburton Sculpture Forest - Haliburton, ON",
-        srcId: "tmeCTB6XVDY",
+        VideoId: "tmeCTB6XVDY",
       },
       {
         id: 11,
@@ -32,7 +32,7 @@ export const performanceData = [
         date: "Mar 2021",
         event: "various",
         location: "online",
-        srcId: "RcDcS-j2vAQ",
+        VideoId: "RcDcS-j2vAQ",
       },
       {
         id: 10,
@@ -43,7 +43,7 @@ export const performanceData = [
         date: "Feb 2020",
         event: "Memories",
         location: "Tokyo, Japan",
-        srcId: "ZO7r9q7uGUA",
+        VideoId: "ZO7r9q7uGUA",
       },
       {
         id: 9,
@@ -54,7 +54,7 @@ export const performanceData = [
         date: "Feb 2020",
         event: "Memories",
         location: "Tokyo, Japan",
-        srcId: "8fMHokiuP9k",
+        VideoId: "8fMHokiuP9k",
       },
       {
         id: 8,
@@ -65,7 +65,7 @@ export const performanceData = [
         date: "Nov 2019",
         event: "The Promise of Sekishu exhibition closing",
         location: "Propeller Art Gallery - Toronto, ON",
-        srcId: "hqWZ2CwnR1g",
+        VideoId: "hqWZ2CwnR1g",
       },
       {
         id: 7,
@@ -76,7 +76,7 @@ export const performanceData = [
         date: "Aug 2019",
         event: "Dusk Dances",
         location: "Withrow Park - Toronto, ON",
-        srcId: "sIBRHW4PH7U",
+        VideoId: "sIBRHW4PH7U",
       },
       {
         id: 6,
@@ -87,7 +87,7 @@ export const performanceData = [
         date: "Mar 2019",
         event: "White Pavilions art installation by Yam Lau",
         location: "Varley Art Gallery - Markham, ON",
-        srcId: "16O66bu6p-k",
+        VideoId: "16O66bu6p-k",
       },
       {
         id: 5,
@@ -98,7 +98,7 @@ export const performanceData = [
         date: "Jul 2003",
         event: "Atlin Arts & Music Festival",
         location: "Globe Theatre - Atlin, BC",
-        srcId: "vNERP66wJYc",
+        VideoId: "vNERP66wJYc",
       },
       {
         id: 4,
@@ -109,7 +109,7 @@ export const performanceData = [
         date: "May 2000",
         event: "Children's Own Museum",
         location: "McLaughlin Planetarium (ROM) - Toronto, ON",
-        srcId: "Vm7cS4pGkbc",
+        VideoId: "Vm7cS4pGkbc",
       },
       {
         id: 3,
@@ -120,7 +120,7 @@ export const performanceData = [
         date: "Feb 1996",
         event: "Toronto Storytelling Festival",
         location: "Harbourfront Centre - Toronto, ON",
-        srcId: "TuVsRLlZdbg",
+        VideoId: "TuVsRLlZdbg",
       },
 
       {
@@ -132,7 +132,7 @@ export const performanceData = [
         date: "Feb 1996",
         event: "Homeworks",
         location: "Toronto, ON",
-        srcId: "0vBRcrmMUV4",
+        VideoId: "0vBRcrmMUV4",
       },
       {
         id: 1,
@@ -143,6 +143,6 @@ export const performanceData = [
         date: "1990",
         event: "Hiroshima City - public education",
         location: "Hiroshima, Japan",
-        srcId: "XEi67heRyUQ",
+        VideoId: "XEi67heRyUQ",
       },
 ]
