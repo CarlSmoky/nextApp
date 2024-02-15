@@ -18,3 +18,10 @@ const isParentheses = (letter: string) => {
   }
   return false;
 }
+
+export const removeExcessivePathSegments= (pathname: string) => {
+  if (pathname.split("/").length > 2) {
+    return pathname.split("/").slice(0, 2).join("/")
+  }
+  return pathname;
+}
