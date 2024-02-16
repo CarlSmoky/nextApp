@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LinkInfo, Sublink } from "@/app/types/Interfaces";
+import { LinkInfo, Sublink } from "../../types/Interfaces";
 import { links } from "./links";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { removeExcessivePathSegments } from "../../utils/textFormat";
