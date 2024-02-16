@@ -1,3 +1,5 @@
+import { PerformanceType } from "../types/Interfaces";
+
 export const toTitleCase = (str: string) => {
   const convertedArr = str.replace(/[-_`\s]/g, "_").split("_");
   let result = []
@@ -24,4 +26,11 @@ export const removeExcessivePathSegments= (pathname: string) => {
     return pathname.split("/").slice(0, 2).join("/")
   }
   return pathname;
+}
+export const getPerformanceTypeName = (performanceType: PerformanceType): string => {
+  if (performanceType === PerformanceType.mimeClowning) {
+    return "Mime/Clowning"
+  } else {
+    return toTitleCase(performanceType)
+  }
 }
