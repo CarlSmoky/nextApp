@@ -1,5 +1,3 @@
-import { toTitleCase } from "../utils/textFormat";
-
 export interface childrenProps {
   children: React.ReactNode;
 }
