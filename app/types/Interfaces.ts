@@ -25,7 +25,6 @@ export interface LinkInfo {
   link: string;
   submenu: boolean;
   sublinks: Sublink[];
-  navState: NavState;
 }
 
 export interface Sublink {
@@ -41,17 +40,17 @@ export interface WorkLink {
 }
 
 export enum PerformanceType {
-  "Mime-Dance",
-  "Dance",
-  "Silent Storytelling",
-  "Mime/Clowning"
+  mimeDance = "mime_dance",
+  dance = "dance",
+  silentStoryTelling = "silent_storytelling",
+  mimeClowning = "mime_clowning"
 }
 
 export interface Performance {
   title: string;
   subTitle?: string
   description?: string;
-  category: PerformanceType;
+  type: PerformanceType;
   date?: string;
   event: string;
   location: string;
@@ -59,16 +58,16 @@ export interface Performance {
 }
 
 export enum VisualArtType {
-  "Washi",
-  "Mix-media",
-  "Sculpture"
+  washi = "washi",
+  mixMedia = "mix_media",
+  sculpture = "sculpture"
 }
 
 export interface VisualArtSeries {
   id: number;
   title: string;
   descriptions? : string;
-  category: VisualArtType;
+  type: VisualArtType;
   images: VisualArtImage[];
 }
 export interface VisualArtImage {

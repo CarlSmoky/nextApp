@@ -1,41 +1,44 @@
-"use client"
-import React, { useContext } from "react";
+"use client";
+import React from "react";
 import Link from "next/link";
-import { DisplayNavContext} from "../../provider/DisplayNavProvider";
-import { NavState, LinkInfo, Sublink } from "../../types/Interfaces";
+import { usePathname } from "next/navigation";
+import { LinkInfo, Sublink } from "../../types/Interfaces";
 import { links } from "../Navbar/links";
+import { removeExcessivePathSegments } from "../../utils/textFormat";
 
 const FooterNav = () => {
-  const navContext = useContext(DisplayNavContext)
-
-  const clickHandler = (link: LinkInfo) => {
-    // redirect contact highlighting to home
-    const newHighlight = link.navState === NavState.contact ? NavState.home : link.navState
-    navContext?.setCurrentNav(newHighlight)
-  }
+  const pathname = usePathname();
   return (
-      <ul className="flex flex-col lg:flex-row px-4 md:px-0 font-paragraph text-sm whitespace-nowrap">
-        {links.map((link: LinkInfo, i) => (
-          <li key={i} className="">
-            <Link onClick={() => clickHandler(link)} href={link.link}>
-              <h3 className={`text-grey-200 m-2 py-3 px-1 text-sm md:text-base lg:text-sm xl:text-base hover:text-black-100 transition-all duration-300 ease-in-out ${navContext?.currentNav ===  link.navState ? 'underline underline-offset-4' : ""}`}>{link.name}</h3>
-            </Link>
-            {link.submenu && (
-              <div className="flex flex-col text-grey-200/80 text-xs">
-                <ul>
-                  {link.sublinks.map((slink: Sublink, i) => (
-                    <div key={i}>
-                      <li className="py-3 px-0 md:px-1 lg:px-2 hover:text-black-100 transition-all duration-300 ease-in-out">
-                        <Link href={slink.link}>{slink.name}</Link>
-                      </li>
-                    </div>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
+    <ul className="w-full xl:w-2/3 flex flex-col lg:flex-row px-4 md:px-0 font-paragraph whitespace-nowrap">
+      {links.map((link: LinkInfo, i) => (
+        <li key={i} className="lg:w-1/6">
+          <Link href={link.link}>
+            <h3
+              className={`text-grey-200 m-2 py-2 px-1 text-sm md:text-base lg:text-sm xl:text-base hover:text-black-100 transition-all duration-300 ease-in-out ${
+                removeExcessivePathSegments(pathname) === link.link
+                  ? "underline underline-offset-4"
+                  : ""
+              }`}
+            >
+              {link.name}
+            </h3>
+          </Link>
+          {link.submenu && (
+            <div className="flex flex-col text-grey-200/80 text-xs">
+              <ul>
+                {link.sublinks.map((slink: Sublink, i) => (
+                  <Link key={i} href={slink.link}>
+                    <li className="ml-3 p-2 hover:text-black-100 transition-all duration-300 ease-in-out">
+                      {slink.name}
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 };
 

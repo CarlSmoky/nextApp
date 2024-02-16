@@ -22,7 +22,7 @@ const page = ({ params }: { params: { seriesTitle: string } }) => {
       <div className="text-base lg:text-lg font-paragraph">
         <p>
           <span className="text-sm">Type: </span>
-          {VisualArtType[seriesInfo.category]}
+          {toTitleCase(seriesInfo.type as VisualArtType)}
         </p>
         {seriesInfo.descriptions && <p>{seriesInfo.descriptions}</p>}
       </div>

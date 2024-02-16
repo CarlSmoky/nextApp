@@ -1,10 +1,11 @@
 import React from "react";
-import { Performance, PerformanceType } from "../types/Interfaces";
+import { Performance } from "../types/Interfaces";
+import { getPerformanceTypeName } from "../utils/textFormat";
 
 const PerformanceInfo: React.FC<Performance> = ({
   title,
   subTitle,
-  category,
+  type,
   event,
   location,
   date,
@@ -16,7 +17,7 @@ const PerformanceInfo: React.FC<Performance> = ({
       <div className="text-base lg:text-lg font-paragraph">
         <p>
           <span className="text-sm">Type: </span> 
-          {PerformanceType[category]}
+          {getPerformanceTypeName(type)}
         </p>
         <p>
           <span className="text-sm">Event: </span>
