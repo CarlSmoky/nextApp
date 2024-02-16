@@ -1,5 +1,5 @@
-import { PerformanceType　} from "../../types/Interfaces";
-import { getPerformanceTypeName } from "../../utils/textFormat"
+import { PerformanceType, VisualArtType　} from "../../types/Interfaces";
+import { toTitleCase, getPerformanceTypeName } from "../../utils/textFormat"
 
 export const links = [
   {
@@ -13,9 +13,9 @@ export const links = [
     link: "/visual-art",
     submenu: false,
     sublinks: [
-          { name: "Washi", link: "/visual-art" },
-          { name: "Mix media", link: "/visual-art" },
-          { name: "Sculpture", link: "/visual-art" },
+          { name: toTitleCase(VisualArtType　.washi), link: `/visual-art?type=${VisualArtType　.washi}` },
+          { name: toTitleCase(VisualArtType　.mixMedia), link: `/visual-art?type=${VisualArtType　.mixMedia}` },
+          { name: toTitleCase(VisualArtType　.sculpture), link: `/visual-art?type=${VisualArtType　.sculpture}` },
         ],
   },
   {
