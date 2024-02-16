@@ -1,3 +1,5 @@
+import { toTitleCase } from "../utils/textFormat";
+
 export interface childrenProps {
   children: React.ReactNode;
 }
@@ -41,10 +43,10 @@ export interface WorkLink {
 }
 
 export enum PerformanceType {
-  "Mime-Dance",
-  "Dance",
-  "Silent Storytelling",
-  "Mime/Clowning"
+  mimeDance = "mime_dance",
+  dance = "dance",
+  silentStoryTelling = "silent_story_telling",
+  mimeClowning = "mime_clowning"
 }
 
 export interface Performance {
