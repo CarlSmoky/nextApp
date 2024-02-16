@@ -1,4 +1,5 @@
-import { NavState　} from "../../types/Interfaces";
+import { PerformanceType　} from "../../types/Interfaces";
+import { getPerformanceTypeName } from "../../utils/textFormat"
 
 export const links = [
   {
@@ -6,7 +7,6 @@ export const links = [
     link: "/",
     submenu: false,
     sublinks: [],
-    navState: NavState.home
   },
   {
     name: "Visual Art",
@@ -17,39 +17,34 @@ export const links = [
           { name: "Mix media", link: "/visual-art" },
           { name: "Sculpture", link: "/visual-art" },
         ],
-    navState: NavState.visualArt
   },
   {
     name: "Performance",
     link: "/performance",
-    submenu: false,
+    submenu: true,
     sublinks: [
-          { name: "Mime dance", link: "/performance" },
-          { name: "Dance", link: "/performance" },
-          { name: "Silent story telling", link: "/performance" },
-          { name: "Mime", link: "/performance" },
+          { name: getPerformanceTypeName(PerformanceType　.mimeDance), link: `/performance?type=${PerformanceType　.mimeDance}` },
+          { name: getPerformanceTypeName(PerformanceType　.dance), link: `/performance?type=${PerformanceType　.dance}` },
+          { name: getPerformanceTypeName(PerformanceType　.silentStoryTelling), link: `/performance?type=${PerformanceType　.silentStoryTelling}` },
+          { name: getPerformanceTypeName(PerformanceType　.mimeClowning), link: `/performance?type=${PerformanceType　.mimeClowning}` },
         ],
-    navState: NavState.peformance
   },  
   {
     name: "Nia Instruction",
     link: "/nia-instruction",
     submenu: false,
     sublinks: [],
-    navState: NavState.nia
   },
   {
     name: "About",
     link: "/about",
     submenu: false,
     sublinks: [],
-    navState: NavState.about
   },
   {
     name: "Contact",
     link: "/#contact",
     submenu: false,
     sublinks: [],
-    navState: NavState.contact
   },
 ];

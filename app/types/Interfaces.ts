@@ -27,7 +27,6 @@ export interface LinkInfo {
   link: string;
   submenu: boolean;
   sublinks: Sublink[];
-  navState: NavState;
 }
 
 export interface Sublink {
@@ -53,7 +52,7 @@ export interface Performance {
   title: string;
   subTitle?: string
   description?: string;
-  category: PerformanceType;
+  type: PerformanceType;
   date?: string;
   event: string;
   location: string;
