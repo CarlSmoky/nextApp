@@ -8,11 +8,11 @@ import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { removeExcessivePathSegments } from "../../utils/textFormat";
 
 
-const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
+const NavLinks: React.FC<ChildComponentProps> = ({ onToggle, closeNav }) => {
   const [heading, setHeading] = useState<string>("");
   const pathname = usePathname();
 
-  const clickHandler = (link: LinkInfo) => {
+  const clickHandler = () => {
     onToggle();
     setHeading("");
   }
@@ -25,7 +25,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
             <h1
               className={`py-7 px-3 lg:px-2 flex justify-between align-baseline text-grey-200 text-base xl:text-lg font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out ${removeExcessivePathSegments(pathname) ===  link.link ? 'underline underline-offset-4' : ""}`}
             >
-              <Link onClick={() => clickHandler(link)} href={link.link}>{link.name}</Link>
+              <Link onClick={clickHandler} href={link.link}>{link.name}</Link>
               {link.submenu && (<span className="text-lg lg:text-sm lg:hidden inline" onClick={() => {
                 heading !== link.name ? setHeading(link.name) : setHeading("");
               }}>
@@ -72,7 +72,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle }) => {
               <div key={i}>
                 <div>
                   <li className="py-3 pl-14 text-grey-200 text-sm font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out">
-                    <Link href={slinks.link}>{slinks.name}</Link>
+                    <Link onClick={() => {closeNav()}} href={slinks.link}>{slinks.name}</Link>
                   </li>
                 </div>
               </div>

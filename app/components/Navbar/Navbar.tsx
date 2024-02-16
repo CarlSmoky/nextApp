@@ -6,7 +6,6 @@ import NavLinks from "./NavLinks";
 import Logo from "../../../public/images/Logo.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { DisplayNavContext } from "../../provider/DisplayNavProvider";
-import { NavState } from "../../types/Interfaces";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
 
 const Navbar: React.FC = () => {
@@ -17,16 +16,15 @@ const Navbar: React.FC = () => {
     setOpen(!open);
   };
 
-  const clickHandler = () => {
+  const closeNav = () => {
     setOpen(false);
-    navContext?.setCurrentNav(NavState.home);
   };
 
   return (
     <nav className="margin-global whitespace-nowrap">
       <div className="flex justify-between">
         <div className="z-50 py-3 w-full flex justify-between">
-          <Link href="/" onClick={clickHandler}>
+          <Link href="/" onClick={() => {closeNav()}}>
             <Image
               src={Logo}
               alt="logo"
@@ -42,7 +40,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
         <ul className="lg:flex hidden items-center">
-          <NavLinks onToggle={handleToggle} />
+          <NavLinks onToggle={handleToggle} closeNav={closeNav}/>
           <li className="nav-sns">
             <Link
               href="https://www.instagram.com/noriko_toronto/"
@@ -69,7 +67,7 @@ const Navbar: React.FC = () => {
         duration-500 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
         `}
         >
-          <NavLinks onToggle={handleToggle} />
+          <NavLinks onToggle={handleToggle} closeNav={closeNav}/>
           <div className="flex justify-center">
             <li className="nav-sns" onClick={handleToggle}>
               <Link
