@@ -8,7 +8,7 @@ import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { removeExcessivePathSegments } from "../../utils/textFormat";
 
 
-const NavLinks: React.FC<ChildComponentProps> = ({ onToggle, closeNav }) => {
+const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle })  => {
   const [heading, setHeading] = useState<string>("");
   const pathname = usePathname();
 
@@ -23,7 +23,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle, closeNav }) => {
         <div key={i}>
           <div className="text-left md:cursor-pointer group">
             <h1
-              className={`py-7 px-3 lg:px-2 flex justify-between align-baseline text-grey-200 text-base xl:text-lg font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out ${removeExcessivePathSegments(pathname) ===  link.link ? 'underline underline-offset-4' : ""}`}
+              className={`py-7 px-3 lg:px-2 flex justify-between align-baseline text-grey-200 text-base xl:text-lg font-paragraph hover:text-black-100 ${removeExcessivePathSegments(pathname) ===  link.link ? 'underline underline-offset-4' : ""}`}
             >
               <Link onClick={clickHandler} href={link.link}>{link.name}</Link>
               {link.submenu && (<span className="text-lg lg:text-sm lg:hidden inline" onClick={() => {
@@ -35,9 +35,10 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle, closeNav }) => {
                   <RiArrowDownSLine />
                 )}
               </span>)}
-              {link.submenu && (<span className="hidden text-lg lg:text-sm lg:mt-1 lg:ml-2 lg:block group-hover:rotate-180 group-hover:-mt-2 group-hover:text-black-100">
-              <RiArrowDownSLine />
-              </span>
+              {link.submenu && (
+              <div className="hidden text-lg lg:flex lg:justify-center lg:my-auto group-hover:text-black-100 group-hover:rotate-180 transition-all duration-600 ease-in-out">
+                <RiArrowDownSLine />
+              </div>
               )}
             </h1>
             {link.submenu && (
@@ -72,7 +73,7 @@ const NavLinks: React.FC<ChildComponentProps> = ({ onToggle, closeNav }) => {
               <div key={i}>
                 <div>
                   <li className="py-3 pl-14 text-grey-200 text-sm font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out">
-                    <Link onClick={() => {closeNav()}} href={slinks.link}>{slinks.name}</Link>
+                    <Link onClick={clickHandler} href={slinks.link}>{slinks.name}</Link>
                   </li>
                 </div>
               </div>

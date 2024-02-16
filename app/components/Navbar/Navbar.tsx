@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
         <ul className="lg:flex hidden items-center">
-          <NavLinks onToggle={handleToggle} closeNav={closeNav}/>
+          <NavLinks onToggle={handleToggle} />
           <li className="nav-sns">
             <Link
               href="https://www.instagram.com/noriko_toronto/"
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
         duration-500 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
         `}
         >
-          <NavLinks onToggle={handleToggle} closeNav={closeNav}/>
+          <NavLinks onToggle={handleToggle} />
           <div className="flex justify-center">
             <li className="nav-sns" onClick={handleToggle}>
               <Link
