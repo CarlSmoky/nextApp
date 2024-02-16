@@ -60,16 +60,16 @@ export interface Performance {
 }
 
 export enum VisualArtType {
-  "Washi",
-  "Mix-media",
-  "Sculpture"
+  washi = "washi",
+  mixMedia = "mix_media",
+  sculpture = "sculpture"
 }
 
 export interface VisualArtSeries {
   id: number;
   title: string;
   descriptions? : string;
-  category: VisualArtType;
+  type: VisualArtType;
   images: VisualArtImage[];
 }
 export interface VisualArtImage {

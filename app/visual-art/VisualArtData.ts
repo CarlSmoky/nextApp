@@ -4,7 +4,7 @@ export const visualArtData = [
   {
     id: 1,
     title: "fading_memories",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
@@ -20,7 +20,7 @@ export const visualArtData = [
   {
     id: 2,
     title: "shadow_impression",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
@@ -77,7 +77,7 @@ export const visualArtData = [
   {
     id: 3,
     title: "flower_power_s",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
@@ -165,7 +165,7 @@ export const visualArtData = [
   {
     id: 4,
     title: "flower_power_m",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
@@ -237,7 +237,7 @@ export const visualArtData = [
   // {
   //   id: 5,
   //   title: "whispering_lights",   
-  //   category: VisualArtType.Washi,
+  //   type: VisualArtType.washi,
   //   descriptions: "",
   //   images: [
   //     {
@@ -269,7 +269,7 @@ export const visualArtData = [
   {
     id: 6,
     title: "namida_(tears)",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
@@ -301,7 +301,7 @@ export const visualArtData = [
   {
     id: 7,
     title: "visual_haiku",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
@@ -365,7 +365,7 @@ export const visualArtData = [
   {
     id: 8,
     title: "imperfection",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
@@ -389,7 +389,7 @@ export const visualArtData = [
   {
     id: 9,
     title: "still_waters_run_deep",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
@@ -413,7 +413,7 @@ export const visualArtData = [
   {
     id: 10,
     title: "differential_space",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
@@ -445,7 +445,7 @@ export const visualArtData = [
   {
     id: 11,
     title: "wavelets",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
@@ -469,7 +469,7 @@ export const visualArtData = [
   {
     id: 12,
     title: "spirit",   
-    category: VisualArtType.Washi,
+    type: VisualArtType.washi,
     descriptions: "",
     images: [
       {
