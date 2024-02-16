@@ -42,7 +42,7 @@ export interface WorkLink {
 export enum PerformanceType {
   mimeDance = "mime_dance",
   dance = "dance",
-  silentStoryTelling = "silent_story_telling",
+  silentStoryTelling = "silent_storytelling",
   mimeClowning = "mime_clowning"
 }
 
