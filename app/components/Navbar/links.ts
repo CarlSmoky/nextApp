@@ -21,7 +21,7 @@ export const links = [
   {
     name: "Performance",
     link: "/performance",
-    submenu: true,
+    submenu: false,
     sublinks: [
           { name: getPerformanceTypeName(PerformanceType　.mimeDance), link: `/performance?type=${PerformanceType　.mimeDance}` },
           { name: getPerformanceTypeName(PerformanceType　.dance), link: `/performance?type=${PerformanceType　.dance}` },

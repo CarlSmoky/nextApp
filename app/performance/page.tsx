@@ -13,32 +13,32 @@ export const metadata: Metadata = {
 
 const PerformancePage = ({ searchParams }: { searchParams: { type: string | string[] } }) => {
 
-  const getParams = (searchParams: string | string[]): PerformanceType[] => {
-    if (!searchParams) return []
+  // const getParams = (searchParams: string | string[]): PerformanceType[] => {
+  //   if (!searchParams) return []
 
-    if (typeof(searchParams) === "string") {
-      return [searchParams as PerformanceType]
-    }
+  //   if (typeof(searchParams) === "string") {
+  //     return [searchParams as PerformanceType]
+  //   }
 
-      return searchParams
-      .filter(item => Object.values(PerformanceType)
-      .includes(item as PerformanceType))
-      .map(item => item as PerformanceType);
-  }
+  //     return searchParams
+  //     .filter(item => Object.values(PerformanceType)
+  //     .includes(item as PerformanceType))
+  //     .map(item => item as PerformanceType);
+  // }
 
-  const applyFilter = (params: PerformanceType[]): Performance[] => {
-    if (params.length === 0) return performanceData
+  // const applyFilter = (params: PerformanceType[]): Performance[] => {
+  //   if (params.length === 0) return performanceData
 
-    const result = performanceData.filter(performance => params.includes(performance.type))
-    return result
-  }
+  //   const result = performanceData.filter(performance => params.includes(performance.type))
+  //   return result
+  // }
 
-  const params = getParams(searchParams.type)
-  const filteredPerformanceData = applyFilter(params)
+  // const params = getParams(searchParams.type)
+  // const filteredPerformanceData = applyFilter(params)
 
   return (
     <SectionWrapper title="Performance">
-      {filteredPerformanceData.map((performance: Performance, i) => (
+      {performanceData.map((performance: Performance, i) => (
         
         <ImageAndText key={i}>
           <VideoWrapper VideoId={performance.VideoId} title={performance.title} />
