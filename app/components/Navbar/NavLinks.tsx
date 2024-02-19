@@ -25,7 +25,7 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
               className={`py-7 px-3 lg:px-2 flex align-baseline text-grey-200 text-base xl:text-lg font-paragraph hover:text-black-100 ${
                 removeExcessivePathSegments(pathname) === link.link ? "underline underline-offset-4" : ""}`}
             >
-              <Link onClick={clickHandler} href={link.link}>
+              <Link onClick={clickHandler} href={link.link} prefetch={false}>
                 {link.name}
               </Link>
               {link.submenu && (
@@ -59,6 +59,7 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         key={i}
                         href={slink.link}
                         className="hover:text-black-100 transition-all duration-300 ease-in-out"
+                        prefetch={false}
                       >
                         <li className="text-sm font-paragraph text-grey-200 my-2.5">
                           {slink.name}
@@ -78,7 +79,7 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
           >
             {/* sublinks */}
             {link.sublinks.map((slinks: Sublink, i) => (
-              <Link key={i} onClick={clickHandler} href={slinks.link}>
+              <Link key={i} onClick={clickHandler} href={slinks.link} prefetch={false}>
                 <li className="py-3 pl-14 text-grey-200 text-sm font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out">
                   {slinks.name}
                 </li>
