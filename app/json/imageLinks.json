@@ -1,0 +1,19 @@
+{
+  "imageLinks": [
+    {
+      "name": "Visual Art",
+      "linkTo": "/visual-art",
+      "src": "/images/fading_memories.jpg"
+    },
+    {
+      "name": "Performance",
+      "linkTo": "/performance",
+      "src": "/images/performance.jpg"
+    },
+    {
+      "name": "Nia Instruction",
+      "linkTo": "/nia-instruction",
+      "src": "/images/nia-instruction.jpg"
+    }
+  ]
+}
