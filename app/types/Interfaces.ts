@@ -20,6 +20,12 @@ export enum NavState {
   contact
 }
 
+export interface imageLink {
+  name: "string"
+  linkTo: "string"
+  src: "string"
+}
+
 export interface LinkInfo {
   name: string;
   link: string;
