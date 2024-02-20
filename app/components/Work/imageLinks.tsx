@@ -1,22 +1,17 @@
-import { NavState } from "@/app/types/Interfaces";
-
 export const imageLinks = [
   {
     name: "Visual Art",
     linkTo: "/visual-art",
-    src: "/images/fading_memories.jpg",
-    navState: NavState.visualArt
+    src: "/images/fading_memories.jpg"
   },
   {
     name: "Performance",
     linkTo: "/performance",
-    src: "/images/performance.jpg",
-    navState: NavState.peformance
+    src: "/images/performance.jpg"
   },
   {
     name: "Nia Instruction",
     linkTo: "/nia-instruction",
-    src: "/images/nia-instruction.jpg",
-    navState: NavState.nia
+    src: "/images/nia-instruction.jpg"
   },
 ];

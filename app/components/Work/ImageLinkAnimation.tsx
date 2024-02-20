@@ -1,16 +1,12 @@
-"use client";
-import React, { useContext } from "react";
-import { DisplayNavContext } from "@/app/provider/DisplayNavProvider";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { NavState } from "../../types/Interfaces";
 import { blurData } from "../Gallery/BlurData";
 
 interface Props {
   src: string;
   name: string;
   linkTo: string;
-  navState: NavState;
   i: number;
 }
 
@@ -18,14 +14,11 @@ const ImageLinkAnimation: React.FC<Props> = ({
   src,
   name,
   linkTo,
-  navState,
   i,
 }: Props) => {
-  const navContext = useContext(DisplayNavContext);
   return (
     <Link
       href={linkTo}
-      onClick={() => navContext?.setCurrentNav(navState)}
       className="w-full"
     >
       <div className="flex from-teal-100 via-teal-300 to-teal-500 bg-gradient-to-br shadow-2xl active:ring active:ring-white-100 cursor-pointer">

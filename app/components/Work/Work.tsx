@@ -13,7 +13,6 @@ const Work: React.FC = () => {
             src={imageLink.src}
             name={imageLink.name}
             linkTo={imageLink.linkTo}
-            navState={imageLink.navState}
             i={i}
           />
         ))}
