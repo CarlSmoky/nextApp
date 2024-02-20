@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ImageAndText from "../components/ImageAndText";
 import VideoWrapper from "../components/VideoWrapper";
 import PerformanceInfo from "../components/PerformanceInfo";
@@ -12,19 +11,13 @@ interface Props {
 }
 
 const PerformanceContentWrapper:React.FC<Props>= ({ parsedQueryString }) => {
-  const [data, setData] = useState<Performance[]>([]);
-  useEffect(() => {
-    const params = getParams(parsedQueryString.type);
-
-    // performanceData is currently static 
-    const filteredData = applyFilter(params, performanceData);
-    setData(filteredData);
-  }, [parsedQueryString]);
-
-  if (data.length === 0 ) return <div>Loading...</div>
+  const params = getParams(parsedQueryString.type);
+  // performanceData is currently static 
+  const filteredData = applyFilter(params, performanceData);
+  
   return (
     <>
-      {data.map((performance: Performance, i) => (
+      {filteredData.map((performance: Performance, i) => (
         <ImageAndText key={i}>
           <VideoWrapper
             VideoId={performance.VideoId}
