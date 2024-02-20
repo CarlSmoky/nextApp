@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { blurData } from "../Gallery/BlurData";
+import fs from "node:fs/promises";
+import { getPlaiceholder } from "plaiceholder";
 
 interface Props {
   src: string;
@@ -10,12 +11,15 @@ interface Props {
   i: number;
 }
 
-const ImageLinkAnimation: React.FC<Props> = ({
+const ImageLinkAnimation: React.FC<Props> = async ({
   src,
   name,
   linkTo,
   i,
 }: Props) => {
+  const buffer = await fs.readFile(`./public/${src}`);
+  const { base64 } = await getPlaiceholder(buffer);
+
   return (
     <Link
       href={linkTo}
@@ -36,7 +40,7 @@ const ImageLinkAnimation: React.FC<Props> = ({
             fill={true}
             sizes="(max-width: 480px) 100vw, 33vw"
             placeholder="blur"
-            blurDataURL={blurData}
+            blurDataURL={base64}
             priority={i === 0 ? true : false}
           />
         </div>
