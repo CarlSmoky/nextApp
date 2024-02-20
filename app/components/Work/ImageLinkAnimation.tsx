@@ -19,6 +19,7 @@ const ImageLinkAnimation: React.FC<Props> = ({
   return (
     <Link
       href={linkTo}
+      prefetch={false}
       className="w-full"
     >
       <div className="flex from-teal-100 via-teal-300 to-teal-500 bg-gradient-to-br shadow-2xl active:ring active:ring-white-100 cursor-pointer">
