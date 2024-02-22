@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import SectionWrapper from "../components/SectionWrapper";
 import ImageAndText from "../components/ImageAndText";
 import Video from "../components/Video";
-import ParagraphWrapper from "../components/ParagraphWrapper";
+import Text from "../components/Text";
 import BorderlineButton from "../components/BorderlineButton";
 import { IoTicketOutline } from "react-icons/io5";
 import { IoIosInformationCircleOutline } from "react-icons/io";
@@ -20,7 +20,10 @@ const AnnouncementPage: React.FC = () => {
           VideoId="1ggLRXBEy8Y"
           title="Mime-Dance by Noriko Yamamoto: Fading Memories"
         />
-        <ParagraphWrapper paragraph="March 8 - 13, 2024: Fading Memories art exhibition + performance in Tokyo, Japan.">
+        <Text>
+          <p>
+          March 8 - 13, 2024: Fading Memories art exhibition + performance in Tokyo, Japan.
+          </p>
           <BorderlineButton
             url="https://norikoyamamoto.themedia.jp/posts/50633765?categoryIds=618885"
             text="More Information (Japanese)"
@@ -33,7 +36,7 @@ const AnnouncementPage: React.FC = () => {
           >
             <IoTicketOutline size={20} className="m-2" />
           </BorderlineButton>
-        </ParagraphWrapper>
+        </Text>
       </ImageAndText>
     </SectionWrapper>
   );
