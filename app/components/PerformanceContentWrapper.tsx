@@ -1,6 +1,6 @@
 import React from "react";
 import ImageAndText from "../components/ImageAndText";
-import VideoWrapper from "../components/VideoWrapper";
+import Video from "./Video";
 import PerformanceInfo from "../components/PerformanceInfo";
 import { performanceData } from "../performance/performanceData";
 import { Performance } from "../types/Interfaces";
@@ -19,7 +19,7 @@ const PerformanceContentWrapper:React.FC<Props>= ({ parsedQueryString }) => {
     <>
       {filteredData.map((performance: Performance, i) => (
         <ImageAndText key={i}>
-          <VideoWrapper
+          <Video
             VideoId={performance.VideoId}
             title={performance.title}
           />
