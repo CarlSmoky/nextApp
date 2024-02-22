@@ -1,7 +1,7 @@
 import React from "react";
-import ImageAndText from "../components/ImageAndText";
+import ImageAndText from "./ImageAndText";
 import Video from "./Video";
-import PerformanceInfo from "../components/PerformanceInfo";
+import PerformanceInfo from "./PerformanceInfo";
 import { performanceData } from "../performance/performanceData";
 import { Performance } from "../types/Interfaces";
 import { applyFilter, getParams } from "../utils/datahandling";
@@ -10,7 +10,7 @@ interface Props {
   parsedQueryString: { type: string | string[] }
 }
 
-const PerformanceContentWrapper:React.FC<Props>= ({ parsedQueryString }) => {
+const PerformanceList:React.FC<Props>= ({ parsedQueryString }) => {
   const params = getParams(parsedQueryString.type);
   // performanceData is currently static 
   const filteredData = applyFilter(params, performanceData);
@@ -38,4 +38,4 @@ const PerformanceContentWrapper:React.FC<Props>= ({ parsedQueryString }) => {
   );
 };
 
-export default PerformanceContentWrapper;
+export default PerformanceList;

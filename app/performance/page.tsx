@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import SectionWrapper from "../components/SectionWrapper";
-import PerformanceContentWrapper from "../components/PerformanceContentWrapper";
+import PerformanceList from "../components/PerformanceList";
 
 export const metadata: Metadata = {
   title: "Performance",
@@ -15,7 +15,7 @@ const PerformancePage = ({
   return (
     <SectionWrapper title="Performance">
       <Suspense fallback={<div>Loading...</div>}>
-        <PerformanceContentWrapper parsedQueryString={searchParams} />
+        <PerformanceList parsedQueryString={searchParams} />
       </Suspense>
     </SectionWrapper>
   );
