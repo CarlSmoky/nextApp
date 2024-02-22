@@ -1,7 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
 import SectionWrapper from "../components/SectionWrapper";
-import ImageAndText from "../components/ImageAndText";
 import Video from "../components/Video";
 import Text from "../components/Text";
 import BorderlineButton from "../components/BorderlineButton";
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 const AnnouncementPage: React.FC = () => {
   return (
     <SectionWrapper title="Announcement">
-      <ImageAndText>
+      <div className="flex-wrapper">
         <Video
           VideoId="1ggLRXBEy8Y"
           title="Mime-Dance by Noriko Yamamoto: Fading Memories"
@@ -37,7 +36,7 @@ const AnnouncementPage: React.FC = () => {
             <IoTicketOutline size={20} className="m-2" />
           </BorderlineButton>
         </Text>
-      </ImageAndText>
+      </div>
     </SectionWrapper>
   );
 };
