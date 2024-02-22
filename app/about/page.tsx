@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import ImageAndText from "../components/ImageAndText";
 import SectionWrapper from "../components/SectionWrapper";
 import PortraitImage from "../components/PortraitImage";
-import ItalicWrapper from "../components/ItalicWrapper";
 import TextWithlineClampButton from "../components/TextWithlineClampButton";
 
 export const metadata: Metadata = {
@@ -20,8 +19,8 @@ const AboutPage: React.FC = () => {
     <SectionWrapper title="Noriko Yamamoto">
       <ImageAndText>
         <PortraitImage src="/images/noriko.jpg" alt="portrait" />
-        <div className="w-full md:w-2/3 mt-10 md:ml-6 md:mt-0">
-          <ItalicWrapper>
+        <div className="w-full md:w-2/3 mt-10 md:mt-0 md:ml-6 text-left text-grey-100 font-paragraph text-base md:text-lg lg:text-xl tracking-wide">
+          <div className="italic text-sm md:text-base lg:text-lg">
             <p>
               {spaces.long}loves
               ...
@@ -36,7 +35,7 @@ const AboutPage: React.FC = () => {
             <p className="whitespace-nowrap">
               Alberto Giacometti{spaces.betweenWords}Isamu Noguchi
             </p>
-          </ItalicWrapper>
+          </div>
           <TextWithlineClampButton>
             <br />
             After a long successful performance career in Tokyo, Noriko Yamamoto moved to Toronto in 1994 to be with her husband. She initially came with two suitcases, her son, cat, and rice cooker. <span className="italic text-sm md:text-base lg:text-lg">(the gallery is named after this special cat)</span>
