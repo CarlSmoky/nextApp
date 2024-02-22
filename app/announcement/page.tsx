@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import SectionWrapper from "../components/SectionWrapper";
 import ImageAndText from "../components/ImageAndText";
-import VideoWrapper from "../components/VideoWrapper";
+import Video from "../components/Video";
 import ParagraphWrapper from "../components/ParagraphWrapper";
 import BorderlineButton from "../components/BorderlineButton";
 import { IoTicketOutline } from "react-icons/io5";
@@ -16,7 +16,7 @@ const AnnouncementPage: React.FC = () => {
   return (
     <SectionWrapper title="Announcement">
       <ImageAndText>
-        <VideoWrapper
+        <Video
           VideoId="1ggLRXBEy8Y"
           title="Mime-Dance by Noriko Yamamoto: Fading Memories"
         />

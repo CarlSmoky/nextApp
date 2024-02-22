@@ -2,10 +2,9 @@ import React from "react";
 import type { Metadata } from "next";
 import ImageAndText from "../components/ImageAndText";
 import SectionWrapper from "../components/SectionWrapper";
-import ImageWrapper from "../components/ImageWrapper";
-import TextWithImageWrapper from "../components/TextWithImageWrapper";
+import PortraitImage from "../components/PortraitImage";
 import ItalicWrapper from "../components/ItalicWrapper";
-import LongTextWithButtonWrapper from "../components/LongTextWithButtonWrapper";
+import TextWithlineClampButton from "../components/TextWithlineClampButton";
 
 export const metadata: Metadata = {
   title: "About Noriko Yamamoto",
@@ -20,8 +19,8 @@ const AboutPage: React.FC = () => {
   return (
     <SectionWrapper title="Noriko Yamamoto">
       <ImageAndText>
-        <ImageWrapper src="/images/noriko.jpg" alt="portrait" />
-        <TextWithImageWrapper>
+        <PortraitImage src="/images/noriko.jpg" alt="portrait" />
+        <div className="w-full md:w-2/3 mt-10 md:ml-6 md:mt-0">
           <ItalicWrapper>
             <p>
               {spaces.long}loves
@@ -38,7 +37,7 @@ const AboutPage: React.FC = () => {
               Alberto Giacometti{spaces.betweenWords}Isamu Noguchi
             </p>
           </ItalicWrapper>
-          <LongTextWithButtonWrapper>
+          <TextWithlineClampButton>
             <br />
             After a long successful performance career in Tokyo, Noriko Yamamoto moved to Toronto in 1994 to be with her husband. She initially came with two suitcases, her son, cat, and rice cooker. <span className="italic text-sm md:text-base lg:text-lg">(the gallery is named after this special cat)</span>
             <br />
@@ -52,8 +51,8 @@ const AboutPage: React.FC = () => {
             In 2019 at the Promise of Sekishu Washi exhibition at Propeller Art Gallery in Toronto, her piece, Sora, received an Honourable Mention from the judges and won the Audience Choice Award. It was at this point that she joined the collective, Washi Sisters, and since then, has been enjoying the challenge of using traditional Japanese handmade paper in her artworks.
             <br />
             <br />
-          </LongTextWithButtonWrapper>
-        </TextWithImageWrapper>
+          </TextWithlineClampButton>
+        </div>
       </ImageAndText>
     </SectionWrapper>
   );

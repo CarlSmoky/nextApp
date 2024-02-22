@@ -1,7 +1,7 @@
 import React from "react";
 import SectionWrapper from "../../components/SectionWrapper";
 import ImageAndText from "../../components/ImageAndText";
-import ArtImageWrapper from "../../components/ArtImageWrapper";
+import SquareImage from "../../components/SquareImage";
 import ArtInfo from "../../components/ArtInfo";
 import { visualArtData } from "../VisualArtData";
 import { toTitleCase } from "../../utils/textFormat";
@@ -30,7 +30,7 @@ const page = ({ params }: { params: { seriesTitle: string } }) => {
         .filter((series) => series.title.toLowerCase() === params.seriesTitle.toLowerCase())[0]
         .images.map((image, i) => (
           <ImageAndText key={i}>
-            <ArtImageWrapper src={image.src} alt={image.title} i={i}/>
+            <SquareImage src={image.src} alt={image.title} i={i}/>
             <ArtInfo
               title={toTitleCase(image.title)}
               size={image.size}

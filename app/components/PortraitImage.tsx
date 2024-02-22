@@ -8,7 +8,7 @@ interface Props {
   alt: string;
 }
 
-const ImageWrapper: React.FC<Props> = async ({ src, alt }: Props) => {
+const PortraitImage: React.FC<Props> = async ({ src, alt }: Props) => {
 
   const buffer = await fs.readFile(`./public/${src}`);
   const { base64 } = await getPlaiceholder(buffer);
@@ -27,4 +27,4 @@ const ImageWrapper: React.FC<Props> = async ({ src, alt }: Props) => {
   );
 };
 
-export default ImageWrapper;
+export default PortraitImage;

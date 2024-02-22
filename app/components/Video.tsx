@@ -5,7 +5,7 @@ interface Props {
   title: string;
 }
 
-const VideoWrapper: React.FC<Props> = ({ VideoId, title }: Props) => {
+const Video: React.FC<Props> = ({ VideoId, title }: Props) => {
   return (
     <div className="m-auto md:mt-0 w-full aspect-video md:w-1/2">
       <iframe
@@ -56,4 +56,4 @@ const VideoWrapper: React.FC<Props> = ({ VideoId, title }: Props) => {
   );
 };
 
-export default VideoWrapper;
+export default Video;
