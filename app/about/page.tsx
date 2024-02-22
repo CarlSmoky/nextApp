@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import ImageAndText from "../components/ImageAndText";
 import SectionWrapper from "../components/SectionWrapper";
 import PortraitImage from "../components/PortraitImage";
-import TextWithImageWrapper from "../components/TextWithImageWrapper";
 import ItalicWrapper from "../components/ItalicWrapper";
 import TextWithlineClampButton from "../components/TextWithlineClampButton";
 
@@ -21,7 +20,7 @@ const AboutPage: React.FC = () => {
     <SectionWrapper title="Noriko Yamamoto">
       <ImageAndText>
         <PortraitImage src="/images/noriko.jpg" alt="portrait" />
-        <TextWithImageWrapper>
+        <div className="w-full md:w-2/3 mt-10 md:ml-6 md:mt-0">
           <ItalicWrapper>
             <p>
               {spaces.long}loves
@@ -53,7 +52,7 @@ const AboutPage: React.FC = () => {
             <br />
             <br />
           </TextWithlineClampButton>
-        </TextWithImageWrapper>
+        </div>
       </ImageAndText>
     </SectionWrapper>
   );
