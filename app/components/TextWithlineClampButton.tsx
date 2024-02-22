@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { childrenProps } from "../types/Interfaces";
 import UnderlineButton from "./UnderlineButton";
 
-const LongTextWithButtonWrapper: React.FC<childrenProps> = ({ children }: childrenProps) => {
+const TextWithlineClampButton: React.FC<childrenProps> = ({ children }: childrenProps) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleToggle = () => {
@@ -23,4 +23,4 @@ const LongTextWithButtonWrapper: React.FC<childrenProps> = ({ children }: childr
   )
 }
 
-export default LongTextWithButtonWrapper
+export default TextWithlineClampButton
