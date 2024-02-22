@@ -7,7 +7,7 @@ interface Props {
   i: number;
 }
 
-const ArtImageWrapper: React.FC<Props> = ({ src, alt, i }: Props) => {
+const SquareImage: React.FC<Props> = ({ src, alt, i }: Props) => {
   return (
     <div className="w-full md:w-1/2 bg-white-200/40 aspect-square relative">
       <div className="w-[97%] h-[97%] m-auto">
@@ -26,4 +26,4 @@ const ArtImageWrapper: React.FC<Props> = ({ src, alt, i }: Props) => {
   );
 };
 
-export default ArtImageWrapper;
+export default SquareImage;
