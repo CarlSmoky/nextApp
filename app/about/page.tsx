@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import ImageAndText from "../components/ImageAndText";
 import SectionWrapper from "../components/SectionWrapper";
-import ImageWrapper from "../components/ImageWrapper";
+import PortraitImage from "../components/PortraitImage";
 import TextWithImageWrapper from "../components/TextWithImageWrapper";
 import ItalicWrapper from "../components/ItalicWrapper";
 import LongTextWithButtonWrapper from "../components/LongTextWithButtonWrapper";
@@ -20,7 +20,7 @@ const AboutPage: React.FC = () => {
   return (
     <SectionWrapper title="Noriko Yamamoto">
       <ImageAndText>
-        <ImageWrapper src="/images/noriko.jpg" alt="portrait" />
+        <PortraitImage src="/images/noriko.jpg" alt="portrait" />
         <TextWithImageWrapper>
           <ItalicWrapper>
             <p>
