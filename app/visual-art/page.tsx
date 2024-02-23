@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Metadata } from "next";
-import SectionWrapper from "../components/SectionWrapper";
+import SectionwithTitle from "../components/SectionwithTitle";
 import GalleryWithStaticImage from '../components/Gallery/GalleryWithStaticImage'
 
 export const metadata: Metadata = {
@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const VisualArtPage = () => {
   return (
-    <SectionWrapper title="Visual Art">
+    <SectionwithTitle title="Visual Art">
       <GalleryWithStaticImage/>
-    </SectionWrapper>
+    </SectionwithTitle>
   )
 }
 

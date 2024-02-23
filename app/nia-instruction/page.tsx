@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import SectionWrapper from "../components/SectionWrapper";
+import SectionwithTitle from "../components/SectionwithTitle";
 import Video from "../components/Video";
 import Text from "../components/Text"
 
@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 
 const NiaInstructionPage: React.FC = () => {
   return (
-    <SectionWrapper title="Nia Instruction">
+    <SectionwithTitle title="Nia Instruction">
       <div className="flex-wrapper">
         <Video
           VideoId="fLJ0Piaqk3Y"
           title="Nia Instruction"
         />
         <Text>
-          <p>
+          <p className="lg:min-h-[350px]">
           Nia blends modern and ethnic dance with elements of martial arts, tai
           chi, and yoga to give a low impact, full&nbsp;
           <span className="italic">
@@ -27,7 +27,7 @@ const NiaInstructionPage: React.FC = () => {
           </p>
         </Text>
       </div>
-    </SectionWrapper>
+    </SectionwithTitle>
   );
 };
 

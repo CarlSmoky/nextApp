@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
-import SectionWrapper from "../components/SectionWrapper";
+import SectionwithTitle from "../components/SectionwithTitle";
 import PerformanceList from "../components/PerformanceList";
 
 export const metadata: Metadata = {
@@ -13,11 +13,11 @@ const PerformancePage = ({
   searchParams: { type: string | string[] };
 }) => {
   return (
-    <SectionWrapper title="Performance">
+    <SectionwithTitle title="Performance">
       <Suspense fallback={<div>Loading...</div>}>
         <PerformanceList parsedQueryString={searchParams} />
       </Suspense>
-    </SectionWrapper>
+    </SectionwithTitle>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import SectionWrapper from "../components/SectionWrapper";
+import SectionwithTitle from "../components/SectionwithTitle";
 import Video from "../components/Video";
 import Text from "../components/Text";
 import BorderlineButton from "../components/BorderlineButton";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const AnnouncementPage: React.FC = () => {
   return (
-    <SectionWrapper title="Announcement">
+    <SectionwithTitle title="Announcement">
       <div className="flex-wrapper">
         <Video
           VideoId="1ggLRXBEy8Y"
@@ -37,7 +37,7 @@ const AnnouncementPage: React.FC = () => {
           </BorderlineButton>
         </Text>
       </div>
-    </SectionWrapper>
+    </SectionwithTitle>
   );
 };
 

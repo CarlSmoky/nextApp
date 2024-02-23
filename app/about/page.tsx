@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import SectionWrapper from "../components/SectionWrapper";
+import SectionwithTitle from "../components/SectionwithTitle";
 import PortraitImage from "../components/PortraitImage";
 import TextWithlineClampButton from "../components/TextWithlineClampButton";
 
@@ -15,7 +15,7 @@ const spaces = {
 
 const AboutPage: React.FC = () => {
   return (
-    <SectionWrapper title="Noriko Yamamoto">
+    <SectionwithTitle title="Noriko Yamamoto">
       <div className="flex-wrapper">
         <PortraitImage src="/images/noriko.jpg" alt="portrait" />
         <div className="w-full md:w-2/3 mt-10 md:mt-0 md:ml-6 text-left text-grey-100 font-paragraph text-base md:text-lg lg:text-xl tracking-wide">
@@ -52,7 +52,7 @@ const AboutPage: React.FC = () => {
           </TextWithlineClampButton>
         </div>
       </div>
-    </SectionWrapper>
+    </SectionwithTitle>
   );
 };
 
