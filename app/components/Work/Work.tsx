@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import fs from "node:fs/promises";
-import SectionWrapper from "../SectionWrapper";
+import SectionwithTitle from "../SectionwithTitle";
 import ImageLinkAnimation from "./ImageLinkAnimation";
 import { imageLink } from "../../types/Interfaces";
 
@@ -9,7 +9,7 @@ const Work: React.FC = async () => {
   const data = JSON.parse(file);
 
   return (
-    <SectionWrapper title="Work">
+    <SectionwithTitle title="Work">
         <div className="flex flex-col sm:flex-row gap-4">
           <Suspense fallback={<div className="m-auto"><p className="font-paragraph">Loading...</p></div>}>
             {data.imageLinks.map((imageLink: imageLink, i: number) => (
@@ -23,7 +23,7 @@ const Work: React.FC = async () => {
             ))}
           </Suspense>
         </div>
-    </SectionWrapper>
+    </SectionwithTitle>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
-import SectionWrapper from "../../components/SectionWrapper";
-import ImageAndText from "../../components/ImageAndText";
+import SectionwithTitle from "../../components/SectionwithTitle";
 import SquareImage from "../../components/SquareImage";
 import ArtInfo from "../../components/ArtInfo";
 import { visualArtData } from "../VisualArtData";
@@ -18,7 +17,7 @@ const page = ({ params }: { params: { seriesTitle: string } }) => {
     );
 
   return (
-    <SectionWrapper title={toTitleCase(params.seriesTitle)}>
+    <SectionwithTitle title={toTitleCase(params.seriesTitle)}>
       <div className="text-base lg:text-lg font-paragraph">
         <p>
           <span className="text-sm">Type: </span>
@@ -29,7 +28,7 @@ const page = ({ params }: { params: { seriesTitle: string } }) => {
       {visualArtData
         .filter((series) => series.title.toLowerCase() === params.seriesTitle.toLowerCase())[0]
         .images.map((image, i) => (
-          <ImageAndText key={i}>
+          <div className="flex-wrapper" key={i}>
             <SquareImage src={image.src} alt={image.title} i={i}/>
             <ArtInfo
               title={toTitleCase(image.title)}
@@ -37,9 +36,9 @@ const page = ({ params }: { params: { seriesTitle: string } }) => {
               media={image.media}
               year={image.year}
             />
-          </ImageAndText>
+          </div>
         ))}
-    </SectionWrapper>
+    </SectionwithTitle>
   );
 };
 

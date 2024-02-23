@@ -12,9 +12,7 @@ const TextWithlineClampButton: React.FC<childrenProps> = ({ children }: children
   return (
     <div>
       <p
-        className={`${
-          open ? "line-clamp-none" : "line-clamp-10"
-        } text-left text-grey-100 text-base md:text-lg lg:text-xl font-paragraph tracking-wide`}
+        className={`${open ? "line-clamp-none" : "line-clamp-10"}`}
       >
         {children}
       </p>

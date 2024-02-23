@@ -1,5 +1,4 @@
 import React from "react";
-import ImageAndText from "./ImageAndText";
 import Video from "./Video";
 import PerformanceInfo from "./PerformanceInfo";
 import { performanceData } from "../performance/performanceData";
@@ -18,7 +17,7 @@ const PerformanceList:React.FC<Props>= ({ parsedQueryString }) => {
   return (
     <>
       {filteredData.map((performance: Performance, i) => (
-        <ImageAndText key={i}>
+        <div className="flex-wrapper " key={i}>
           <Video
             VideoId={performance.VideoId}
             title={performance.title}
@@ -32,7 +31,7 @@ const PerformanceList:React.FC<Props>= ({ parsedQueryString }) => {
             date={performance.date}
             VideoId={performance.VideoId}
           />
-        </ImageAndText>
+        </div>
       ))}
     </>
   );
