@@ -1,4 +1,3 @@
-import React from "react";
 import { toTitleCase, formatForKey } from "../utils/textFormat";
 import { Performance, VisualArtImage } from "../types/Interfaces";
 
