@@ -10,7 +10,7 @@ const PerformanceListItem:React.FC<PerformanceListItemProps> = ({item}) => {
   const displayKey = ["type", "event", "location", "date"];
   const titleCaseKeys = ["type", "event", "location", "date"];
   return (
-    <li className="flex-wrapper ">
+    <li className="flex-wrapper">
       <Video title={item.title} VideoId={item.VideoId}/>
       <Details item={item} displayKey={displayKey} titleCaseKeys={titleCaseKeys}/>
     </li>
