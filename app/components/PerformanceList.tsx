@@ -1,39 +1,24 @@
 import React from "react";
-import Video from "./Video";
-import PerformanceInfo from "./PerformanceInfo";
 import { performanceData } from "../performance/performanceData";
 import { Performance } from "../types/Interfaces";
 import { applyFilter, getParams } from "../utils/datahandling";
+import PerformanceListItem from "./PerformanceListItem";
 
-interface Props {
+interface PerformanceListProps {
   parsedQueryString: { type: string | string[] }
 }
 
-const PerformanceList:React.FC<Props>= ({ parsedQueryString }) => {
+const PerformanceList:React.FC<PerformanceListProps>= ({ parsedQueryString }) => {
   const params = getParams(parsedQueryString.type);
   // performanceData is currently static 
-  const filteredData = applyFilter(params, performanceData);
-  
+  const filteredData = applyFilter(params, performanceData);  
+  const performanceListItems = filteredData.map((performance: Performance, i) => 
+    <PerformanceListItem key={i} item={performance}/>
+  )
   return (
-    <>
-      {filteredData.map((performance: Performance, i) => (
-        <div className="flex-wrapper " key={i}>
-          <Video
-            VideoId={performance.VideoId}
-            title={performance.title}
-          />
-          <PerformanceInfo
-            title={performance.title}
-            subTitle={performance.subTitle}
-            type={performance.type}
-            event={performance.event}
-            location={performance.location}
-            date={performance.date}
-            VideoId={performance.VideoId}
-          />
-        </div>
-      ))}
-    </>
+    <ul>
+    {performanceListItems}
+    </ul>
   );
 };
 
