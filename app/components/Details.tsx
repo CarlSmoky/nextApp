@@ -1,5 +1,6 @@
 import { toTitleCase, formatForKey } from "../utils/textFormat";
 import { Performance, VisualArtImage } from "../types/Interfaces";
+import Text from "./Text";
 
 type DetailsProps = {
   item: Performance | VisualArtImage;
@@ -9,7 +10,7 @@ type DetailsProps = {
 
 const Details: React.FC<DetailsProps> = ({ item, displayKey, titleCaseKeys }) => {
   return (
-    <div className="w-auto mt-4 mb-10 md:mt-0 md:ml-8 md:w-1/2 text-left text-grey-100  tracking-wide">
+    <Text>
       <h3 className="font-title font-bold text-lg md:text-xl lg:text-2xl">
         {toTitleCase(item.title)}
       </h3>
@@ -26,7 +27,7 @@ const Details: React.FC<DetailsProps> = ({ item, displayKey, titleCaseKeys }) =>
             )
         )}
       </div>
-    </div>
+    </Text>
   );
 };
 

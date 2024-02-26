@@ -17,7 +17,7 @@ const NiaInstructionPage: React.FC = () => {
           title="Nia Instruction"
         />
         <Text>
-          <p className="lg:min-h-[350px]">
+          <p className="lg:min-h-[350px] pt-4 md:pt-0">
           Nia blends modern and ethnic dance with elements of martial arts, tai
           chi, and yoga to give a low impact, full&nbsp;
           <span className="italic">

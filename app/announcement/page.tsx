@@ -20,7 +20,7 @@ const AnnouncementPage: React.FC = () => {
           title="Mime-Dance by Noriko Yamamoto: Fading Memories"
         />
         <Text>
-          <p>
+          <p className="py-4 md:pt-0">
           March 8 - 13, 2024: Fading Memories art exhibition + performance in Tokyo, Japan.
           </p>
           <BorderlineButton
