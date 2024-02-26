@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import SectionwithTitle from "../components/SectionwithTitle";
 import PortraitImage from "../components/PortraitImage";
 import TextWithlineClampButton from "../components/TextWithlineClampButton";
+import Compliment from "../components/Compliment";
 
 export const metadata: Metadata = {
   title: "About Noriko Yamamoto",
@@ -18,8 +19,9 @@ const AboutPage: React.FC = () => {
     <SectionwithTitle title="Noriko Yamamoto">
       <div className="flex-wrapper">
         <PortraitImage src="/images/noriko.jpg" alt="portrait" />
-        <div className="w-full md:w-2/3 mt-10 md:mt-0 md:ml-6 text-left text-grey-100 font-paragraph text-base md:text-lg lg:text-xl tracking-wide">
-          <div className="italic text-sm md:text-base lg:text-lg">
+        <Compliment widthRatio="twoThird">
+
+          <div className="italic text-sm md:text-base lg:text-lg pt-6 md:pt-0">
             <p>
               {spaces.long}loves
               ...
@@ -50,7 +52,7 @@ const AboutPage: React.FC = () => {
             <br />
             <br />
           </TextWithlineClampButton>
-        </div>
+        </Compliment>
       </div>
     </SectionwithTitle>
   );
