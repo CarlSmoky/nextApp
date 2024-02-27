@@ -109,9 +109,9 @@ const ContactForm = () => {
       className="w-full lg:w-2/3 p-8  my-3 mr-auto text-grey-100"
       onSubmit={handleSubmit}
     >
-      <h1 className="font-bold text-2xl lg:text-3xl font-title">
+      <h2 className="font-bold text-2xl lg:text-3xl font-title">
         Send me a message
-      </h1>
+      </h2>
       <div className="font-paragraph">
         {Object.entries(errors).some(([k, v]) => v === true) && (
           <span className="text-red-100">Please fill in {errorFileds}. </span>

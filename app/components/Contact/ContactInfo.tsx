@@ -7,18 +7,18 @@ const ContactInfo:React.FC = () => {
   return (
     <div className="w-full lg:w-1/3 px-8 lg:px-3 py-12 bg-prime-100">
       <div className="flex flex-col text-grey-100">
-        <h1 className="font-bold text-2xl lg:text-3xl my-4 font-title">
+        <h3 className="font-bold text-2xl lg:text-3xl my-4 font-title">
           Gallery hours:
           <br/>
           By appointment
-        </h1>
+        </h3>
         <Link href="https://maps.app.goo.gl/461nGG59xpnmvXNt7" target="_blank">
           <div className="flex my-4">
             <div className="flex flex-col pt-1 pr-1">
               <IoIosPin size={23} />
             </div>
             <div className="flex flex-col">
-              <h2 className="text-xl font-title">Gallery</h2>
+              <h4 className="text-xl font-title">Gallery</h4>
               <p className="text-base font-paragraph">
               <span className="whitespace-nowrap">692 St.Clarens Ave. Studio #8</span>
                 <br />
@@ -36,7 +36,7 @@ const ContactInfo:React.FC = () => {
               <MdEmail size={23} />
             </div>
             <div className="flex flex-col">
-              <h2 className="text-xl font-title">Email</h2>
+              <h4 className="text-xl font-title">Email</h4>
               <p className="text-base font-paragraph">
                 performernoriko@gmail.com
               </p>
