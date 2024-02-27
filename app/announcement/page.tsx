@@ -1,8 +1,7 @@
-import React from "react";
 import type { Metadata } from "next";
 import SectionwithTitle from "../components/SectionwithTitle";
 import Video from "../components/Video";
-import Compliment from "../components/Compliment";
+import TextInfoWrapper from "../components/TextInfoWrapper";
 import BorderlineButton from "../components/BorderlineButton";
 import { IoTicketOutline } from "react-icons/io5";
 import { IoIosInformationCircleOutline } from "react-icons/io";
@@ -19,7 +18,7 @@ const AnnouncementPage: React.FC = () => {
           VideoId="1ggLRXBEy8Y"
           title="Mime-Dance by Noriko Yamamoto: Fading Memories"
         />
-        <Compliment widthRatio="half">
+        <TextInfoWrapper breakePointWidth="half">
           <p className="py-4 md:pt-0">
           March 8 - 13, 2024: Fading Memories art exhibition + performance in Tokyo, Japan.
           </p>
@@ -35,7 +34,7 @@ const AnnouncementPage: React.FC = () => {
           >
             <IoTicketOutline size={20} className="m-2" />
           </BorderlineButton>
-        </Compliment>
+        </TextInfoWrapper>
       </div>
     </SectionwithTitle>
   );

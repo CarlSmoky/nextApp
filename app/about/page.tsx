@@ -1,9 +1,8 @@
-import React from "react";
 import type { Metadata } from "next";
 import SectionwithTitle from "../components/SectionwithTitle";
 import PortraitImage from "../components/PortraitImage";
 import TextWithlineClampButton from "../components/TextWithlineClampButton";
-import Compliment from "../components/Compliment";
+import TextInfoWrapper from "../components/TextInfoWrapper";
 
 export const metadata: Metadata = {
   title: "About Noriko Yamamoto",
@@ -19,8 +18,7 @@ const AboutPage: React.FC = () => {
     <SectionwithTitle title="Noriko Yamamoto">
       <div className="flex-wrapper">
         <PortraitImage src="/images/noriko.jpg" alt="portrait" />
-        <Compliment widthRatio="twoThird">
-
+        <TextInfoWrapper breakePointWidth="twoThirds">
           <div className="italic text-sm md:text-base lg:text-lg pt-6 md:pt-0">
             <p>
               {spaces.long}loves
@@ -52,7 +50,7 @@ const AboutPage: React.FC = () => {
             <br />
             <br />
           </TextWithlineClampButton>
-        </Compliment>
+        </TextInfoWrapper>
       </div>
     </SectionwithTitle>
   );
