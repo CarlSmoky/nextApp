@@ -23,7 +23,7 @@ const Footer = () => {
                 className="sm:cursor-pointer w-36 "
               />
             </Link>
-            <p className="text-center text-sm lg:text-xs whitespace-nowrap">
+            <p className="p-2 text-center text-sm lg:text-xs whitespace-nowrap">
               © {currentYear} Momo gallery. All rights reserved
             </p>
         </div>
