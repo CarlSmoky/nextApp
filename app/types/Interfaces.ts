@@ -80,6 +80,7 @@ export interface VisualArtImage {
   id: number;
   src: string;
   title: string;
+  subTitle?: string;
   size?: string;
   media?: string;
   year?: number;

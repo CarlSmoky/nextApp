@@ -1,11 +1,11 @@
 import React from "react";
 
-interface Props {
-  VideoId: string;
+type VideoProps = {
   title: string;
+  VideoId: string;
 }
 
-const Video: React.FC<Props> = ({ VideoId, title }: Props) => {
+const Video: React.FC<VideoProps> = ( { title, VideoId } ) => {
   return (
     <div className="m-auto md:mt-0 w-full aspect-video md:w-1/2">
       <iframe

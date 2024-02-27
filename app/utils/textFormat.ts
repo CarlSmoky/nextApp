@@ -34,3 +34,11 @@ export const getPerformanceTypeName = (performanceType: PerformanceType): string
     return toTitleCase(performanceType)
   }
 }
+
+export const formatForKey = (key: string, input: string, titleCaseKeys:string[]): string => {
+  if (titleCaseKeys.includes(key)) {
+    return toTitleCase(input)
+  } else {
+    return input
+  }
+}
