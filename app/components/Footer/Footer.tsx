@@ -1,8 +1,7 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BsInstagram, BsYoutube } from "react-icons/bs";
 import FooterNav from "./FooterNav";
+import SnsLinks from "../SnsLinks";
 import Logo from "../../../public/images/Logo.png";
 
 const Footer = () => {
@@ -10,34 +9,23 @@ const Footer = () => {
   const currentYear = currentDate.getFullYear();
 
   return (
-    <footer className="margin-global bottom-0 border-t border-grey-200">
+    <footer className="margin-global bottom-0 border-t border-grey-200 font-paragraph text-grey-200">
       <div className="flex flex-col md:flex-row justify-between">
         <FooterNav />
         <div className="flex flex-col justify-end">
-          <ul className="flex justify-center lg:m-auto">
-            <li className="nav-sns">
-              <Link href="https://www.instagram.com/noriko_toronto/" target="blank">
-                <BsInstagram size={25} />
-                <span className="sr-only">instagram</span>
-              </Link>
-            </li>
-            <li className="nav-sns">
-              <Link href="https://www.youtube.com/@norikoyamamoto7147" target="blank">
-                <BsYoutube size={25} />
-                <span className="sr-only">youtube</span>
-              </Link>
-            </li>
+          <ul className="flex justify-center lg:m-auto text-grey-200">
+            <SnsLinks />
           </ul>
             <Link href="/" className="p-3 mx-auto">
               <Image
                 src={Logo}
-                alt="logo"
+                alt="Momo Gallery Logo"
                 className="sm:cursor-pointer w-36 "
               />
             </Link>
-            <h3 className="text-center font-paragraph text-sm lg:text-xs text-grey-100 whitespace-nowrap">
+            <p className="text-center text-sm lg:text-xs whitespace-nowrap">
               © {currentYear} Momo gallery. All rights reserved
-            </h3>
+            </p>
         </div>
       </div>
     </footer>

@@ -19,22 +19,15 @@ const AboutPage: React.FC = () => {
       <div className="flex-wrapper">
         <PortraitImage src="/images/noriko.jpg" alt="portrait" />
         <TextInfoWrapper breakePointWidth="twoThirds">
-          <div className="italic text-sm md:text-base lg:text-lg pt-6 md:pt-0">
-            <p>
-              {spaces.long}loves
-              ...
-            </p>
-            <p className="whitespace-nowrap">
-              cats{spaces.betweenWords}cello{spaces.betweenWords}skywatching{spaces.betweenWords}crescent
-              moons
-            </p>
-            <p className="whitespace-nowrap">
-              Charlie Chaplin{spaces.betweenWords}Jean-Louis Barrault
-            </p>
-            <p className="whitespace-nowrap">
-              Alberto Giacometti{spaces.betweenWords}Isamu Noguchi
-            </p>
-          </div>
+          <p className="italic text-sm md:text-base lg:text-lg pt-6 md:pt-0">
+            {spaces.long}loves...
+            <br />
+            cats{spaces.betweenWords}cello{spaces.betweenWords}skywatching{spaces.betweenWords}crescent moons
+            <br />
+            Charlie Chaplin{spaces.betweenWords}Jean-Louis Barrault
+            <br />
+            Alberto Giacometti{spaces.betweenWords}Isamu Noguchi
+          </p>
           <TextWithlineClampButton>
             <br />
             After a long successful performance career in Tokyo, Noriko Yamamoto moved to Toronto in 1994 to be with her husband. She initially came with two suitcases, her son, cat, and rice cooker. <span className="italic text-sm md:text-base lg:text-lg">(the gallery is named after this special cat)</span>

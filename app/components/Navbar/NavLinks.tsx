@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LinkInfo, Sublink } from "../../types/Interfaces";
@@ -19,10 +19,10 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
   return (
     <>
       {links.map((link: LinkInfo, i) => (
-        <div key={i}>
-          <div className="text-left md:cursor-pointer group">
-            <h1
-              className={`py-7 px-3 lg:px-2 flex align-baseline text-grey-200 text-base xl:text-lg font-paragraph hover:text-black-100 ${
+        <Fragment key={i}>
+          <li className="text-left md:cursor-pointer group">
+            <div
+              className={`py-7 px-3 lg:px-2 flex align-baseline hover:text-black-100 ${
                 removeExcessivePathSegments(pathname) === link.link ? "underline underline-offset-4" : ""}`}
             >
               <Link onClick={clickHandler} href={link.link} prefetch={false}>
@@ -49,28 +49,27 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
                   <RiArrowDownSLine />
                 </div>
               )}
-            </h1>
+            </div>
             {link.submenu && (
               <div>
                 <div className="absolute top-20 hidden group-hover:lg:block hover:lg:block z-10">
-                  <div className="bg-prime-100 rounded-sm grid grid-cols-3 px-5 ">
+                  <ul className="bg-prime-100 rounded-sm grid grid-cols-3 px-5 ">
                     {link.sublinks.map((slink: Sublink, i) => (
                       <Link
                         key={i}
                         href={slink.link}
-                        className="hover:text-black-100 transition-all duration-300 ease-in-out"
                         prefetch={false}
                       >
-                        <li className="text-sm font-paragraph text-grey-200 my-2.5">
+                        <li className="text-sm my-2.5 hover:text-black-100 transition-all duration-300 ease-in-out">
                           {slink.name}
                         </li>
                       </Link>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
             )}
-          </div>
+          </li>
           {/* Mobile menus */}
           <div
             className={`
@@ -80,13 +79,13 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
             {/* sublinks */}
             {link.sublinks.map((slinks: Sublink, i) => (
               <Link key={i} onClick={clickHandler} href={slinks.link} prefetch={false}>
-                <li className="py-3 pl-14 text-grey-200 text-sm font-paragraph hover:text-black-100 transition-all duration-300 ease-in-out">
+                <li className="py-3 pl-14 text-sm hover:text-black-100 transition-all duration-300 ease-in-out">
                   {slinks.name}
                 </li>
               </Link>
             ))}
           </div>
-        </div>
+        </Fragment>
       ))}
     </>
   );
