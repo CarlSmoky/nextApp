@@ -9,13 +9,13 @@ import { removeExcessivePathSegments } from "../../utils/textFormat";
 const FooterNav = () => {
   const pathname = usePathname();
   return (
-    <ul className="w-full xl:w-2/3 flex flex-col lg:flex-row px-4 md:px-0 font-paragraph whitespace-nowrap">
+    <ul className="w-full xl:w-2/3 flex flex-col lg:flex-row px-4 md:px-0 whitespace-nowrap">
       {links.map((link: LinkInfo, i) => (
         <li key={i} className="lg:w-1/6">
           <Link
             href={link.link}
             prefetch={false}
-            className={`block text-grey-200 my-2 py-2 px-1 text-sm md:text-base lg:text-sm xl:text-base hover:text-black-100 transition-all duration-300 ease-in-out ${
+            className={`block my-2 py-2 px-1 text-sm md:text-base lg:text-sm xl:text-base hover:text-black-100 transition-all duration-300 ease-in-out ${
               removeExcessivePathSegments(pathname) === link.link
                 ? "underline underline-offset-4"
                 : ""

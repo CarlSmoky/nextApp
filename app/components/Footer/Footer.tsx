@@ -9,11 +9,11 @@ const Footer = () => {
   const currentYear = currentDate.getFullYear();
 
   return (
-    <footer className="margin-global bottom-0 border-t border-grey-200">
+    <footer className="margin-global bottom-0 border-t border-grey-200 font-paragraph text-grey-200">
       <div className="flex flex-col md:flex-row justify-between">
         <FooterNav />
         <div className="flex flex-col justify-end">
-          <ul className="flex justify-center lg:m-auto">
+          <ul className="flex justify-center lg:m-auto text-grey-200">
             <SnsLinks />
           </ul>
             <Link href="/" className="p-3 mx-auto">
@@ -23,7 +23,7 @@ const Footer = () => {
                 className="sm:cursor-pointer w-36 "
               />
             </Link>
-            <p className="text-center font-paragraph text-sm lg:text-xs text-grey-100 whitespace-nowrap">
+            <p className="text-center text-sm lg:text-xs whitespace-nowrap">
               © {currentYear} Momo gallery. All rights reserved
             </p>
         </div>
