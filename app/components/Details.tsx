@@ -17,16 +17,16 @@ const Details: React.FC<DetailsProps> = ({ item, displayKey, titleCaseKeys }) =>
       {item.subTitle && (
         <h4 className="text-sm font-paragraph">{toTitleCase(item.subTitle)}</h4>
       )}
-      <div className="text-base lg:text-lg font-paragraph">
+      <ul className="text-base lg:text-lg font-paragraph">
         {displayKey.map((key, i) =>
             (item as any)[key] && (
-              <p key={i}>
+              <li key={i}>
                 <span className="text-sm">{toTitleCase(key)}: </span>
                 {formatForKey(key, (item as any)[key], titleCaseKeys)}
-              </p>
+              </li>
             )
         )}
-      </div>
+      </ul>
     </TextInfoWrapper>
   );
 };
