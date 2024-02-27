@@ -5,7 +5,7 @@ import ImageLinkAnimation from "./ImageLinkAnimation";
 import { imageLink } from "../../types/Interfaces";
 
 const Work: React.FC = async () => {
-  const file = await fs.readFile(process.cwd() + "/app/json/imageLinks.json","utf8");
+  const file = await fs.readFile(process.cwd() + "/app/data/imageLinks.json","utf8");
   const data = JSON.parse(file);
 
   return (

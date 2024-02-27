@@ -1,8 +1,7 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BsInstagram, BsYoutube } from "react-icons/bs";
 import FooterNav from "./FooterNav";
+import SnsLinks from "../SnsLinks";
 import Logo from "../../../public/images/Logo.png";
 
 const Footer = () => {
@@ -15,23 +14,12 @@ const Footer = () => {
         <FooterNav />
         <div className="flex flex-col justify-end">
           <ul className="flex justify-center lg:m-auto">
-            <li className="nav-sns">
-              <Link href="https://www.instagram.com/noriko_toronto/" target="blank">
-                <BsInstagram size={25} />
-                <span className="sr-only">instagram</span>
-              </Link>
-            </li>
-            <li className="nav-sns">
-              <Link href="https://www.youtube.com/@norikoyamamoto7147" target="blank">
-                <BsYoutube size={25} />
-                <span className="sr-only">youtube</span>
-              </Link>
-            </li>
+            <SnsLinks />
           </ul>
             <Link href="/" className="p-3 mx-auto">
               <Image
                 src={Logo}
-                alt="logo"
+                alt="Momo Gallery Logo"
                 className="sm:cursor-pointer w-36 "
               />
             </Link>

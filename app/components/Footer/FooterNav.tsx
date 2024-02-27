@@ -12,29 +12,27 @@ const FooterNav = () => {
     <ul className="w-full xl:w-2/3 flex flex-col lg:flex-row px-4 md:px-0 font-paragraph whitespace-nowrap">
       {links.map((link: LinkInfo, i) => (
         <li key={i} className="lg:w-1/6">
-          <Link href={link.link} prefetch={false}>
-            <h3
-              className={`text-grey-200 m-2 py-2 px-1 text-sm md:text-base lg:text-sm xl:text-base hover:text-black-100 transition-all duration-300 ease-in-out ${
-                removeExcessivePathSegments(pathname) === link.link
-                  ? "underline underline-offset-4"
-                  : ""
-              }`}
-            >
-              {link.name}
-            </h3>
+          <Link
+            href={link.link}
+            prefetch={false}
+            className={`block text-grey-200 my-2 py-2 px-1 text-sm md:text-base lg:text-sm xl:text-base hover:text-black-100 transition-all duration-300 ease-in-out ${
+              removeExcessivePathSegments(pathname) === link.link
+                ? "underline underline-offset-4"
+                : ""
+            }`}
+          >
+            {link.name}
           </Link>
           {link.submenu && (
-            <div className="flex flex-col text-grey-200/80 text-xs">
-              <ul>
-                {link.sublinks.map((slink: Sublink, i) => (
-                  <Link key={i} href={slink.link} prefetch={false}>
-                    <li className="ml-3 p-2 hover:text-black-100 transition-all duration-300 ease-in-out">
-                      {slink.name}
-                    </li>
+            <ul className="flex flex-col text-grey-200/80 text-xs">
+              {link.sublinks.map((slink: Sublink, i) => (
+                <li key={i} className="ml-3 p-2 hover:text-black-100 transition-all duration-300 ease-in-out">
+                  <Link href={slink.link} prefetch={false}>
+                    {slink.name}
                   </Link>
-                ))}
-              </ul>
-            </div>
+                </li>
+              ))}
+            </ul>
           )}
         </li>
       ))}
