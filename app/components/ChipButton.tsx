@@ -24,8 +24,8 @@ const ChipButton:React.FC<ChipButtonProps> = ({params, types, type , path}) => {
     <button
           key={type}
           onClick={clickHandler}
-          className={`flex justify-center rounded-full border border-grey-100/20 px-[0.5rem] py-[0.1rem] min-w-[3rem] whitespace-nowrap hover:bg-grey-100/20 transition ease-in-out 
-          ${(params.length === 0 || params.includes(type)) && "bg-grey-100/80 text-white-100"}
+          className={`flex justify-center rounded-full border border-grey-100/20 p-[0.5rem] min-w-[4rem] whitespace-nowrap hover:bg-grey-100/80 hover:text-white-100 transition ease-in-out 
+          ${(params.length === 0 || params.includes(type)) && "bg-grey-100/30 "}
           `}
         >
           {(params.length === 0 || params.includes(type)) 
