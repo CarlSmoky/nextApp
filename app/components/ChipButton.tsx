@@ -18,7 +18,7 @@ const ChipButton:React.FC<ChipButtonProps> = ({params, types, type , path}) => {
   const clickHandler = (): void => {
     const updatedPath = makePath(params, types, type, path)
     router.refresh();
-    router.replace(updatedPath)
+    router.push(updatedPath)
   }
   return (
     <button
