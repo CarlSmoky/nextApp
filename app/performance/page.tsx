@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import SectionwithTitle from "../components/SectionwithTitle";
+import Chips from "../components/Chips";
 import PerformanceList from "../components/PerformanceList";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ const PerformancePage = ({
 }) => {
   return (
     <SectionwithTitle title="Performance">
+      <Chips parsedQueryString={searchParams}/>
       <Suspense fallback={<div>Loading...</div>}>
         <PerformanceList parsedQueryString={searchParams} />
       </Suspense>
