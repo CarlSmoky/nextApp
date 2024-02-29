@@ -23,3 +23,11 @@ export const applyFilter = (params: PerformanceType[], rawData: Performance[]): 
   );
   return displayData;
 };
+
+export const makePath = (params: PerformanceType[], types: PerformanceType[], type: PerformanceType, path: string): string => {
+    params.includes(type) ? params.splice(params.indexOf(type), 1) : params.push(type)
+    if (params.length > 0 && params.length < types.length) {
+      path += "?type="  + params.join("&type=");
+    }
+    return path;
+}
