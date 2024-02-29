@@ -16,10 +16,10 @@ const Chips: React.FC<ChipsProps> = ({ parsedQueryString }) => {
   const params = getParams(parsedQueryString.type);
 
   return (
-    <div className="flex flex-wrap gap-2 text-xs md:text-sm font-paragraph text-grey-100">
+    <div className="flex flex-wrap gap-3 text-xs md:text-sm font-paragraph text-grey-100">
       <button
         key={0}
-        className={`flex justify-center rounded-full border border-grey-100/20 p-[0.5rem] min-w-[4rem] whitespace-nowrap  ${
+        className={`flex justify-center rounded-full border border-grey-100/20 p-[0.5rem] min-w-[5rem] whitespace-nowrap  ${
           (params.length === 0) ? "outline outline-offset-2 outline-2 outline-grey-100/50" : "hover:bg-grey-100/80 hover:text-white-100 transition ease-in-out"
         }`}
         onClick={() => router.push(path)}
