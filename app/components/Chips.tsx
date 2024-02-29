@@ -20,7 +20,7 @@ const Chips: React.FC<ChipsProps> = ({ parsedQueryString }) => {
       <button
         key={0}
         className={`flex justify-center rounded-full border border-grey-100/20 p-[0.5rem] min-w-[5rem] whitespace-nowrap  ${
-          (params.length === 0) ? "outline outline-offset-2 outline-2 outline-grey-100/50" : "hover:bg-grey-100/80 hover:text-white-100 transition ease-in-out"
+          (params.length === 0) ? "outline outline-offset-2 outline-2 outline-grey-100/50" : "md:hover:bg-grey-100/80 md:hover:text-white-100 transition ease-in-out"
         }`}
         onClick={() => router.push(path)}
         disabled={params.length === 0}
