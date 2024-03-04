@@ -41,7 +41,7 @@ const ImageLinkAnimation: React.FC<Props> = async ({
             sizes="(max-width: 480px) 100vw, 33vw"
             placeholder="blur"
             blurDataURL={base64}
-            priority={i === 0 ? true : false}
+            // priority={i === 0 ? true : false}
           />
         </div>
       </div>
