@@ -8,10 +8,10 @@ import { paragraphFont, titleFont } from "./fonts";
 
 export const metadata: Metadata = {
   title: {
-    default: "Momo gallery",
+    default: "Momo gallery - Noriko Yamamoto",
     template: "%s | Momo gallery",
   },
-  description: "Artist and Performer Noriko Yamamoto sites",
+  description: "Visual Artist and Performer Noriko Yamamoto's site",
 };
 
 const RootLayout: React.FC<childrenProps> = ({ children }: childrenProps) => {

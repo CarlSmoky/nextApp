@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "./NavLinks";
 import SnsLinks from "../SnsLinks";
-import Logo from "../../../public/images/Logo.png";
+import Logo from "../../../public/images/Logo.svg";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const Navbar: React.FC = () => {
@@ -33,7 +33,6 @@ const Navbar: React.FC = () => {
               alt="Momo gallery logo"
               className="sm:cursor-pointer w-36 md:w-48 lg:w-56"
               sizes="33vw"
-              priority
             />
           </Link>
           <div
