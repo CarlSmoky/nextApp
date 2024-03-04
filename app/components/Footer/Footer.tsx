@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import FooterNav from "./FooterNav";
 import SnsLinks from "../SnsLinks";
-import Logo from "../../../public/images/Logo.png";
+import Logo from "../../../public/images/Logo.svg";
 
 const Footer = () => {
   const currentDate = new Date();
