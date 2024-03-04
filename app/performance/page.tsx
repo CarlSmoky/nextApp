@@ -15,7 +15,7 @@ const PerformancePage = ({
 }) => {
   return (
     <SectionwithTitle title="Performance">
-      <ChipCollection parsedQueryString={searchParams}/>
+      <ChipCollection parsedQueryString={searchParams} path="/performance"/>
       <Suspense fallback={<div>Loading...</div>}>
         <PerformanceList parsedQueryString={searchParams} />
       </Suspense>
