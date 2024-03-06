@@ -1,75 +1,53 @@
 "use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-import { RxDotFilled } from "react-icons/rx";
+import React, { useState, useEffect } from "react";
+import Arrow from "./Arrow";
 import { featuredImages } from "./Images";
-import { blurData } from "../Gallery/BlurData"
-
-let count: number = 0;
-let slideInterval: undefined | ReturnType<typeof setTimeout>
+import Indicator from "./Indicator";
 
 const Slider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleOnNextClick = () => {
-    count = (count + 1) % featuredImages.length;
-    setCurrentIndex(count);
+  useEffect(() => {
+    const autoplay = setInterval(() => {
+      nextSlide();
+    }, 3000);
+    return () => clearInterval(autoplay);
+  }, [currentIndex]);
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? featuredImages.length - 1 : prevIndex - 1
+    );
+  };
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === featuredImages.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
-  const handleOnPrevClick = () => {
-    const productsLength = featuredImages.length;
-    count = (currentIndex + productsLength - 1) % productsLength;
-    setCurrentIndex(count);
-  };
-
-  const pauseSlider = () => {
-    clearInterval(slideInterval);
-  };
-
-  const goToSlide = (slideIndex: number) => {
+  const jumpSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
-
   return (
-    <section className="md:margin-global max-w-screen-2xl m-auto ">
-      <div className="md:p-4 lg:p-6 xl:p-10">
-        <div className="w-full aspect-video relative select-none" >
-          <Image
-            src={featuredImages[currentIndex]}
-            alt={`image_${currentIndex + 1}`}
-            width={0}
-            height={0}
-            fill={true}
-            sizes="100vw"
-            priority={true}
-            style={{width: "100%", objectFit:"contain"}}
-            placeholder="blur"
-            blurDataURL={blurData}
-          />
-        <div className="absolute w-full top-1/2 transform -translate-y-1/2 flex justify-between items-start text-white-100">
-          <button onClick={handleOnPrevClick}>
-            <GrFormPrevious size={25} />
-            <span className="sr-only">previous</span>
-          </button>
-          <button onClick={handleOnNextClick} >
-            <GrFormNext size={25} />
-            <span className="sr-only">next</span>
-          </button>
-        </div>
-        </div>
-        <div className="flex top-4 justify-center py-2">
-          {featuredImages.map((slide, slideIndex) => (
-            <div
-              key={slideIndex}
-              onClick={() => goToSlide(slideIndex)}
-              className="z-10 text-2xl cursor-pointer"
-            >
-              <RxDotFilled className={`${currentIndex === slideIndex ? "text-black-100" : "text-grey-100/50"}`}/>
-            </div>
-          ))}
-        </div>
+    <section className="md:margin-global max-w-screen-2xl m-auto md:p-4 lg:p-6 xl:p-10">
+      <div className="relative w-full aspect-video select-none ">
+        <div
+          style={{ backgroundImage: `url(${featuredImages[currentIndex]})` }}
+          className="w-full h-full bg-center bg-contain bg-no-repeat ease-in-out duration-700"
+        ></div>
+        <Arrow direction="left" onClick={prevSlide} />
+        <Arrow direction="right" onClick={nextSlide} />
       </div>
+      <ul className="flex top-4 justify-center py-2 z-10">
+        {featuredImages.map((slide, index) => (
+          <Indicator
+            key={index}
+            jumpSlide={jumpSlide}
+            index={index}
+            currentIndex={currentIndex}
+          />
+        ))}
+      </ul>
     </section>
   );
 };
