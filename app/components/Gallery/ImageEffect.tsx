@@ -85,7 +85,7 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, i }) => {
               width: `${MAGNIFIER_SIZE.width}px`,
               height: `${MAGNIFIER_SIZE.height}px`,
             }}
-            className={`z-50 pointer-events-none absolute`}
+            className={`z-50 border border-grey-200/30 pointer-events-none absolute`}
           />
         </div>
       </div>
