@@ -1,4 +1,4 @@
-import SquareImage from "./SquareImage";
+import ImageEffect from "./Gallery/ImageEffect";
 import Details from "./Details";
 import { VisualArtImage } from "../types/Interfaces"
 
@@ -12,7 +12,7 @@ const VisualArtListItem:React.FC<VisualArtListItemProps> = ({item, i}) => {
   const titleCaseKeys = ["media"]
   return (
     <li className="flex-wrapper">
-      <SquareImage src={item.src} alt={item.title} i={i}/>
+      <ImageEffect src={item.src} alt={item.title} i={i}/>
       <Details item={item} displayKey={displayKey} titleCaseKeys={titleCaseKeys}/>
     </li>
   )
