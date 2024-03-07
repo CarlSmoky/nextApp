@@ -9,8 +9,8 @@ type ImageEffectProps = {
 };
 
 const MAGNIFIER_SIZE = {
-  width: 300,
-  height: 400,
+  width: 350,
+  height: 450,
 }
 const ZOOM_LEVEL = 2;
 
@@ -23,6 +23,7 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, i }) => {
     mouseX: 0,
     mouseY: 0,
   });
+  const url = src.replace(/\(/g, '%28').replace(/\)/g, '%29');
 
   const handleMouseEnter = (e: MouseEvent) => {
     let element = e.currentTarget;
@@ -73,7 +74,7 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, i }) => {
           <div
             style={{
               backgroundPosition: `${position.x}px ${position.y}px`,
-              backgroundImage: `url(${src})`,
+              backgroundImage: `url(${url})`,
               backgroundSize: `${imageSize.width * ZOOM_LEVEL}px ${
                 imageSize.height * ZOOM_LEVEL
               }px`,
@@ -84,7 +85,7 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, i }) => {
               width: `${MAGNIFIER_SIZE.width}px`,
               height: `${MAGNIFIER_SIZE.height}px`,
             }}
-            className={`z-50 border border-gray-200 pointer-events-none absolute`}
+            className={`z-50 pointer-events-none absolute`}
           />
         </div>
       </div>
