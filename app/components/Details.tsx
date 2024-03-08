@@ -11,11 +11,11 @@ type DetailsProps = {
 const Details: React.FC<DetailsProps> = ({ item, displayKey, titleCaseKeys }) => {
   return (
     <TextInfoWrapper breakePointWidth="half">
-      <h3 className="font-title font-bold text-lg md:text-xl lg:text-2xl">
+      <h2 className="font-title font-bold text-lg md:text-xl lg:text-2xl">
         {toTitleCase(item.title)}
-      </h3>
+      </h2>
       {item.subTitle && (
-        <h4 className="text-sm font-paragraph">{toTitleCase(item.subTitle)}</h4>
+        <h3 className="text-sm font-paragraph">{toTitleCase(item.subTitle)}</h3>
       )}
       <ul className="text-base lg:text-lg font-paragraph">
         {displayKey.map((key, i) =>
