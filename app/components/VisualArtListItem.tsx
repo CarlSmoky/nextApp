@@ -12,7 +12,7 @@ const VisualArtListItem:React.FC<VisualArtListItemProps> = ({item, i}) => {
   const titleCaseKeys = ["media"]
   return (
     <li className="flex-wrapper">
-      <ImageEffect src={item.src} alt={item.title} i={i}/>
+      <ImageEffect src={item.src} alt={item.title} blurDataURL={item.blurredDataUrl} i={i}/>
       <Details item={item} displayKey={displayKey} titleCaseKeys={titleCaseKeys}/>
     </li>
   )
