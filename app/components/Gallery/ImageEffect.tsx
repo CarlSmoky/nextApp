@@ -55,7 +55,7 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, i }) => {
   };
 
   return (
-    <div className="w-full md:w-1/2 bg-white-200/40 aspect-square relative">
+    <div className="w-full md:w-1/2 bg-white-200/40 aspect-square relative cursor-zoom-in">
       <div
         onMouseLeave={handleMouseLeave}
         onMouseEnter={handleMouseEnter}
