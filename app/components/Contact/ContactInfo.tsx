@@ -44,9 +44,9 @@ const ContactInfo:React.FC = () => {
           </div>
         </Link>
 
-        <div className="flex my-4">
+        <ul className="flex my-4">
           <SnsLinks/>
-        </div>
+        </ul>
       </div>
     </div>
   );

@@ -54,9 +54,9 @@ const Navbar: React.FC = () => {
         `}
         >
           <NavLinks onToggle={handleToggle} />
-          <div className="flex justify-center">
+          <ul className="flex justify-center">
             <SnsLinks clickHandler={handleToggle}/>
-          </div>
+          </ul>
         </ul>
       </div>
     </nav>
