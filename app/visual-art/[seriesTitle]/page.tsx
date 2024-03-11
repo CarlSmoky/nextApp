@@ -1,7 +1,5 @@
 import React from "react";
 import SectionwithTitle from "../../components/SectionwithTitle";
-import SquareImage from "../../components/SquareImage";
-import Details from "../../components/Details";
 import { visualArtData } from "../VisualArtData";
 import { toTitleCase } from "../../utils/textFormat";
 import { VisualArtType } from "../../types/Interfaces";

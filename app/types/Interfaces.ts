@@ -2,15 +2,6 @@ export interface childrenProps {
   children: React.ReactNode;
 }
 
-export interface PhotoSchema {
-  id: number;
-  src: string;
-  alt: string;
-  category: string;
-  updateTime: string;
-  blurredDataUrl?: string;
-}
-
 export enum NavState {
   home,
   visualArt,
@@ -76,7 +67,7 @@ export interface VisualArtSeries {
   type: VisualArtType;
   images: VisualArtImage[];
 }
-export interface VisualArtImage {
+export type VisualArtImage = {
   id: number;
   src: string;
   title: string;
@@ -84,6 +75,7 @@ export interface VisualArtImage {
   size?: string;
   media?: string;
   year?: number;
+  blurredDataUrl?: string;
 }
 
 
