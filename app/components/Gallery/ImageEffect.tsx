@@ -6,7 +6,7 @@ import useResizeObserver from "../../hooks/useResizeObserver";
 type ImageEffectProps = {
   src: string;
   alt: string;
-  blurDataURL: string;
+  blurDataURL: string | undefined;
   i: number;
 };
 
