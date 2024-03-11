@@ -1,39 +1,42 @@
 "use client";
 import React, { MouseEvent, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import useResizeObserver from "@/app/hooks/useResizeObserver";
+import useResizeObserver from "../../hooks/useResizeObserver";
 
 type ImageEffectProps = {
   src: string;
   alt: string;
-  blurDataURL: string | undefined;
+  blurDataURL: string;
   i: number;
+};
+
+const DEFAULT_IMAGE_SIZE = {
+  width: 300,
+  height: 300,
 };
 
 const MAGNIFIER_SIZE = {
   width: 350,
   height: 450,
 };
-const ZOOM_LEVEL = 2;
+const ZOOM_LEVEL = 2.5;
 
-const ImageEffect: React.FC<ImageEffectProps> = ({
-  src,
-  alt,
-  blurDataURL
-}) => {
-  const [innerImageContainerSize, setInnerImageContainerSize] = useState({ width: 0, height: 0});
-  const [downloadImageSize, setDownloadImageSize] = useState({ width: 0, height: 0 });
-  const [displayImageSize, setDisplayImageSize] = useState({ width: 300, height: 300 });
+const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, blurDataURL }) => {
+  const [innerImageContainerSize, setInnerImageContainerSize] =
+    useState(DEFAULT_IMAGE_SIZE);
+  const [downloadImageSize, setDownloadImageSize] =
+    useState(DEFAULT_IMAGE_SIZE);
+  const [displayImageSize, setDisplayImageSize] = useState(DEFAULT_IMAGE_SIZE);
   const [zoomable, setZoomable] = useState(false);
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
   const [position, setPosition] = useState({
     x: 100,
     y: 100,
     mouseX: 0,
     mouseY: 0,
   });
-  
+
   const url = src.replace(/\(/g, "%28").replace(/\)/g, "%29");
 
   const handleMouseEnter = (e: MouseEvent) => {
@@ -67,74 +70,97 @@ const ImageEffect: React.FC<ImageEffectProps> = ({
 
   const onResize = useCallback((target: HTMLDivElement) => {
     const { width, height } = target.getBoundingClientRect();
-    setInnerImageContainerSize({ width, height })
+    setInnerImageContainerSize({ width, height });
   }, []);
 
   const innerImageContainer = useResizeObserver(onResize);
 
-  const getRatio = useCallback((innerImageContainerSizeWidth: number, downloadImageSizeWidth: number, downloadImageSizeHeight: number): number => {
-    return downloadImageSize.width >= downloadImageSize.height ? innerImageContainerSizeWidth / downloadImageSizeWidth : innerImageContainerSizeWidth / downloadImageSizeHeight;
-  },[downloadImageSize])
+  const getRatio = useCallback(
+    (
+      innerImageContainerSizeWidth: number,
+      downloadImageSizeWidth: number,
+      downloadImageSizeHeight: number
+    ): number => {
+      return downloadImageSize.width >= downloadImageSize.height
+        ? innerImageContainerSizeWidth / downloadImageSizeWidth
+        : innerImageContainerSizeWidth / downloadImageSizeHeight;
+    },
+    [downloadImageSize]
+  );
 
-  const makeImageSize = useCallback((ratio: number, downloadImageSizeWidth: number, downloadImageSizeHeight: number) => {
+  const makeImageSize = (
+    ratio: number,
+    downloadImageSizeWidth: number,
+    downloadImageSizeHeight: number
+  ) => {
     return {
       width: downloadImageSizeWidth * ratio,
-      height: downloadImageSizeHeight * ratio
-    }
-  },[])
+      height: downloadImageSizeHeight * ratio,
+    };
+  };
 
   useEffect(() => {
-    const ratio = getRatio(innerImageContainerSize.width, downloadImageSize.width, downloadImageSize.height);
-    const renderImageSize = makeImageSize(ratio, downloadImageSize.width, downloadImageSize.height);
-    setDisplayImageSize(renderImageSize)
-    setIsLoaded(true)
-  }, [downloadImageSize, innerImageContainerSize, getRatio])
-  
-
-  
-  
+    const ratio = getRatio(
+      innerImageContainerSize.width,
+      downloadImageSize.width,
+      downloadImageSize.height
+    );
+    const displayImageSize = makeImageSize(
+      ratio,
+      downloadImageSize.width,
+      downloadImageSize.height
+    );
+    setDisplayImageSize(displayImageSize);
+    setIsLoaded(true);
+  }, [downloadImageSize, innerImageContainerSize, getRatio]);
 
   return (
     <div className="flex items-center justify-center w-full md:w-1/2 bg-white-200/40 aspect-square cursor-zoom-in">
-      <div ref={innerImageContainer} className="flex items-center justify-center w-[95%] h-[95%]">
-      
       <div
-        onMouseLeave={handleMouseLeave}
-        onMouseEnter={handleMouseEnter}
-        onMouseMove={handleMouseMove}
-        className={`relative`}
-        style={displayImageSize}
+        ref={innerImageContainer}
+        className="flex items-center justify-center w-[95%] h-[95%]"
       >
-        <Image
-          alt={alt}
-          src={src}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className={`object-contain  border z-10  ${!isLoaded && "blur-2xl"} liner duration-500`}
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-          onLoadingComplete={({ naturalWidth, naturalHeight }) => {
-            setDownloadImageSize({ width: naturalWidth, height: naturalHeight });
-          }}
-        />
         <div
-          style={{
-            backgroundPosition: `${position.x}px ${position.y}px`,
-            backgroundImage: `url(${url})`,
-            backgroundSize: `${imageSize.width * ZOOM_LEVEL}px ${
-              imageSize.height * ZOOM_LEVEL
-            }px`,
-            backgroundRepeat: "no-repeat",
-            display: zoomable ? "block" : "none",
-            top: `${position.mouseY}px`,
-            left: `${position.mouseX}px`,
-            width: `${MAGNIFIER_SIZE.width}px`,
-            height: `${MAGNIFIER_SIZE.height}px`,
-          }}
-          className={`z-50 border border-grey-200/30 pointer-events-none absolute`}
-        />
-      </div>
-      
+          onMouseLeave={handleMouseLeave}
+          onMouseEnter={handleMouseEnter}
+          onMouseMove={handleMouseMove}
+          className={`relative`}
+          style={displayImageSize}
+        >
+          <Image
+            alt={alt}
+            src={src}
+            fill
+            sizes="(max-width: 768px) 75vw, 40vw"
+            className={`object-contain  border z-10  ${
+              !isLoaded && "blur-2xl"
+            } liner duration-500`}
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+            onLoadingComplete={({ naturalWidth, naturalHeight }) => {
+              setDownloadImageSize({
+                width: naturalWidth,
+                height: naturalHeight,
+              });
+            }}
+          />
+          <div
+            style={{
+              backgroundPosition: `${position.x}px ${position.y}px`,
+              backgroundImage: `url(${url})`,
+              backgroundSize: `${imageSize.width * ZOOM_LEVEL}px ${
+                imageSize.height * ZOOM_LEVEL
+              }px`,
+              backgroundRepeat: "no-repeat",
+              display: zoomable ? "block" : "none",
+              top: `${position.mouseY}px`,
+              left: `${position.mouseX}px`,
+              width: `${MAGNIFIER_SIZE.width}px`,
+              height: `${MAGNIFIER_SIZE.height}px`,
+            }}
+            className={`z-50 border border-grey-200/30 pointer-events-none absolute`}
+          />
+        </div>
       </div>
     </div>
   );
