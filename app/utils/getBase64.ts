@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import { getPlaiceholder } from "plaiceholder";
 import type { VisualArtImage } from '../types/Interfaces'
 
-const getBase64 = async (src: string) => {
+export const getBase64 = async (src: string) => {
   try {
     const buffer = await fs.readFile(`./public/${src}`);
     const { base64 } = await getPlaiceholder(Buffer.from(buffer))
