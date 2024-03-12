@@ -1,6 +1,6 @@
-import { VisualArtType } from "../types/Interfaces";
+import { VisualArtSeries, VisualArtType } from "../types/Interfaces";
 
-export const visualArtData = [
+export const visualArtData: VisualArtSeries[] = [
   {
     id: 1,
     title: "fading_memories",   
@@ -65,7 +65,7 @@ export const visualArtData = [
       }
       ,
       {
-        id: 5,
+        id: 6,
         src: "/images/shadow_impression_06.jpg",
         title: "shadow_impression_#6",
         size: "14.5 in x 10 in",
