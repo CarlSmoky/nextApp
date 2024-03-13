@@ -1,3 +1,5 @@
+"use client"
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { VisualArtImage } from "../../types/Interfaces";
@@ -13,6 +15,7 @@ const ImgContainer: React.FC<ImgContainerProps> = ({
   numberOfImage,
   title,
 }) => {
+  const [isLoaded, setIsLoaded] = useState(false)
 
   return (
     <>
@@ -26,14 +29,19 @@ const ImgContainer: React.FC<ImgContainerProps> = ({
               src={image.src}
               alt={image.title}
               fill={true}
-              className={`object-contain`}
+              className={`object-contain z-50 ${
+                !isLoaded && "blur-2xl"
+              } liner duration-500`}
               sizes="(max-width: 768px) 100vw, (max-width: 976px) 50vw, 33vw"
+              onLoadingComplete={() => setIsLoaded(true)}
             />
           </div>
         </Link>
         {numberOfImage > 1 && (
           <span
-            className={`absolute right-1 top-1 p-1 text-white-100 font-title text-sm bg-grey-200/30 rounded-xl z-10}`}
+            className={`absolute right-1 top-1 p-1 text-white-100 font-title text-sm bg-grey-200/30 rounded-xl z-10} z-50 ${
+              !isLoaded && "blur-2xl"
+            } liner duration-500`}
           >
             1/{numberOfImage}
           </span>
