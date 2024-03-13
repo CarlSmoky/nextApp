@@ -34,6 +34,8 @@ const ImgContainer: React.FC<ImgContainerProps> = ({
               } liner duration-500`}
               sizes="(max-width: 768px) 100vw, (max-width: 976px) 50vw, 33vw"
               onLoadingComplete={() => setIsLoaded(true)}
+              placeholder="blur"
+              blurDataURL={image.blurredDataUrl}
             />
           </div>
         </Link>
