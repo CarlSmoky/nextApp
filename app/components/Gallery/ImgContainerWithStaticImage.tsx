@@ -29,19 +29,17 @@ const ImgContainer: React.FC<ImgContainerProps> = ({
               src={image.src}
               alt={image.title}
               fill={true}
-              className={`object-contain z-20 ${
+              className={`object-contain  ${
                 !isLoaded && "blur-2xl"
               } liner duration-500`}
               sizes="(max-width: 768px) 100vw, (max-width: 976px) 50vw, 33vw"
               onLoadingComplete={() => setIsLoaded(true)}
-              placeholder="blur"
-              blurDataURL={image.blurredDataUrl}
             />
           </div>
         </Link>
         {numberOfImage > 1 && (
           <span
-            className={`absolute right-1 top-1 p-1 text-white-100 font-title text-sm bg-grey-200/30 rounded-xl z-10} z-20 ${
+            className={`absolute right-1 top-1 p-1 text-white-100 font-title text-sm bg-grey-200/30 rounded-xl z-10}  ${
               !isLoaded && "blur-2xl"
             } liner duration-500`}
           >
