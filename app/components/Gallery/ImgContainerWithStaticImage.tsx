@@ -19,7 +19,7 @@ const ImgContainer: React.FC<ImgContainerProps> = ({
 
   return (
     <>
-      <li className="flex items-center justify-center w-full md:w-[calc(50%-16px)] lg:w-[calc(33.3%-16px)] bg-white-200/40 aspect-square my-2 md:m-2 active:ring active:ring-white-100 relative">
+      <li className="flex items-center justify-center w-full md:w-[calc(50%-16px)] lg:w-[calc(33.3%-16px)] shadow-2xl bg-white-200/40 aspect-square my-2 md:m-2 active:ring active:ring-white-100 relative">
         <Link
           href={`/visual-art/${title.toLowerCase()}`}
           className="flex items-center justify-center"
@@ -33,8 +33,6 @@ const ImgContainer: React.FC<ImgContainerProps> = ({
                 !isLoaded && "blur-2xl"
               } liner duration-500`}
               sizes="(max-width: 768px) 100vw, (max-width: 976px) 50vw, 33vw"
-              placeholder="blur"
-              blurDataURL={image.blurredDataUrl}
               onLoadingComplete={() => {
                 setIsLoaded(true);
               }}
