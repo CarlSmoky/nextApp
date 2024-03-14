@@ -5,6 +5,7 @@ import React, {
   useState,
   useEffect,
   useCallback,
+  useRef,
 } from "react";
 import Image from "next/image";
 import useResizeObserver from "../../hooks/useResizeObserver";
@@ -45,25 +46,40 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, blurDataURL }) => {
     mouseY: 0,
   });
 
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+
   const url = src.replace(/\(/g, "%28").replace(/\)/g, "%29");
 
   const handleEvent = (
     e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
-    action: 'enter' | 'move' | 'leave'
+    action: EventAction
   ) => {
-    e.preventDefault();
-    const isTouch = 'touches' in e;
-    const event = isTouch ? e.touches[0] : e;
-    const { clientX, clientY } = event;
+    let clientX: number = 0;
+    let clientY: number = 0;
+    const isTouch = "touches" in e;
+
+    if (action === "move" && isTouch) {
+      clientX = e.touches[0].clientX;
+      clientY = e.touches[0].clientY;
+    } else if (action === "leave" && isTouch) {
+      // For touch end events, use changedTouches
+      if (e.changedTouches && e.changedTouches.length > 0) {
+        clientX = e.changedTouches[0].clientX;
+        clientY = e.changedTouches[0].clientY;
+      }
+    } else if (!isTouch) {
+      clientX = e.clientX;
+      clientY = e.clientY;
+    }
 
     switch (action) {
-      case 'enter':
+      case "enter":
         let element = e.currentTarget;
         let { width, height } = element.getBoundingClientRect();
         setImageSize({ width, height });
         setZoomable(true);
         break;
-      case 'move':
+      case "move":
         const { left, top } = e.currentTarget.getBoundingClientRect();
         let x = clientX - left;
         let y = clientY - top;
@@ -74,18 +90,37 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, blurDataURL }) => {
           mouseY: y - MAGNIFIER_SIZE.height / 2,
         });
         break;
-      case 'leave':
+      case "leave":
         setZoomable(false);
         break;
     }
   };
-
   const onResize = useCallback((target: HTMLDivElement) => {
     const { width, height } = target.getBoundingClientRect();
     setInnerImageContainerSize({ width, height });
   }, []);
 
   const innerImageContainer = useResizeObserver(onResize);
+
+  useEffect(() => {
+    const imageContainer = imageContainerRef.current;
+    const handleTouchMove: EventListener = (event: Event) => {
+      const touchEvent = event as unknown as TouchEvent;
+      touchEvent.preventDefault();
+    };
+
+    if (imageContainer) {
+      imageContainer.addEventListener("touchmove", handleTouchMove, {
+        passive: false,
+      });
+    }
+
+    return () => {
+      if (imageContainer) {
+        imageContainer.removeEventListener("touchmove", handleTouchMove);
+      }
+    };
+  }, []);
 
   const getRatio = useCallback(
     (
@@ -133,6 +168,7 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, blurDataURL }) => {
         className="flex items-center justify-center w-[95%] h-[95%]"
       >
         <div
+          ref={imageContainerRef}
           onMouseEnter={(e) => handleEvent(e, "enter")}
           onMouseMove={(e) => handleEvent(e, "move")}
           onMouseLeave={(e) => handleEvent(e, "leave")}
@@ -159,22 +195,24 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, blurDataURL }) => {
               });
             }}
           />
-          <div
-            style={{
-              backgroundPosition: `${position.x}px ${position.y}px`,
-              backgroundImage: `url(${url})`,
-              backgroundSize: `${imageSize.width * ZOOM_LEVEL}px ${
-                imageSize.height * ZOOM_LEVEL
-              }px`,
-              backgroundRepeat: "no-repeat",
-              display: zoomable ? "block" : "none",
-              top: `${position.mouseY}px`,
-              left: `${position.mouseX}px`,
-              width: `${MAGNIFIER_SIZE.width}px`,
-              height: `${MAGNIFIER_SIZE.height}px`,
-            }}
-            className={`z-50 border border-grey-200/30 pointer-events-none absolute`}
-          />
+          {zoomable && (
+            <div
+              style={{
+                backgroundPosition: `${position.x}px ${position.y}px`,
+                backgroundImage: `url(${url})`,
+                backgroundSize: `${imageSize.width * ZOOM_LEVEL}px ${
+                  imageSize.height * ZOOM_LEVEL
+                }px`,
+                backgroundRepeat: "no-repeat",
+                display: zoomable ? "block" : "none",
+                top: `${position.mouseY}px`,
+                left: `${position.mouseX}px`,
+                width: `${MAGNIFIER_SIZE.width}px`,
+                height: `${MAGNIFIER_SIZE.height}px`,
+              }}
+              className={`z-50 border border-grey-200/30 pointer-events-none absolute`}
+            />
+          )}
         </div>
       </div>
     </div>
