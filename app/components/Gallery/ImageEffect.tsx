@@ -1,5 +1,11 @@
 "use client";
-import React, { MouseEvent, useState, useEffect, useCallback } from "react";
+import React, {
+  MouseEvent,
+  TouchEvent,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 import Image from "next/image";
 import useResizeObserver from "../../hooks/useResizeObserver";
 
@@ -9,6 +15,8 @@ type ImageEffectProps = {
   blurDataURL: string | undefined;
   i: number;
 };
+
+type EventAction = "enter" | "move" | "leave";
 
 const DEFAULT_IMAGE_SIZE = {
   width: 300,
@@ -39,33 +47,37 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, blurDataURL }) => {
 
   const url = src.replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-  const handleMouseEnter = (e: MouseEvent) => {
-    let element = e.currentTarget;
-    let { width, height } = element.getBoundingClientRect();
-    setImageSize({ width, height });
-    setZoomable(true);
-    updatePosition(e);
-  };
+  const handleEvent = (
+    e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
+    action: 'enter' | 'move' | 'leave'
+  ) => {
+    e.preventDefault();
+    const isTouch = 'touches' in e;
+    const event = isTouch ? e.touches[0] : e;
+    const { clientX, clientY } = event;
 
-  const handleMouseLeave = (e: MouseEvent) => {
-    setZoomable(false);
-    updatePosition(e);
-  };
-
-  const handleMouseMove = (e: MouseEvent) => {
-    updatePosition(e);
-  };
-
-  const updatePosition = (e: MouseEvent) => {
-    const { left, top } = e.currentTarget.getBoundingClientRect();
-    let x = e.clientX - left;
-    let y = e.clientY - top;
-    setPosition({
-      x: -x * ZOOM_LEVEL + MAGNIFIER_SIZE.width / 2,
-      y: -y * ZOOM_LEVEL + MAGNIFIER_SIZE.height / 2,
-      mouseX: x - MAGNIFIER_SIZE.width / 2,
-      mouseY: y - MAGNIFIER_SIZE.height / 2,
-    });
+    switch (action) {
+      case 'enter':
+        let element = e.currentTarget;
+        let { width, height } = element.getBoundingClientRect();
+        setImageSize({ width, height });
+        setZoomable(true);
+        break;
+      case 'move':
+        const { left, top } = e.currentTarget.getBoundingClientRect();
+        let x = clientX - left;
+        let y = clientY - top;
+        setPosition({
+          x: -x * ZOOM_LEVEL + MAGNIFIER_SIZE.width / 2,
+          y: -y * ZOOM_LEVEL + MAGNIFIER_SIZE.height / 2,
+          mouseX: x - MAGNIFIER_SIZE.width / 2,
+          mouseY: y - MAGNIFIER_SIZE.height / 2,
+        });
+        break;
+      case 'leave':
+        setZoomable(false);
+        break;
+    }
   };
 
   const onResize = useCallback((target: HTMLDivElement) => {
@@ -121,9 +133,12 @@ const ImageEffect: React.FC<ImageEffectProps> = ({ src, alt, blurDataURL }) => {
         className="flex items-center justify-center w-[95%] h-[95%]"
       >
         <div
-          onMouseLeave={handleMouseLeave}
-          onMouseEnter={handleMouseEnter}
-          onMouseMove={handleMouseMove}
+          onMouseEnter={(e) => handleEvent(e, "enter")}
+          onMouseMove={(e) => handleEvent(e, "move")}
+          onMouseLeave={(e) => handleEvent(e, "leave")}
+          onTouchStart={(e) => handleEvent(e, "enter")}
+          onTouchMove={(e) => handleEvent(e, "move")}
+          onTouchEnd={(e) => handleEvent(e, "leave")}
           className={`relative`}
           style={displayImageSize}
         >
