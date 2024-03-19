@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import fs from "node:fs/promises";
 import SectionwithTitle from "../SectionwithTitle";
 import ImageLinkAnimation from "./ImageLinkAnimation";
-import { imageLink } from "../../types/Interfaces";
+import type { imageLink } from "../../types/Interfaces";
 
 const Work: React.FC = async () => {
   const file = await fs.readFile(process.cwd() + "/app/data/imageLinks.json","utf8");

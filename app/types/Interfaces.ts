@@ -11,10 +11,10 @@ export enum NavState {
   contact
 }
 
-export interface imageLink {
-  name: "string"
-  linkTo: "string"
-  src: "string"
+export type imageLink = {
+  name: string;
+  linkTo: string;
+  src: string;
 }
 
 export interface LinkInfo {
@@ -60,13 +60,14 @@ export enum VisualArtType {
   sculpture = "sculpture"
 }
 
-export interface VisualArtSeries {
+export type VisualArtSeries = {
   id: number;
   title: string;
   descriptions? : string;
   type: VisualArtType;
   images: VisualArtImage[];
 }
+
 export type VisualArtImage = {
   id: number;
   src: string;
