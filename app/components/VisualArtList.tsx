@@ -1,5 +1,5 @@
 import VisualArtListItem from "./VisualArtListItem";
-import { VisualArtSeries, VisualArtImage } from "../types/Interfaces"
+import type { VisualArtSeries, VisualArtImage } from "../types/Interfaces"
 import addBlurredDataUrls from "../utils/getBase64";
 
 type VisualArtListProps = {
