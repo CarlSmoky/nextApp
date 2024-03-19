@@ -1,14 +1,17 @@
 import React from "react";
+import fs from "node:fs/promises";
 import SectionwithTitle from "../../components/SectionwithTitle";
-import { visualArtData } from "../VisualArtData";
 import { toTitleCase } from "../../utils/textFormat";
-import { VisualArtType } from "../../types/Interfaces";
+import type { VisualArtType, VisualArtSeries } from "../../types/Interfaces";
 import PageNotFound from "../../components/PageNotFound";
 import VisualArtList from "@/app/components/VisualArtList";
 
-const page = ({ params }: { params: { seriesTitle: string } }) => {
-  const seriesInfo = visualArtData.filter(
-    (series) => series.title.toLowerCase() === params.seriesTitle.toLowerCase()
+const page = async ({ params }: { params: { seriesTitle: string } }) => {
+  const file = await fs.readFile(process.cwd() + "/app/data/visualArtData.json","utf8");
+  const data = JSON.parse(file);
+
+  const seriesInfo = data.visualArtData.filter(
+    (series: VisualArtSeries) => series.title.toLowerCase() === params.seriesTitle.toLowerCase()
   )[0];
   if (!seriesInfo)
     return (
