@@ -1,13 +1,17 @@
 import React from "react";
 import fs from "node:fs/promises";
+import path from 'path'
+import getConfig from 'next/config'
 import SectionwithTitle from "../../components/SectionwithTitle";
 import { toTitleCase } from "../../utils/textFormat";
 import type { VisualArtType, VisualArtSeries } from "../../types/Interfaces";
 import PageNotFound from "../../components/PageNotFound";
 import VisualArtList from "@/app/components/VisualArtList";
 
+
 const page = async ({ params }: { params: { seriesTitle: string } }) => {
-  const file = await fs.readFile(process.cwd() + "/app/data/visualArtData.json","utf8");
+  const { serverRuntimeConfig } = getConfig()
+  const file = await fs.readFile(path.join(serverRuntimeConfig.PROJECT_ROOT, '/app/data/visualArtData.json'), "utf8")
   const data = JSON.parse(file);
 
   const seriesInfo = data.visualArtData.filter(
