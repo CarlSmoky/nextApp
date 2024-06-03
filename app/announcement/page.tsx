@@ -29,11 +29,11 @@ const AnnouncementPage: React.FC = () => {
             <ul className="text-base lg:text-lg">
             <Link href="https://maps.app.goo.gl/pM5dhsHC35C2cjUL7" target="_blank">
               <li>
-                Venue: Main Hall, Tranzac Club 292 Brunswick Ave, Toronto
+                <span className="text-sm">Venue: </span>Main Hall, Tranzac Club 292 Brunswick Ave, Toronto
               </li>
               </Link>
-              <li>Date: June 18, 2024</li>
-              <li>Time: 7:00pm - 11:00pm</li>
+              <li><span className="text-sm">Date: </span>June 18, 2024</li>
+              <li><span className="text-sm">Time: </span>7:00pm - 11:00pm</li>
             </ul>
             <span className="text-xs lg:text-sm">Note: The concert starts at 7pm, but Luka&apos;s band will be on from 9pm.</span>
           </div>
