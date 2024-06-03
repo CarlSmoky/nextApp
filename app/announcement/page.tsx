@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SectionwithTitle from "../components/SectionwithTitle";
 import Video from "../components/Video";
 import TextInfoWrapper from "../components/TextInfoWrapper";
@@ -15,22 +16,36 @@ const AnnouncementPage: React.FC = () => {
     <SectionwithTitle title="Announcement">
       <div className="flex-wrapper">
         <Video
-          VideoId="1ggLRXBEy8Y"
+          VideoId="ol6DkXRV1G8"
           title="Mime-Dance by Noriko Yamamoto: Fading Memories"
         />
         <TextInfoWrapper breakePointWidth="half">
-          <p className="py-4 md:pt-0">
-          March 8 - 13, 2024: Fading Memories art exhibition + performance in Tokyo, Japan.
-          </p>
+          <div className="py-4 md:pt-0">
+            <h2 className="font-bold text-base lg:text-xl pb-2">I am dancing in music video and will be dancing live at show on June 18!</h2>
+            <p className="text-base lg:text-lg py-2">
+              Luka Kuplowsky & The Ryōkan Band released new album &quot;How Can I Possibly Sleep When There is Music.&quot; I am dancing in one of the song&apos;s videos + I will
+              be dancing live to 4 of the songs at the show. 
+            </p>
+            <ul className="text-base lg:text-lg">
+            <Link href="https://maps.app.goo.gl/pM5dhsHC35C2cjUL7" target="_blank">
+              <li>
+                Venue: Main Hall, Tranzac Club 292 Brunswick Ave, Toronto
+              </li>
+              </Link>
+              <li>Date: June 18, 2024</li>
+              <li>Time: 7:00pm - 11:00pm</li>
+            </ul>
+            <span className="text-xs lg:text-sm">Note: The concert starts at 7pm, but Luka&apos;s band will be on from 9pm.</span>
+          </div>
           <BorderlineButton
-            url="https://norikoyamamoto.themedia.jp/posts/50633765?categoryIds=618885"
-            text="More Information (Japanese)"
+            url="https://www.tranzac.org/event/luka-kuplowsky-the-ryokan-band-album-release-w-the-heart-of-going-la/"
+            text="More Information"
           >
             <IoIosInformationCircleOutline size={20} className="m-2" />
           </BorderlineButton>
           <BorderlineButton
-            url="https://docs.google.com/forms/d/e/1FAIpQLScJ6ctBBgKpjJf4qX3Eg-13dqZi7AX3D1ejaVgBzcT7fZ-Hng/viewform?vc=0&c=0&w=1&flr=0"
-            text="Reserve Ticket (Japanese)"
+            url="https://www.eventbrite.ca/e/luka-kuplowsky-the-ryokan-band-album-release-w-the-heart-of-going-la-tickets-885287086507"
+            text="Reserve Ticket"
           >
             <IoTicketOutline size={20} className="m-2" />
           </BorderlineButton>
