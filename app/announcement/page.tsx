@@ -17,7 +17,7 @@ const AnnouncementPage: React.FC = () => {
       <div className="flex-wrapper">
         <Video
           VideoId="ol6DkXRV1G8"
-          title="Mime-Dance by Noriko Yamamoto: Fading Memories"
+          title="What Luck! (Ryōkan Taigu) - Luka Kuplowsky & The Ryōkan Band"
         />
         <TextInfoWrapper breakePointWidth="half">
           <div className="py-4 md:pt-0">
