@@ -21,15 +21,15 @@ const AnnouncementPage: React.FC = () => {
         />
         <TextInfoWrapper breakePointWidth="half">
           <div className="py-4 md:pt-0">
-            <h2 className="font-bold text-base lg:text-xl pb-2">I am dancing in music video and will be dancing live at show on June 18!</h2>
+            <h2 className="font-bold text-base lg:text-xl pb-2">Dancing in Music Video, and Live Show on June 18!</h2>
             <p className="text-base lg:text-lg py-2">
-              Luka Kuplowsky & The Ryōkan Band released new album &quot;How Can I Possibly Sleep When There is Music.&quot; I am dancing in one of the song&apos;s videos + I will
-              be dancing live to 4 of the songs at the show. 
+              Luka Kuplowsky & The Ryōkan Band released their new album <span className="italic">How Can I Possibly Sleep When There is Music.</span> I am dancing in one of the song&apos;s videos & I will
+              be dancing live to four of the songs at the show. 
             </p>
             <ul className="text-base lg:text-lg">
-            <Link href="https://maps.app.goo.gl/pM5dhsHC35C2cjUL7" target="_blank">
+            <Link href="https://maps.app.goo.gl/wrh41uJTi6Qff58m7" target="_blank">
               <li>
-                <span className="text-sm">Venue: </span>Main Hall, Tranzac Club 292 Brunswick Ave, Toronto
+                <span className="text-sm">Venue: </span>Tranzac Club (Main Hall) - 292 Brunswick Ave, Toronto
               </li>
               </Link>
               <li><span className="text-sm">Date: </span>June 18, 2024</li>
