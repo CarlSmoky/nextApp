@@ -39,14 +39,14 @@ const AnnouncementPage: React.FC = () => {
             </p>
             <ul className="text-base lg:text-lg">
               <li>
-                <span className="text-sm">Venue: </span>
-                Tranzac Club (Main Hall)
-              </li>
-              <li>
                 <span className="text-sm">Date: </span>June 18, 2024
               </li>
               <li>
                 <span className="text-sm">Time: </span>7:00pm - 11:00pm
+              </li>
+              <li>
+                <span className="text-sm">Venue: </span>
+                Tranzac Club (Main Hall)
               </li>
               <li>
                 <span className="text-sm">Address: </span>
