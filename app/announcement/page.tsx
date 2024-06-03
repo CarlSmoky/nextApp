@@ -21,21 +21,48 @@ const AnnouncementPage: React.FC = () => {
         />
         <TextInfoWrapper breakePointWidth="half">
           <div className="py-4 md:pt-0">
-            <h2 className="font-bold text-base lg:text-xl pb-2">Dancing in Music Video, and Live Show on June 18!</h2>
+            <h2 className="font-bold text-lg lg:text-xl pb-2">
+              Dancing in Music Video, and Live Show on June 18!
+            </h2>
             <p className="text-base lg:text-lg py-2">
-              Luka Kuplowsky & The Ryōkan Band released their new album <span className="italic">How Can I Possibly Sleep When There is Music.</span> I am dancing in one of the song&apos;s videos & I will
-              be dancing live to four of the songs at the show. 
+              Luka Kuplowsky & The Ryōkan Band released their new album{" "}
+              <Link
+                href="https://lukalives.bandcamp.com/album/how-can-i-possibly-sleep-when-there-is-music"
+                target="_blank"
+              >
+                <span className="italic no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4">
+                  How Can I Possibly Sleep When There is Music.
+                </span>
+              </Link>{" "}
+              I am dancing in one of the song&apos;s videos & I will be dancing
+              live to four of the songs at the show.
             </p>
             <ul className="text-base lg:text-lg">
-            <Link href="https://maps.app.goo.gl/wrh41uJTi6Qff58m7" target="_blank">
               <li>
-                <span className="text-sm">Venue: </span>Tranzac Club (Main Hall) - 292 Brunswick Ave, Toronto
+                <span className="text-sm">Venue: </span>
+                Tranzac Club (Main Hall)
               </li>
-              </Link>
-              <li><span className="text-sm">Date: </span>June 18, 2024</li>
-              <li><span className="text-sm">Time: </span>7:00pm - 11:00pm</li>
+              <li>
+                <span className="text-sm">Date: </span>June 18, 2024
+              </li>
+              <li>
+                <span className="text-sm">Time: </span>7:00pm - 11:00pm
+              </li>
+              <li>
+                <span className="text-sm">Address: </span>
+                <Link
+                  href="https://maps.app.goo.gl/wrh41uJTi6Qff58m7"
+                  target="_blank"
+                  className="no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4"
+                >
+                  292 Brunswick Ave Toronto, ON
+                </Link>
+              </li>
             </ul>
-            <span className="text-xs lg:text-sm">Note: The concert starts at 7pm, but Luka&apos;s band will be on from 9pm.</span>
+            <span className="text-xs lg:text-sm">
+              Note: The concert starts at 7pm, but Luka&apos;s band will be on
+              from 9pm.
+            </span>
           </div>
           <BorderlineButton
             url="https://www.tranzac.org/event/luka-kuplowsky-the-ryokan-band-album-release-w-the-heart-of-going-la/"
