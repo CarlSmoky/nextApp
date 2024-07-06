@@ -67,6 +67,7 @@ export interface VisualArtSeries {
   type: VisualArtType;
   images: VisualArtImage[];
 }
+
 export type VisualArtImage = {
   id: number;
   src: string;
@@ -76,6 +77,17 @@ export type VisualArtImage = {
   media?: string;
   year?: number;
   blurredDataUrl?: string;
+}
+
+export type MultimediaSource = {
+  title: string;
+  href: string;
+}
+
+export enum MultimediaType {
+  essay = "essay",
+  poem = "poem",
+  radio = "radio"
 }
 
 

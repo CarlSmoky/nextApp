@@ -1,0 +1,38 @@
+{
+  "multimedia": 
+    {
+      "essay" :
+      [
+        {
+          "title": "Fraser 202403(フレイザ- 2024年3月号)",
+          "href": "/images/multimedia/fraser_202403.pdf"
+        },
+        {
+          "title": "Shikakubi #16(鹿首 16号)",
+          "href": "/images/multimedia/fraser_202403.pdf"
+        },
+        {
+          "title": "Shikakubi #17(鹿首 17号)",
+          "href": "/images/multimedia/fraser_202403.pdf"
+        },
+        {
+          "title": "Shikakubi #18(鹿首 18号)",
+          "href": "/images/multimedia/fraser_202403.pdf"
+        }
+      ],
+      "poem" :
+      [
+        {
+          "title": "My father(私の父）",
+          "href": "/images/multimedia/myFather.pdf"
+        }
+      ],
+      "radio" :
+      [
+        {
+          "title": "cbc",
+          "href": "/images/multimedia/fraser_202403.pdf"
+        }
+      ]
+    }
+}
