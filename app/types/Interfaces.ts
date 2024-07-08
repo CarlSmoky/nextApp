@@ -86,7 +86,7 @@ export type MultimediaSource = {
 }
 
 export enum MultimediaType {
-  article = "article",
+  essay = "essay",
   radio = "radio",
   poem = "poem"
 }

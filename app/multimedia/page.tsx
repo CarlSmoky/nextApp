@@ -19,25 +19,25 @@ const MultimediaPage: React.FC = async () => {
     "utf8"
   );
   const data = JSON.parse(file);
-  const displayOrder = ["article", "poem", "radio"];
+  const displayOrder = ["essay", "poem", "radio"];
   return (
     <SectionwithTitle title="Multimedia">
       <div className="flex-wrapper">
-        <ul className="text-base lg:text-lg font-paragraph m-auto lg:w-[750px]">
+        <ul className="m-auto lg:w-[750px] text-grey-100">
           {displayOrder.map((el) => (
             <React.Fragment key={el}>
               <li className="list-none">
-                <h3 className="text-2xl font-title my-4" id={el}>
+                <h2 className="font-title font-bold text-lg md:text-xl lg:text-2xl my-4" id={el}>
                   {toTitleCase(el)}
-                </h3>
-                <ul className="text-base xl:text-lg font-paragraph">
+                </h2>
+                <ul className="font-paragraph text-base xl:text-lg">
                   {data.multimedia[el].map(
                     (item: MultimediaSource, i: number) => {
-                      if (el === "article") {
+                      if (el === "essay") {
                         return (
                           <li
                             key={i}
-                            className="my-2 group "
+                            className="my-2 group"
                           >
                             <Link
                               href={item.href}
