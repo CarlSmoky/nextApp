@@ -1,4 +1,4 @@
-import { PerformanceType, VisualArtType　} from "../../types/Interfaces";
+import { PerformanceType, VisualArtType, MultimediaType　} from "../../types/Interfaces";
 import { toTitleCase, getPerformanceTypeName } from "../../utils/textFormat"
 
 export const links = [
@@ -34,6 +34,16 @@ export const links = [
     link: "/nia-instruction",
     submenu: false,
     sublinks: [],
+  },
+  {
+    name: "Multimedia",
+    link: "/multimedia",
+    submenu: true,
+    sublinks: [
+      { name: toTitleCase(MultimediaType.article), link: `/multimedia/#${MultimediaType.article}`},
+      { name: toTitleCase(MultimediaType.poem), link: `/multimedia/#${MultimediaType.poem}`},
+      { name: toTitleCase(MultimediaType.radio), link: `/multimedia/#${MultimediaType.radio}`}
+    ],
   },
   {
     name: "About",
