@@ -1,38 +1,41 @@
 {
   "multimedia": 
     {
-      "essay" :
+      "article" :
       [
-        {
-          "title": "Fraser 202403(フレイザ- 2024年3月号)",
-          "href": "/images/multimedia/fraser_202403.pdf"
+        { 
+          "cover" : "/images/multimedia/fraser_cover_202403.png",
+          "title": "Fraser-March 2024(JP)",
+          "href": "/images/multimedia/fraser_article_202403.pdf"
         },
         {
-          "title": "Shikakubi #16(鹿首 16号)",
-          "href": "/images/multimedia/fraser_202403.pdf"
+          "cover" : "/images/multimedia/shikakubi_cover_17.png",
+          "title": "Shikakubi #17(JP)",
+          "href": "/images/multimedia/shikakubi_article_17.pdf"
         },
         {
-          "title": "Shikakubi #17(鹿首 17号)",
-          "href": "/images/multimedia/fraser_202403.pdf"
-        },
-        {
-          "title": "Shikakubi #18(鹿首 18号)",
-          "href": "/images/multimedia/fraser_202403.pdf"
+          "cover" : "/images/multimedia/shikakubi_cover_16.png",
+          "title": "Shikakubi #16(JP)",
+          "href": "/images/multimedia/shikakubi_article_16.pdf"
         }
       ],
       "poem" :
       [
         {
-          "title": "My father(私の父）",
-          "href": "/images/multimedia/myFather.pdf"
+          "title": "Watashinochichi(JP)",
+          "href": "/images/multimedia/watashinochichi.pdf"
         }
       ],
       "radio" :
       [
         {
-          "title": "cbc",
-          "href": "/images/multimedia/fraser_202403.pdf"
-        }
+          "title": "CBC Radio-April 5, 2005(EN)",
+          "href": "/images/multimedia/cbc_radio_20050405.mp3"
+          },
+          {
+            "title": "Shizuoka Radio-April 16, 2023(JP)",
+            "href": "/images/multimedia/shizuoka_radio_20230416.mp3"
+            }
       ]
     }
 }

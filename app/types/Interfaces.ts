@@ -80,14 +80,15 @@ export type VisualArtImage = {
 }
 
 export type MultimediaSource = {
+  cover?: string;
   title: string;
   href: string;
 }
 
 export enum MultimediaType {
-  essay = "essay",
-  poem = "poem",
-  radio = "radio"
+  article = "article",
+  radio = "radio",
+  poem = "poem"
 }
 
 
