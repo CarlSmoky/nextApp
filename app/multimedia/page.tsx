@@ -19,7 +19,7 @@ const MultimediaPage: React.FC = async () => {
     "utf8"
   );
   const data = JSON.parse(file);
-  const displayOrder = ["article", "poem", "radio"];
+  const displayOrder = ["essay", "poem", "radio"];
   return (
     <SectionwithTitle title="Multimedia">
       <div className="flex-wrapper">
@@ -33,7 +33,7 @@ const MultimediaPage: React.FC = async () => {
                 <ul className="text-base xl:text-lg font-paragraph">
                   {data.multimedia[el].map(
                     (item: MultimediaSource, i: number) => {
-                      if (el === "article") {
+                      if (el === "essay") {
                         return (
                           <li
                             key={i}

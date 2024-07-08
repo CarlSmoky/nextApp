@@ -1,22 +1,22 @@
 {
   "multimedia": 
     {
-      "article" :
+      "essay" :
       [
         { 
           "cover" : "/images/multimedia/fraser_cover_202403.png",
           "title": "Fraser-March 2024(JP)",
-          "href": "/images/multimedia/fraser_article_202403.pdf"
+          "href": "/images/multimedia/fraser_essay_202403.pdf"
         },
         {
           "cover" : "/images/multimedia/shikakubi_cover_17.png",
           "title": "Shikakubi #17(JP)",
-          "href": "/images/multimedia/shikakubi_article_17.pdf"
+          "href": "/images/multimedia/shikakubi_essay_17.pdf"
         },
         {
           "cover" : "/images/multimedia/shikakubi_cover_16.png",
           "title": "Shikakubi #16(JP)",
-          "href": "/images/multimedia/shikakubi_article_16.pdf"
+          "href": "/images/multimedia/shikakubi_essay_16.pdf"
         }
       ],
       "poem" :
