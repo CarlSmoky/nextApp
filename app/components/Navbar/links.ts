@@ -41,8 +41,8 @@ export const links = [
     submenu: true,
     sublinks: [
       { name: toTitleCase(MultimediaType.article), link: `/multimedia/#${MultimediaType.article}`},
-      { name: toTitleCase(MultimediaType.radio), link: `/multimedia/#${MultimediaType.radio}`},
-      { name: toTitleCase(MultimediaType.poem), link: `/multimedia/#${MultimediaType.poem}`}
+      { name: toTitleCase(MultimediaType.poem), link: `/multimedia/#${MultimediaType.poem}`},
+      { name: toTitleCase(MultimediaType.radio), link: `/multimedia/#${MultimediaType.radio}`}
     ],
   },
   {
