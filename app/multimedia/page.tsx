@@ -2,13 +2,12 @@ import React from "react";
 import type { Metadata } from "next";
 import fs from "node:fs/promises";
 import Link from "next/link";
-import Image from "next/image";
-import SectionwithTitle from "../components/SectionwithTitle";
 import { MultimediaSource } from "../types/Interfaces";
 import { toTitleCase } from "../utils/textFormat";
+import SectionwithTitle from "../components/SectionwithTitle";
+import MagazineCover from "../components/MagazineCover";
 import { FaBookOpen } from "react-icons/fa";
 import { FaRadio, FaPenFancy } from "react-icons/fa6";
-import MagazineCover from "../components/MagazineCover";
 
 export const metadata: Metadata = {
   title: "Multimedia",
