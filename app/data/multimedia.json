@@ -5,37 +5,37 @@
       [
         { 
           "cover" : "/images/multimedia/fraser_cover_202403.png",
-          "title": "Fraser-March 2024(JP)",
+          "title": "Fraser-March 2024 (JP)",
           "href": "/images/multimedia/fraser_essay_202403.pdf"
         },
         {
           "cover" : "/images/multimedia/shikakubi_cover_17.png",
-          "title": "Shikakubi #17(JP)",
+          "title": "Shikakubi #17 (JP)",
           "href": "/images/multimedia/shikakubi_essay_17.pdf"
         },
         {
           "cover" : "/images/multimedia/shikakubi_cover_16.png",
-          "title": "Shikakubi #16(JP)",
+          "title": "Shikakubi #16 (JP)",
           "href": "/images/multimedia/shikakubi_essay_16.pdf"
         }
       ],
       "poem" :
       [
         {
-          "title": "Watashinochichi(JP)",
+          "title": "Watashinochichi (JP)",
           "href": "/images/multimedia/watashinochichi.pdf"
         }
       ],
       "radio" :
       [
         {
-          "title": "CBC Radio-April 5, 2005(EN)",
+          "title": "Shizuoka Radio - April 16, 2023 (JP)",
+          "href": "/images/multimedia/shizuoka_radio_20230416.mp3"
+        },
+        {
+          "title": "CBC Radio - April 5, 2005 (EN)",
           "href": "/images/multimedia/cbc_radio_20050405.mp3"
-          },
-          {
-            "title": "Shizuoka Radio-April 16, 2023(JP)",
-            "href": "/images/multimedia/shizuoka_radio_20230416.mp3"
-            }
+        }
       ]
     }
 }
