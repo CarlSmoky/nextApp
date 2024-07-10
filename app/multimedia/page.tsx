@@ -33,7 +33,7 @@ const MultimediaPage: React.FC = async () => {
                 <ul className="font-paragraph text-base xl:text-lg">
                   {data.multimedia[el].map(
                     (item: MultimediaSource, i: number) => {
-                      if (el === "essay") {
+                      if (el !== "radio") {
                         return (
                           <li
                             key={i}
@@ -47,13 +47,13 @@ const MultimediaPage: React.FC = async () => {
                               className="flex flex-col md:flex-row justify-between group-hover:opacity-60 transition-all duration-600 ease-in-out"
                             >
                               <div className="flex flex-row md:w-1/2 pl-6 ">
-                                <FaBookOpen className="my-auto" />
-                                <h3 className="text-center md:text-left  md:my-auto ml-4">
+                                {el === "essay" ? <FaBookOpen className="my-auto" /> : <FaPenFancy className="my-auto" />}
+                                <h3 className="text-center md:text-left  md:my-auto ml-4 py-2 md:py-4">
                                   {item.title}
                                 </h3>
                               </div>
 
-                              {item.cover ? (
+                              {item.cover && (
                                 <Image
                                   className="object-obtain m-auto md:m-0 p-1"
                                   src={item.cover}
@@ -62,15 +62,11 @@ const MultimediaPage: React.FC = async () => {
                                   height={100}
                                   sizes="(max-width: 480px) 66vw, (max-width: 768px) 50vw, 33vw"
                                 />
-                              ) : (
-                                <span>No Image Available</span>
                               )}
                             </Link>
                           </li>
                         );
-                      }
-
-                      if (el === "radio") {
+                      } else {
                         return (
                           <li
                             key={i}
@@ -78,33 +74,14 @@ const MultimediaPage: React.FC = async () => {
                           >
                             <div className="flex flex-row md:w-1/2 pl-6">
                               <FaRadio className="my-auto"/>
-                              <h3 className="text-center md:text-left md:my-auto ml-4">
+                              <h3 className="text-center md:text-left md:my-auto ml-4 py-2 md:py-4">
                                 {item.title}
                               </h3>
                             </div>
-                            <audio controls className="p-1">
+                            <audio controls className="p-1 m-auto md:m-0">
                               <source src={item.href} type="audio/mpeg" />
                               Your browser does not support the audio element.
                             </audio>
-                          </li>
-                        );
-                      } else {
-                        return (
-                          <li key={i} className="my-4 group">
-                            <Link
-                              href={item.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              locale={false}
-                              className="group-hover:opacity-60 transition-all duration-600 ease-in-out"
-                            >
-                              <div className="flex flex-row md:w-1/2 pl-6 py-4">
-                              <FaPenFancy className="my-auto"/>
-                              <h3 className="text-center md:text-left md:my-auto ml-4">
-                                {item.title}
-                              </h3>
-                              </div>
-                            </Link>
                           </li>
                         );
                       }
