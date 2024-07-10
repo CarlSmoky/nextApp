@@ -8,6 +8,7 @@ import { MultimediaSource } from "../types/Interfaces";
 import { toTitleCase } from "../utils/textFormat";
 import { FaBookOpen } from "react-icons/fa";
 import { FaRadio, FaPenFancy } from "react-icons/fa6";
+import MagazineCover from "../components/MagazineCover";
 
 export const metadata: Metadata = {
   title: "Multimedia",
@@ -54,14 +55,7 @@ const MultimediaPage: React.FC = async () => {
                               </div>
 
                               {item.cover && (
-                                <Image
-                                  className="object-obtain m-auto md:m-0 p-1"
-                                  src={item.cover}
-                                  alt={item.title}
-                                  width={200}
-                                  height={100}
-                                  sizes="(max-width: 480px) 66vw, (max-width: 768px) 50vw, 33vw"
-                                />
+                                <MagazineCover src={item.cover} alt={item.title}/>
                               )}
                             </Link>
                           </li>
