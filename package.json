@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.5",
     "@sendgrid/mail": "^7.7.0",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/node": "20.6.3",

@@ -1,5 +1,6 @@
 import React from "react";
 import "./globals.css";
+import { GoogleTagManager } from "@next/third-parties/google";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import type { Metadata } from "next";
@@ -14,9 +15,15 @@ export const metadata: Metadata = {
   description: "Visual Artist and Performer Noriko Yamamoto's site",
 };
 
+const {GTM_ID} = process.env
+if (!GTM_ID) {
+  throw new Error("Google Tag Manager ID is not defined");
+}
+
 const RootLayout: React.FC<childrenProps> = ({ children }: childrenProps) => {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId={GTM_ID} />
       <body className="bg-prime-100">
         <main className={`${titleFont.variable} ${paragraphFont.variable}`}>
             <Navbar />
