@@ -16,7 +16,7 @@ const Footer = () => {
           <ul className="flex justify-center lg:m-auto text-grey-200">
             <SnsLinks />
           </ul>
-            <Link href="/" className="p-3 mx-auto">
+            <Link href="/" className="p-3 mx-auto g-logo-to-home-link">
               <Image
                 src={Logo}
                 alt="Momo Gallery Logo"

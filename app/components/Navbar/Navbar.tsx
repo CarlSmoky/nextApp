@@ -27,6 +27,7 @@ const Navbar: React.FC = () => {
             onClick={() => {
               closeNav();
             }}
+            className="g-logo-to-home-link"
           >
             <Image
               src={Logo}
