@@ -15,7 +15,7 @@ const FooterNav = () => {
           <Link
             href={link.link}
             prefetch={false}
-            className={`block my-2 py-2 px-1 text-sm md:text-base lg:text-sm xl:text-base hover:text-black-100 transition-all duration-300 ease-in-out ${
+            className={`g-footer-nav-link block my-2 py-2 px-1 text-sm md:text-base lg:text-sm xl:text-base hover:text-black-100 transition-all duration-300 ease-in-out ${
               removeExcessivePathSegments(pathname) === link.link
                 ? "underline underline-offset-4"
                 : ""
@@ -27,7 +27,7 @@ const FooterNav = () => {
             <ul className="flex flex-col text-grey-200/80 text-xs">
               {link.sublinks.map((slink: Sublink, i) => (
                 <li key={i} className="ml-3 p-2 hover:text-black-100 transition-all duration-300 ease-in-out">
-                  <Link href={slink.link} prefetch={false}>
+                  <Link href={slink.link} prefetch={false} className="g-footer-nav-link">
                     {slink.name}
                   </Link>
                 </li>
