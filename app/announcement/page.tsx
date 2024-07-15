@@ -29,6 +29,7 @@ const AnnouncementPage: React.FC = () => {
               <Link
                 href="https://lukalives.bandcamp.com/album/how-can-i-possibly-sleep-when-there-is-music"
                 target="_blank"
+                className="g-external_link"
               >
                 <span className="italic no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4">
                   How Can I Possibly Sleep When There is Music.
@@ -53,7 +54,7 @@ const AnnouncementPage: React.FC = () => {
                 <Link
                   href="https://maps.app.goo.gl/wrh41uJTi6Qff58m7"
                   target="_blank"
-                  className="no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4"
+                  className="no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4 g-external_link"
                 >
                   292 Brunswick Ave Toronto, ON
                 </Link>
