@@ -24,7 +24,7 @@ const ImageLinkAnimation: React.FC<Props> = async ({
     <Link
       href={linkTo}
       prefetch={false}
-      className="w-full"
+      className="w-full g-image-link"
     >
       <div className="flex from-teal-100 via-teal-300 to-teal-500 bg-gradient-to-br shadow-2xl active:ring active:ring-white-100 cursor-pointer">
         <div className="relative w-full aspect-video sm:aspect-square overflow-hidden group">
