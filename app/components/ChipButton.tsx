@@ -21,7 +21,7 @@ const ChipButton: React.FC<ChipButtonProps> = ({
     <Link
       href={href}
       prefetch={false}
-      className={`flex justify-center rounded-full border border-grey-100/20 p-[0.5rem] min-w-[5rem] whitespace-nowrap md:hover:bg-grey-100/80 md:hover:text-white-100 transition ease-in-out 
+      className={`flex justify-center rounded-full border border-grey-100/20 p-[0.5rem] min-w-[5rem] whitespace-nowrap md:hover:bg-grey-100/80 md:hover:text-white-100 transition ease-in-out g-chip-button-link
           ${selectedType && "bg-grey-100/30"}
           ${disabled && "pointer-events-none"}
           ${selectedAll && "outline outline-offset-2 outline-2 outline-grey-100/50 "}
