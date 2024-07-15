@@ -44,7 +44,7 @@ const MultimediaPage: React.FC = async () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               locale={false}
-                              className="flex flex-col md:flex-row justify-between group-hover:opacity-60 transition-all duration-600 ease-in-out"
+                              className="flex flex-col md:flex-row justify-between group-hover:opacity-60 transition-all duration-600 ease-in-out g-multimedia-link"
                             >
                               <div className="flex flex-row md:w-1/2 pl-6 ">
                                 {el === "essay" ? <FaBookOpen className="my-auto" /> : <FaPenFancy className="my-auto" />}
