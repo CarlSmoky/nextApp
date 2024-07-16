@@ -43,7 +43,7 @@ const Video: React.FC<VideoProps> = ( { title, VideoId } ) => {
               transform: scale(1.1);
             }
           </style>
-          <a href=https://www.youtube.com/embed/${VideoId}?autoplay=1&fs=1>
+          <a href=https://www.youtube.com/embed/${VideoId}?autoplay=1&fs=1&enablejsapi=1>
             <img
               src=https://img.youtube.com/vi/${VideoId}/hqdefault.jpg
               alt=${title}
