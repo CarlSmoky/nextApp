@@ -15,6 +15,7 @@ const Video: React.FC<VideoProps> = ( { title, VideoId } ) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
         allowFullScreen
         loading="lazy"
+        src={`https://www.youtube.com/embed/${VideoId}?autoplay=1&fs=1&enablejsapi=1`}
         srcDoc={
           `<style>
             * {
