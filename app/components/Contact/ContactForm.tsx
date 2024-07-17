@@ -116,7 +116,7 @@ const ContactForm = () => {
         {Object.entries(errors).some(([k, v]) => v === true) && (
           <span className="text-red-100">Please fill in {errorFileds}. </span>
         )}
-        {showSuccessMessage && <span>Your message has been sent</span>}
+        {showSuccessMessage && <span id="g-success-message">Your message has been sent</span>}
         {showFailureMessage && (
           <span className="text-red-100">Fail to send message, try gain</span>
         )}
