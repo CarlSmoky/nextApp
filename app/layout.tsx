@@ -12,7 +12,11 @@ export const metadata: Metadata = {
     default: "Momo gallery - Noriko Yamamoto",
     template: "%s | Momo gallery",
   },
-  description: "Visual Artist and Performer Noriko Yamamoto's site",
+  description: "Discover Noriko Yamamoto - Visual Artist (Washi, Sculpture, Mixed-media), Performer (Mime Dance, Dance, Silent Storytelling, Mime, Clowning), Choreographer, and Nia Instruction",
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const {GTM_ID} = process.env
