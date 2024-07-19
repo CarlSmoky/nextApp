@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /components/
+Disallow: /data/
+Disallow: /hooks/
+Disallow: /types/
+Disallow: /utils/
+
+Sitemap: https://www.momogallery.ca/
+Sitemap: https://www.momogallery.ca/visual-art/
+Sitemap: https://www.momogallery.ca/performance/
+Sitemap: https://www.momogallery.ca/nia-instruction/
+Sitemap: https://www.momogallery.ca/multimedia/
+Sitemap: https://www.momogallery.ca/about/
