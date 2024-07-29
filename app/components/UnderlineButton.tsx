@@ -14,6 +14,7 @@ const UnderlineButton: React.FC<ButtonProps> = ({
       <button
         className="p-2 underline underline-offset-8 decoration-grey-100/80 hover:bg-grey-100/80 hover:text-prime-100 hover:no-underline active:bg-grey-100/80 transition-all cursor-pointer"
         onClick={onClick}
+        aria-expanded={open}
       >
         {open ? "Show less" : "Read more"}
       </button>
