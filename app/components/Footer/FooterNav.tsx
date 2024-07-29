@@ -24,7 +24,7 @@ const FooterNav = () => {
             {link.name}
           </Link>
           {link.submenu && (
-            <ul className="flex flex-col text-grey-200/80 text-xs">
+            <ul className="flex flex-col text-grey-200/85 text-xs">
               {link.sublinks.map((slink: Sublink, i) => (
                 <li key={i} className="ml-3 p-2 hover:text-black-100 transition-all duration-300 ease-in-out">
                   <Link href={slink.link} prefetch={false} className="g-footer-nav-link">

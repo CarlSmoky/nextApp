@@ -13,16 +13,17 @@ const IndicatorItem: React.FC<IndicatorItemProps> = ({
   currentIndex,
 }) => {
   return (
-        <li
-          onClick={() => jumpSlide(index)}
-          className="z-10 text-2xl cursor-pointer"
-        >
-          <RxDotFilled
-            className={`${
-              currentIndex === index ? "text-black-100" : "text-grey-100/50"
-            }`}
-          />
-        </li>
+    <li
+      className="z-10 text-2xl cursor-pointer"
+    >
+      <button aria-label={`slide image ${index + 1}`} onClick={() => jumpSlide(index)}>
+        <RxDotFilled
+          className={`${
+            currentIndex === index ? "text-black-100" : "text-grey-100/50"
+          }`}
+        />
+      </button>
+    </li>
   );
 };
 

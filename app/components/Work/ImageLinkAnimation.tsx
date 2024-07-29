@@ -36,12 +36,11 @@ const ImageLinkAnimation: React.FC<Props> = async ({
           <Image
             className="object-cover lg:group-hover:scale-110 transition duration-300 ease-in-out"
             src={src}
-            alt={name}
+            alt={"image link to " + name}
             fill={true}
             sizes="(max-width: 480px) 100vw, 33vw"
             placeholder="blur"
             blurDataURL={base64}
-            // priority={i === 0 ? true : false}
           />
         </div>
       </div>
