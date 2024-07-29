@@ -14,8 +14,9 @@ const Arrow: React.FC<ArrowProps> = ({ direction, onClick }) => (
     aria-label={direction === "left" ? "previous slide image" : "next slide image"}
     className="absolute top-[50%] translate-x-0 translate-y-[-50%] text-2xl rounded-full text-white-100 cursor-pointer"
     style={{ [direction]: "1px" }}
+    onClick={onClick}
   >
-    {direction === "left" ? <GrFormPrevious onClick={onClick} size={25} /> : <GrFormNext onClick={onClick} size={25} />}
+    {direction === "left" ? <GrFormPrevious  size={25} /> : <GrFormNext size={25} />}
   </button>
 );
 export default Arrow;
