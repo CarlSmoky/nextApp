@@ -190,7 +190,7 @@ const ContactForm = () => {
       </div>
       <div className="my-2 w-1/2 md:w-1/3 font-paragraph">
         <button
-          className="text-sm sm:text-base whitespace-nowrap font-bold tracking-wide bg-grey-100/80 text-prime-100 p-3 w-full hover:bg-grey-100 focus:outline-none focus:shadow-outline active:ring active:ring-grey-100 active:bg-grey-100 transition-all"
+          className="text-sm sm:text-base whitespace-nowrap font-bold tracking-wide bg-grey-100/80 text-prime-100 p-3 w-full hover:bg-grey-100 focus:outline-offset-4 active:ring active:ring-grey-100 active:bg-grey-100 transition-all"
           type="submit"
         >
           {sendStatus ? "Sending" : "Send Message"}
