@@ -9,7 +9,7 @@ const Work: React.FC = async () => {
   const data = JSON.parse(file);
 
   return (
-    <SectionwithTitle title="Work">
+    <SectionwithTitle title="Work" isPageHeading={false}>
         <div className="flex flex-col sm:flex-row gap-4">
           <Suspense fallback={<div className="m-auto"><p className="font-paragraph">Loading...</p></div>}>
             {data.imageLinks.map((imageLink: imageLink, i: number) => (
