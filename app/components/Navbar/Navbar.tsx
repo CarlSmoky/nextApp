@@ -22,7 +22,11 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="margin-global whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph">
+    <nav
+      className="margin-global whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph"
+      role={open ? "dialog" : "navigation"}
+      aria-modal={open ? true : false}
+    >
       <div className="flex justify-between">
         <div className="z-50 py-3 w-full flex justify-between">
           <Link href="/" onClick={closeNav} className="g-logo-to-home-link">
@@ -52,8 +56,9 @@ const Navbar: React.FC = () => {
         </ul>
         {/* Mobile nav */}
         <ul
-          className={`lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24 duration-500 ${open ? "left-0 z-30 block" : "left-[-100%] z-10 hidden"}`}
-          role="dialog"
+          className={`lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24 duration-500 ${
+            open ? "left-0 z-30 block" : "left-[-100%] z-10 hidden"
+          }`}
           aria-label="Mobile navigation"
           aria-hidden={!open}
         >
