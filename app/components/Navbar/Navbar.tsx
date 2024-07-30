@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "./NavLinks";
@@ -10,6 +10,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [heading, setHeading] = useState<string>("");
+  const modalRef = useRef<HTMLUListElement>(null);
 
   const handleClick = () => {
     setOpen(!open);
@@ -21,8 +22,55 @@ const Navbar: React.FC = () => {
     setHeading("");
   };
 
+  useEffect(() => {
+    if (open && modalRef.current) {
+      const currentModalRef = modalRef.current;
+      const focusableElements = currentModalRef.querySelectorAll(
+        'a[href], button, textarea, input, select'
+      );
+      const firstElement = focusableElements[0] as HTMLElement;
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+      const trapFocus = (event: KeyboardEvent) => {
+        if (event.key === "Tab") {
+          if (event.shiftKey) {
+            // Shift + Tab
+            if (document.activeElement === firstElement) {
+              event.preventDefault();
+              lastElement.focus();
+            }
+          } else {
+            // Tab
+            if (document.activeElement === lastElement) {
+              event.preventDefault();
+              firstElement.focus();
+            }
+          }
+        } else if (event.key === "Escape") {
+          closeNav();
+        }
+      };
+
+      currentModalRef.addEventListener("keydown", trapFocus);
+
+      // Set focus to the first element
+      if (firstElement) {
+        firstElement.focus();
+      }
+
+      return () => {
+        currentModalRef.removeEventListener("keydown", trapFocus);
+      };
+    }
+  }, [open]);
+
   return (
-    <nav className="margin-global whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph">
+    <nav
+      ref={modalRef}
+      className="margin-global whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph"
+      role={open ? "dialog" : "navigation"}
+      aria-modal={open ? true : false}
+    >
       <div className="flex justify-between">
         <div className="z-50 py-3 w-full flex justify-between">
           <Link href="/" onClick={closeNav} className="g-logo-to-home-link">
@@ -52,8 +100,9 @@ const Navbar: React.FC = () => {
         </ul>
         {/* Mobile nav */}
         <ul
-          className={`lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24 duration-500 ${open ? "left-0 z-30 block" : "left-[-100%] z-10 hidden"}`}
-          role="dialog"
+          className={`lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24 duration-500 ${
+            open ? "left-0 z-30 block" : "left-[-100%] z-10 hidden"
+          }`}
           aria-label="Mobile navigation"
           aria-hidden={!open}
         >
