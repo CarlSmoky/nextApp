@@ -66,10 +66,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      ref={modalRef}
-      className="margin-global whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph"
-      role={open ? "dialog" : "navigation"}
-      aria-modal={open ? true : false}
+    className="margin-global whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph"
     >
       <div className="flex justify-between">
         <div className="z-50 py-3 w-full flex justify-between">
@@ -100,11 +97,14 @@ const Navbar: React.FC = () => {
         </ul>
         {/* Mobile nav */}
         <ul
-          className={`lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24 duration-500 ${
-            open ? "left-0 z-30 block" : "left-[-100%] z-10 hidden"
+          className={`lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24 duration-500 transform ${
+            open ? "left-0 z-30" : "left-[-100%] z-10"
           }`}
+          ref={modalRef}
+          role={open ? "dialog" : "navigation"}
           aria-label="Mobile navigation"
           aria-hidden={!open}
+          aria-modal={open ? true : false}
         >
           <NavLinks
             onToggle={handleClick}

@@ -39,6 +39,7 @@ const NavLinks: React.FC<NavLinksProps> = ({
                 href={link.link}
                 prefetch={false}
                 className="g-nav"
+                tabIndex={isOpen ? 0 : -1}
               >
                 {link.name}
               </Link>
@@ -49,6 +50,7 @@ const NavLinks: React.FC<NavLinksProps> = ({
                   aria-expanded={heading === link.name}
                   aria-controls={`${link.name}-submenu`}
                   onClick={() => heading !== link.name ? setHeading(link.name): setHeading("")}
+                  tabIndex={isOpen ? 0 : -1}
                 >
                   {heading === link.name ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
                 </button>
