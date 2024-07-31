@@ -11,6 +11,7 @@ type NavLinksProps = {
   onToggle: () => void;
   isOpen: boolean;
   heading: string;
+  isMobile?: boolean;
   setHeading: (heading: string | "") => void;
 };
 
@@ -19,6 +20,7 @@ const NavLinks: React.FC<NavLinksProps> = ({
   isOpen,
   heading,
   setHeading,
+  isMobile = false
 }) => {
   const pathname = usePathname();
 
@@ -39,16 +41,18 @@ const NavLinks: React.FC<NavLinksProps> = ({
                 href={link.link}
                 prefetch={false}
                 className="g-nav"
+                tabIndex={isOpen || !isMobile ? 0 : -1}
               >
                 {link.name}
               </Link>
               {link.submenu && (
                 <button
-                  className="text-2xl mx-4 px-2 lg:mx-0 lg:px-1"
+                  className="text-2xl px-2 lg:mx-0 lg:px-1"
                   aria-label={heading === link.name ? "collapse submenu" : "expand submenu"}
                   aria-expanded={heading === link.name}
                   aria-controls={`${link.name}-submenu`}
                   onClick={() => heading !== link.name ? setHeading(link.name): setHeading("")}
+                  tabIndex={isOpen || !isMobile ? 0 : -1}
                 >
                   {heading === link.name ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
                 </button>
@@ -62,7 +66,7 @@ const NavLinks: React.FC<NavLinksProps> = ({
               {link.sublinks.map((slinks: Sublink, i) => (
                 <li
                   key={i}
-                  className="p-3 mx-14 lg:mx-4 text-sm hover:text-black-100 transition-all duration-300 ease-in-out"
+                  className="mx-4 p-3 text-sm hover:text-black-100 transition-all duration-300 ease-in-out"
                 >
                   <Link
                     onClick={onToggle}
