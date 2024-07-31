@@ -10,7 +10,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [heading, setHeading] = useState<string>("");
-  const modalRef = useRef<HTMLUListElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
     setOpen(!open);
@@ -23,13 +23,15 @@ const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
-    if (open && modalRef.current) {
-      const currentModalRef = modalRef.current;
+    const currentModalRef = modalRef.current;
+    if (open && currentModalRef) {
       const focusableElements = currentModalRef.querySelectorAll(
-        'a[href], button, textarea, input, select'
+        "a[href], button, textarea, input, select"
       );
       const firstElement = focusableElements[0] as HTMLElement;
-      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+      const lastElement = focusableElements[
+        focusableElements.length - 1
+      ] as HTMLElement;
 
       const trapFocus = (event: KeyboardEvent) => {
         if (event.key === "Tab") {
@@ -65,11 +67,9 @@ const Navbar: React.FC = () => {
   }, [open]);
 
   return (
-    <nav
-    className="margin-global whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph"
-    >
-      <div className="flex justify-between">
-        <div className="z-50 py-3 w-full flex justify-between">
+    <nav className="lg:mx-20 xl:mx-36 whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph">
+      <div className="flex justify-between ">
+        <div className="m-4 md:mx-10 w-full flex justify-between">
           <Link href="/" onClick={closeNav} className="g-logo-to-home-link">
             <Image
               src={Logo}
@@ -96,9 +96,9 @@ const Navbar: React.FC = () => {
           <SnsLinks />
         </ul>
         {/* Mobile nav */}
-        <ul
-          className={`lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24 duration-500 transform ${
-            open ? "left-0 z-30" : "left-[-100%] z-10"
+        <div
+          className={`lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 duration-500 transform ${
+            open ? "translate-x-0 z-30" : "-translate-x-full z-10"
           }`}
           ref={modalRef}
           role={open ? "dialog" : "navigation"}
@@ -106,13 +106,41 @@ const Navbar: React.FC = () => {
           aria-hidden={!open}
           aria-modal={open ? true : false}
         >
-          <NavLinks
-            onToggle={handleClick}
-            isOpen={open}
-            heading={heading}
-            setHeading={setHeading}
-          />
-        </ul>
+          <div className="m-4 md:mx-10 flex justify-between ">
+            <div className="w-full flex justify-between">
+              <Link
+                href="/"
+                onClick={closeNav}
+                className="g-logo-to-home-link"
+                tabIndex={open ? 0 : -1}
+              >
+                <Image
+                  src={Logo}
+                  alt="Momo gallery logo"
+                  className="sm:cursor-pointer w-36 md:w-48 lg:w-56"
+                  sizes="33vw"
+                />
+              </Link>
+              <button
+                aria-label={open ? "Close menu" : "Open menu"}
+                className="cursor-pointer text-3xl lg:hidden text-black-100 my-auto"
+                onClick={handleClick}
+                tabIndex={open ? 0 : -1}
+              >
+                {open ? <AiOutlineClose /> : <AiOutlineMenu />}
+              </button>
+            </div>
+          </div>
+          <ul className="m-4 md:mx-10">
+            <NavLinks
+              onToggle={handleClick}
+              isOpen={open}
+              heading={heading}
+              setHeading={setHeading}
+              isMobile={true}
+            />
+          </ul>
+        </div>
       </div>
     </nav>
   );
