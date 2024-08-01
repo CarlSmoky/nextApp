@@ -6,11 +6,15 @@ import NavLinks from "./NavLinks";
 import SnsLinks from "../SnsLinks";
 import Logo from "../../../public/images/Logo.svg";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { useRouter, usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [heading, setHeading] = useState<string>("");
   const modalRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const pathname = usePathname();
+  const prevPathname = useRef(pathname);
 
   const handleClick = () => {
     setOpen(!open);
@@ -65,6 +69,20 @@ const Navbar: React.FC = () => {
       };
     }
   }, [open]);
+
+  useEffect(() => {
+    // Handle route changes by comparing the previous pathname to the current one
+    if (prevPathname.current !== pathname) {
+      closeNav();
+      setTimeout(() => {
+        const h1 = document.querySelector("h1");
+        if (h1) {
+          h1.focus();
+        }
+      }, 0); // Delay to ensure the DOM is fully updated
+      prevPathname.current = pathname; // Update the previous pathname
+    }
+  }, [pathname]);
 
   return (
     <nav className="lg:mx-20 xl:mx-36 whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph">
@@ -122,7 +140,8 @@ const Navbar: React.FC = () => {
                 />
               </Link>
               <button
-                aria-label={open ? "Close menu" : "Open menu"}
+                aria-label={open ? "Close menu" : ""}
+                aria-hidden={!open}
                 className="cursor-pointer text-3xl lg:hidden text-black-100 my-auto"
                 onClick={handleClick}
                 tabIndex={open ? 0 : -1}
