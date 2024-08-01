@@ -27,7 +27,7 @@ const MultimediaPage: React.FC = async () => {
           {displayOrder.map((el) => (
             <React.Fragment key={el}>
               <li className="list-none">
-                <h2 className="font-title font-bold text-lg md:text-xl lg:text-2xl my-4" id={el}>
+                <h2 className="font-title font-bold text-lg md:text-xl lg:text-2xl my-4" id={el} tabIndex={-1}>
                   {toTitleCase(el)}
                 </h2>
                 <ul className="font-paragraph text-base xl:text-lg">
