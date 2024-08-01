@@ -8,6 +8,7 @@ import SectionwithTitle from "../components/SectionwithTitle";
 import MagazineCover from "../components/MagazineCover";
 import { FaBookOpen } from "react-icons/fa";
 import { FaRadio, FaPenFancy } from "react-icons/fa6";
+import { displayOrder } from "../data/multimediaDisplayOrder";
 
 export const metadata: Metadata = {
   title: "Multimedia",
@@ -19,7 +20,7 @@ const MultimediaPage: React.FC = async () => {
     "utf8"
   );
   const data = JSON.parse(file);
-  const displayOrder = ["essay", "poem", "radio"];
+  
   return (
     <SectionwithTitle title="Multimedia">
       <div className="flex-wrapper">
