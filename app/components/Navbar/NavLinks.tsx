@@ -47,7 +47,7 @@ const NavLinks: React.FC<NavLinksProps> = ({
               </Link>
               {link.submenu && (
                 <button
-                  className="text-2xl px-2 lg:mx-0 lg:px-1"
+                  className="text-2xl px-2 lg:mx-0 lg:px-1 dropdown-icon"
                   aria-label={heading === link.name ? "collapse submenu" : "expand submenu"}
                   aria-expanded={heading === link.name}
                   aria-controls={`${link.name}-submenu`}
