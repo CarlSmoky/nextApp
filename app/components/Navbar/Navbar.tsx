@@ -41,10 +41,10 @@ const Navbar: React.FC = () => {
           </Link>
           <button
             aria-label={open ? "Close menu" : "Open menu"}
-            className="cursor-pointer text-3xl lg:hidden text-black-100 my-auto"
+            className={`cursor-pointer text-3xl lg:hidden text-black-100 my-auto duration-500 transform ${!open ? "text-opacity-100" : "text-opacity-0"}`}
             onClick={handleClick}
           >
-            {open ? <AiOutlineClose /> : <AiOutlineMenu />}
+            <AiOutlineMenu />
           </button>
         </div>
         <ul className="hidden lg:flex items-center">
@@ -58,8 +58,8 @@ const Navbar: React.FC = () => {
         </ul>
         {/* Mobile nav */}
         <div
-          className={`lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 duration-500 transform ${
-            open ? "translate-x-0 z-30" : "-translate-x-full z-10"
+          className={`lg:hidden bg-prime-100 fixed w-full top-0 overflow-y-auto bottom-0 z-30 duration-500 transform ${
+            open ? "translate-x-0" : "-translate-x-full"
           }`}
           ref={modalRef}
           role={open ? "dialog" : "navigation"}
@@ -85,11 +85,11 @@ const Navbar: React.FC = () => {
               <button
                 aria-label={open ? "Close menu" : ""}
                 aria-hidden={!open}
-                className="cursor-pointer text-3xl lg:hidden text-black-100 my-auto"
+                className={`cursor-pointer text-3xl lg:hidden text-black-100 my-auto duration-500 transform ${open ? "text-opacity-100" : "text-opacity-0"}`}
                 onClick={handleClick}
                 tabIndex={open ? 0 : -1}
               >
-                {open ? <AiOutlineClose /> : <AiOutlineMenu />}
+                <AiOutlineClose />
               </button>
             </div>
           </div>
