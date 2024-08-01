@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
   };
 
   useFocusTrap({modalRef, isOpen: open, closeNav});
-  useRouteFocus({closeNav});
+  useRouteFocus({closeNav, isOpen: open});
 
   return (
     <nav className="lg:mx-20 xl:mx-36 whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph">

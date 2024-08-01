@@ -104,4 +104,5 @@ export type FocusTrapParams = {
 
 export type RouteFocusParams = {
   closeNav: CloseNavFunction;
+  isOpen: boolean;
 };
