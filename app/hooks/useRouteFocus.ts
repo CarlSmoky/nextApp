@@ -10,6 +10,7 @@ const useRouteFocus = ({ closeNav }: RouteFocusParams) => {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
+
       if (hash === "#contact") {
         const contactSection = document.getElementById("contact");
         if (contactSection) {
@@ -19,18 +20,11 @@ const useRouteFocus = ({ closeNav }: RouteFocusParams) => {
             h2.focus();
           }
         }
-      } 
-      else if (hash === "#essay" || hash === "#poem" || hash === "#radio") {
-        let selectedMultmediaSection = document.getElementById("essay");
-        if (hash === "#poem") {
-          selectedMultmediaSection = document.getElementById("poem");
-        }
-        if (hash === "#radio") {
-          selectedMultmediaSection = document.getElementById("radio");
-        }
-        if (selectedMultmediaSection) {
-          selectedMultmediaSection.setAttribute("tabindex", "-1");
-          selectedMultmediaSection.focus();
+      } else if (hash === "#essay" || hash === "#poem" || hash === "#radio") {
+        const selectedMultimediaSection = document.getElementById(hash.slice(1));
+        if (selectedMultimediaSection) {
+          selectedMultimediaSection.setAttribute("tabindex", "-1");
+          selectedMultimediaSection.focus();
         }
       } else {
         const h1 = document.querySelector("h1");
