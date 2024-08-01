@@ -89,8 +89,8 @@ export type MultimediaSource = {
 
 export enum MultimediaType {
   essay = "essay",
-  radio = "radio",
-  poem = "poem"
+  poem = "poem",
+  radio = "radio"
 }
 
 type CloseNavFunction = () => void;

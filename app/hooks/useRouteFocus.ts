@@ -1,12 +1,13 @@
 import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { RouteFocusParams } from "../types/Interfaces";
-import { displayOrder } from "../data/multimediaDisplayOrder";
+import { MultimediaType } from "../types/Interfaces";
 
 const useRouteFocus = ({ closeNav, isOpen }: RouteFocusParams) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const prevPathname = useRef(pathname);
+  const displayOrder = Object.values(MultimediaType);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -16,7 +17,7 @@ const useRouteFocus = ({ closeNav, isOpen }: RouteFocusParams) => {
         let focusElement: HTMLElement | null = null;
         if (hash === "contact") {
           focusElement = document.querySelector("#contact h2");
-        } else if (displayOrder.indexOf(hash) !== -1) {
+        } else if (displayOrder.indexOf(hash as MultimediaType) !== -1) {
           focusElement = document.getElementById(hash.slice(1));
         } else {
           focusElement = document.querySelector("h1");

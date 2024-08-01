@@ -2,13 +2,12 @@ import React from "react";
 import type { Metadata } from "next";
 import fs from "node:fs/promises";
 import Link from "next/link";
-import { MultimediaSource } from "../types/Interfaces";
+import { MultimediaSource, MultimediaType } from "../types/Interfaces";
 import { toTitleCase } from "../utils/textFormat";
 import SectionwithTitle from "../components/SectionwithTitle";
 import MagazineCover from "../components/MagazineCover";
 import { FaBookOpen } from "react-icons/fa";
 import { FaRadio, FaPenFancy } from "react-icons/fa6";
-import { displayOrder } from "../data/multimediaDisplayOrder";
 
 export const metadata: Metadata = {
   title: "Multimedia",
@@ -20,6 +19,7 @@ const MultimediaPage: React.FC = async () => {
     "utf8"
   );
   const data = JSON.parse(file);
+  const displayOrder = Object.values(MultimediaType);
   
   return (
     <SectionwithTitle title="Multimedia">
