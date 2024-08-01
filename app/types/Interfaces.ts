@@ -1,3 +1,5 @@
+import { RefObject } from "react";
+
 export interface childrenProps {
   children: React.ReactNode;
 }
@@ -91,4 +93,15 @@ export enum MultimediaType {
   poem = "poem"
 }
 
+type CloseNavFunction = () => void;
 
+export type FocusTrapParams = {
+  modalRef: RefObject<HTMLDivElement>;
+  isOpen: boolean;
+  closeNav: CloseNavFunction;
+};
+
+
+export type RouteFocusParams = {
+  closeNav: CloseNavFunction;
+};

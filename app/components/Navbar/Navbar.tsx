@@ -1,20 +1,18 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "./NavLinks";
 import SnsLinks from "../SnsLinks";
 import Logo from "../../../public/images/Logo.svg";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { useRouter, usePathname } from "next/navigation";
+import useFocusTrap from "../../hooks/useFocusTrap";
+import useRouteFocus from "../../hooks/useRouteFocus";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [heading, setHeading] = useState<string>("");
   const modalRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
-  const pathname = usePathname();
-  const prevPathname = useRef(pathname);
 
   const handleClick = () => {
     setOpen(!open);
@@ -26,63 +24,8 @@ const Navbar: React.FC = () => {
     setHeading("");
   };
 
-  useEffect(() => {
-    const currentModalRef = modalRef.current;
-    if (open && currentModalRef) {
-      const focusableElements = currentModalRef.querySelectorAll(
-        "a[href], button, textarea, input, select"
-      );
-      const firstElement = focusableElements[0] as HTMLElement;
-      const lastElement = focusableElements[
-        focusableElements.length - 1
-      ] as HTMLElement;
-
-      const trapFocus = (event: KeyboardEvent) => {
-        if (event.key === "Tab") {
-          if (event.shiftKey) {
-            // Shift + Tab
-            if (document.activeElement === firstElement) {
-              event.preventDefault();
-              lastElement.focus();
-            }
-          } else {
-            // Tab
-            if (document.activeElement === lastElement) {
-              event.preventDefault();
-              firstElement.focus();
-            }
-          }
-        } else if (event.key === "Escape") {
-          closeNav();
-        }
-      };
-
-      currentModalRef.addEventListener("keydown", trapFocus);
-
-      // Set focus to the first element
-      if (firstElement) {
-        firstElement.focus();
-      }
-
-      return () => {
-        currentModalRef.removeEventListener("keydown", trapFocus);
-      };
-    }
-  }, [open]);
-
-  useEffect(() => {
-    // Handle route changes by comparing the previous pathname to the current one
-    if (prevPathname.current !== pathname) {
-      closeNav();
-      setTimeout(() => {
-        const h1 = document.querySelector("h1");
-        if (h1) {
-          h1.focus();
-        }
-      }, 0); // Delay to ensure the DOM is fully updated
-      prevPathname.current = pathname; // Update the previous pathname
-    }
-  }, [pathname]);
+  useFocusTrap({modalRef, isOpen: open, closeNav});
+  useRouteFocus({closeNav});
 
   return (
     <nav className="lg:mx-20 xl:mx-36 whitespace-nowrap text-grey-200 text-base xl:text-lg font-paragraph">
