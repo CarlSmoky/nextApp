@@ -16,7 +16,7 @@ const MagazineCover: React.FC<MagazineCoverProps> = async ({ src, alt }: Magazin
       <Image
         className="object-obtain m-auto md:m-0 p-1"
         src={src}
-        alt={alt}
+        alt={"image of " + alt + " cover"}
         width={200}
         height={285}
         sizes="(max-width: 480px) 66vw, (max-width: 768px) 50vw, 33vw"

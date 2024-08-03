@@ -109,7 +109,7 @@ const ContactForm = () => {
       className="w-full lg:w-2/3 p-8  my-3 mr-auto text-grey-100"
       onSubmit={handleSubmit}
     >
-      <h2 className="font-bold text-2xl lg:text-3xl font-title">
+      <h2 className="font-bold text-2xl lg:text-3xl font-title" tabIndex={-1}>
         Send me a message
       </h2>
       <div className="font-paragraph">

@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import fs from "node:fs/promises";
 import Link from "next/link";
-import { MultimediaSource } from "../types/Interfaces";
+import { MultimediaSource, MultimediaType } from "../types/Interfaces";
 import { toTitleCase } from "../utils/textFormat";
 import SectionwithTitle from "../components/SectionwithTitle";
 import MagazineCover from "../components/MagazineCover";
@@ -19,7 +19,8 @@ const MultimediaPage: React.FC = async () => {
     "utf8"
   );
   const data = JSON.parse(file);
-  const displayOrder = ["essay", "poem", "radio"];
+  const displayOrder = Object.values(MultimediaType);
+  
   return (
     <SectionwithTitle title="Multimedia">
       <div className="flex-wrapper">
@@ -27,7 +28,7 @@ const MultimediaPage: React.FC = async () => {
           {displayOrder.map((el) => (
             <React.Fragment key={el}>
               <li className="list-none">
-                <h2 className="font-title font-bold text-lg md:text-xl lg:text-2xl my-4" id={el}>
+                <h2 className="font-title font-bold text-lg md:text-xl lg:text-2xl my-4" id={el} tabIndex={-1}>
                   {toTitleCase(el)}
                 </h2>
                 <ul className="font-paragraph text-base xl:text-lg">
