@@ -1,105 +1,66 @@
 "use client";
 import React, { FormEvent, useState } from "react";
-
-type formData = {
-  fullname: string;
-  email: string;
-  subject: string;
-  message: string;
-};
-
-const initialData = {
-  fullname: "",
-  email: "",
-  subject: "",
-  message: "",
-};
-
-type tempError = {
-  fullname: boolean;
-  email: boolean;
-  subject: boolean;
-  message: boolean;
-};
+import useFormState from "../../hooks/useFormState";
+import useMessageRefs from "../../hooks/useMessageRefs";
+import useValidation from "../../hooks/useValidation";
 
 const ContactForm = () => {
-  const [data, setData] = useState<formData>(initialData);
-  const [errors, setErrors] = useState<{ [key: string]: boolean }>({});
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [showFailureMessage, setShowFailureMessage] = useState(false);
+  const { data, updateFields, resetForm } = useFormState();
+  const { errors, validate, setErrors } = useValidation(data);
+  const {
+    successMessageRef,
+    failureMessageRef,
+    errorMessageRef,
+    showSuccessMessage,
+    showFailureMessage,
+    setShowSuccessMessage,
+    setShowFailureMessage,
+  } = useMessageRefs(errors);
+
   const [sendStatus, setSendStatus] = useState(false);
-
-  const updateFields = (fields: Partial<formData>) => {
-    setData((prev) => {
-      return { ...prev, ...fields };
-    });
-  };
-
-  const handleValidation = () => {
-    let tempErrors: Partial<tempError> = {};
-    let isValid = true;
-
-    if (data.fullname.length <= 0) {
-      tempErrors["fullname"] = true;
-      isValid = false;
-    }
-    if (data.email.length <= 0) {
-      tempErrors["email"] = true;
-      isValid = false;
-    }
-    if (data.subject.length <= 0) {
-      tempErrors["subject"] = true;
-      isValid = false;
-    }
-    if (data.message.length <= 0) {
-      tempErrors["message"] = true;
-      isValid = false;
-    }
-
-    setErrors({ ...tempErrors });
-    return isValid;
-  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
-    let isValidForm = handleValidation();
+    const isValidForm = validate();
 
     if (!isValidForm) {
-      setSendStatus(false);
+      resetMessages();
       return;
     }
 
-    if (isValidForm) {
-      setSendStatus(false);
+    setSendStatus(true);
 
+    try {
       const res = await fetch("/api/sendgrid", {
-        body: JSON.stringify({
-          email: data.email,
-          fullname: data.fullname,
-          subject: data.subject,
-          message: data.message,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
         method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
-
-      const { error } = await res.json();
-
-      if (error) {
-        setShowSuccessMessage(false);
-        setShowFailureMessage(true);
-        return;
-      }
-      if (res.status === 200) {
-        setShowSuccessMessage(true);
-        setShowFailureMessage(false);
-        setErrors({});
-        setData(initialData);
-      }
+      
+      const result = await res.json();
+      handleResponse(result, res.status);
+    } catch (error) {
+      setShowFailureMessage(true);
+    } finally {
+      setSendStatus(false);
     }
+  };
+
+  const handleResponse = (result: any, status: number) => {
+    if (result.error) {
+      setShowFailureMessage(true);
+      setShowSuccessMessage(false);
+    } else if (status === 200) {
+      setShowSuccessMessage(true);
+      setShowFailureMessage(false);
+      resetForm();
+      setErrors({});
+    }
+  };
+
+  const resetMessages = () => {
+    setShowSuccessMessage(false);
+    setShowFailureMessage(false);
   };
 
   const errorFileds = Object.keys(errors).join(", ");
@@ -114,11 +75,29 @@ const ContactForm = () => {
       </h2>
       <div className="font-paragraph">
         {Object.entries(errors).some(([k, v]) => v === true) && (
-          <span className="text-red-100">Please fill in {errorFileds}. </span>
+          <span ref={errorMessageRef} tabIndex={-1} className="text-red-100">
+            Please fill in {errorFileds}.{" "}
+          </span>
         )}
-        {showSuccessMessage && <span id="g-success-message">Your message has been sent</span>}
+        {showSuccessMessage && (
+          <span
+            id="g-success-message"
+            ref={successMessageRef}
+            tabIndex={-1}
+            role="alert"
+          >
+            Your message has been sent
+          </span>
+        )}
         {showFailureMessage && (
-          <span className="text-red-100">Fail to send message, try gain</span>
+          <span
+            className="text-red-100"
+            ref={failureMessageRef}
+            tabIndex={-1}
+            role="alert"
+          >
+            Fail to send message, try gain
+          </span>
         )}
       </div>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5 font-paragraph">
