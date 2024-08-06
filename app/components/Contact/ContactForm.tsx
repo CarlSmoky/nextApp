@@ -1,5 +1,5 @@
 "use client";
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useState, useEffect, useRef } from "react";
 
 type formData = {
   fullname: string;
@@ -28,6 +28,28 @@ const ContactForm = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showFailureMessage, setShowFailureMessage] = useState(false);
   const [sendStatus, setSendStatus] = useState(false);
+
+  const errorMessageRef = useRef<HTMLSpanElement>(null);
+  const successMessageRef = useRef<HTMLSpanElement>(null);
+  const failureMessageRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (showSuccessMessage && successMessageRef.current) {
+      setTimeout(() => {
+        successMessageRef.current!.focus();
+      }, 100);
+    }
+    if (showFailureMessage && failureMessageRef.current) {
+      setTimeout(() => {
+        failureMessageRef.current!.focus();
+      }, 100);
+    }
+    if (Object.keys(errors).length > 0 && errorMessageRef.current) {
+      setTimeout(() => {
+        errorMessageRef.current!.focus();
+      }, 100);
+    }
+  }, [showSuccessMessage, showFailureMessage, errors])
 
   const updateFields = (fields: Partial<formData>) => {
     setData((prev) => {
@@ -114,11 +136,29 @@ const ContactForm = () => {
       </h2>
       <div className="font-paragraph">
         {Object.entries(errors).some(([k, v]) => v === true) && (
-          <span className="text-red-100">Please fill in {errorFileds}. </span>
+          <span ref={errorMessageRef} tabIndex={-1} className="text-red-100">
+            Please fill in {errorFileds}.{" "}
+          </span>
         )}
-        {showSuccessMessage && <span id="g-success-message">Your message has been sent</span>}
+        {showSuccessMessage && (
+          <span
+            id="g-success-message"
+            ref={successMessageRef}
+            tabIndex={-1}
+            role="alert"
+          >
+            Your message has been sent
+          </span>
+        )}
         {showFailureMessage && (
-          <span className="text-red-100">Fail to send message, try gain</span>
+          <span
+            className="text-red-100"
+            ref={failureMessageRef}
+            tabIndex={-1}
+            role="alert"
+          >
+            Fail to send message, try gain
+          </span>
         )}
       </div>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5 font-paragraph">
