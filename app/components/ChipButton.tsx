@@ -5,7 +5,7 @@ import { PerformanceType } from "../types/Interfaces";
 type ChipButtonProps = {
   href: string;
   type?: PerformanceType | null;
-  selectedType: boolean;
+  selectedType?: boolean;
   selectedAll: boolean;
   disabled: boolean;
 };
@@ -15,17 +15,20 @@ const ChipButton: React.FC<ChipButtonProps> = ({
   type,
   selectedType = false,
   selectedAll = false,
-  disabled = false
+  disabled = false,
 }) => {
   return (
     <Link
       href={href}
       prefetch={false}
+      aria-selected={selectedType || selectedAll}
+      role="option"
+      aria-disabled={disabled}
       className={`flex justify-center rounded-full border border-grey-100/20 p-[0.5rem] min-w-[5rem] whitespace-nowrap md:hover:bg-grey-100/80 md:hover:text-white-100 transition ease-in-out g-chip-button-link
-          ${selectedType && "bg-grey-100/30"}
-          ${disabled && "pointer-events-none"}
-          ${selectedAll && "outline outline-offset-2 outline-2 outline-grey-100/50 "}
-          `}
+          ${selectedType ? "bg-grey-100/30" : ""}
+          ${disabled ? "pointer-events-none" : ""}
+          ${selectedAll ? "outline outline-offset-2 outline-2 outline-grey-100/50" : ""}
+      `}
     >
       {type ? toTitleCase(type) : "All"}
     </Link>

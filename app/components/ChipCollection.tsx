@@ -10,24 +10,35 @@ type ChipsProps = {
 const ChipCollection: React.FC<ChipsProps> = ({ parsedQueryString, path }) => {
   const types = Object.values(PerformanceType);
   const params = getParams(parsedQueryString.type);
-  
-  const selectedType = (params: PerformanceType[], type: PerformanceType): boolean => {
-    return params.length === 0 || params.includes(type) ? true : false;
-  }
 
-  const disabled = (params: PerformanceType[], type: PerformanceType): boolean => {
-    return params.includes(type) ? true : false;
-  }
+  const isSelectedType = (params: PerformanceType[], type: PerformanceType): boolean => {
+    return params.length === 0 || params.includes(type);
+  };
 
-  const selectedAll = (params: PerformanceType[]): boolean => {
-    return  params.length === 0 ? true : false;
-  }
+  const isDisabled = (params: PerformanceType[], type: PerformanceType): boolean => {
+    return params.includes(type);
+  };
+
+  const isSelectedAll = (params: PerformanceType[]): boolean => {
+    return params.length === 0;
+  };
 
   return (
-    <div className="flex flex-wrap gap-3 text-xs md:text-sm font-paragraph text-grey-100">
-      <ChipButton href={path} selectedType={false} selectedAll={selectedAll(params)} disabled={selectedAll(params)}/>
+    <div
+      className="flex flex-wrap gap-3 text-xs md:text-sm font-paragraph text-grey-100"
+      role="listbox"
+      aria-label="Performance Types"
+    >
+      <ChipButton href={path} selectedAll={isSelectedAll(params)} disabled={isSelectedAll(params)} />
       {types.map((type: PerformanceType, i) => (
-        <ChipButton key={i} href={`${path}?type=${type}`} type={type} selectedType={selectedType(params, type)} selectedAll={false} disabled={disabled(params, type)}/>
+        <ChipButton
+          key={i}
+          href={`${path}?type=${type}`}
+          type={type}
+          selectedType={isSelectedType(params, type)}
+          selectedAll={false}
+          disabled={isDisabled(params, type)}
+        />
       ))}
     </div>
   );
