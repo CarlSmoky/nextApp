@@ -66,7 +66,7 @@ const AnnouncementPage: React.FC = () => {
               </li>
             </ul>
             <span className="text-xs lg:text-sm">
-              Note: Mime dance performance will start at 8:30pm in the JCCC Gallery.
+              Note: Mime dance performance will start at 8:30pm.
             </span>
           </div>
           <div className="my-auto">
