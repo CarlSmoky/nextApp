@@ -20,7 +20,7 @@ const AnnouncementPage: React.FC = () => {
           alt="Spirit Place Opening Reception Flyer"
           width={300}
           height={300}
-          className={`w-2/3 sm:w-1/2 md:w-1/3 object-contain m-auto md:m-0`}
+          className={`w-2/3 sm:w-1/2 md:w-1/3 object-cover mx-auto md:mx-0`}
           sizes="(max-width: 768px) 100vw, (max-width: 976px) 50vw, 33vw"
         />
         <TextInfoWrapper breakePointWidth="twoThirds">
