@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import SectionwithTitle from "../components/SectionwithTitle";
-import Video from "../components/Video";
 import TextInfoWrapper from "../components/TextInfoWrapper";
 import BorderlineButton from "../components/BorderlineButton";
 import { IoTicketOutline } from "react-icons/io5";
@@ -13,70 +13,70 @@ export const metadata: Metadata = {
 
 const AnnouncementPage: React.FC = () => {
   return (
-    <SectionwithTitle title="Announcement">
+    <SectionwithTitle title="Announcement" isPageHeading={false}>
       <div className="flex-wrapper">
-        <Video
-          VideoId="ol6DkXRV1G8"
-          title="What Luck! (Ryōkan Taigu) - Luka Kuplowsky & The Ryōkan Band"
+        <Image
+          src="/images/announcement/Opening_Reception_Spirit_Place_JCCC.jpeg"
+          alt="Spirit Place Opening Reception Flyer"
+          width={300}
+          height={300}
+          className={`w-2/3 sm:w-1/2 md:w-1/3 object-contain m-auto md:m-0`}
+          sizes="(max-width: 768px) 100vw, (max-width: 976px) 50vw, 33vw"
         />
-        <TextInfoWrapper breakePointWidth="half">
+        <TextInfoWrapper breakePointWidth="twoThirds">
           <div className="py-4 md:pt-0">
-            <h2 className="font-bold text-lg lg:text-xl pb-2">
-              Dancing in Music Video, and Live Show on June 18!
-            </h2>
+            <h3 className="font-bold text-lg lg:text-xl pb-2">
+              Mime dance performance at JCCC Gallery on September 25!
+            </h3>
             <p className="text-base lg:text-lg py-2">
-              Luka Kuplowsky & The Ryōkan Band released their new album{" "}
+              I will be performing mime dance at the opening reception of {" "}
               <Link
-                href="https://lukalives.bandcamp.com/album/how-can-i-possibly-sleep-when-there-is-music"
+                href="https://jccc.on.ca/event/2024/09/spirit-place-magnificent-woodcut-art-naoko-matsubara"
                 target="_blank"
                 className="g-external-link"
               >
                 <span className="italic no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4">
-                  How Can I Possibly Sleep When There is Music.
+                  Spirit Place: The Magnificent Woodcut Art of Naoko
+                  Matsubara.
                 </span>
               </Link>{" "}
-              I am dancing in one of the song&apos;s videos & I will be dancing
-              live to four of the songs at the show.
+              Please join us for a night of art, film,
+              and dance!
             </p>
             <ul className="text-base lg:text-lg">
               <li>
-                <span className="text-sm">Date: </span>June 18, 2024
+                <span className="text-sm">Date: </span>September 25, 2024
               </li>
               <li>
-                <span className="text-sm">Time: </span>7:00pm - 11:00pm
+                <span className="text-sm">Time: </span>7:00pm - 9:30pm
               </li>
               <li>
                 <span className="text-sm">Venue: </span>
-                Tranzac Club (Main Hall)
+                Japanese Canadian Cultural Centre Gallery
               </li>
               <li>
                 <span className="text-sm">Address: </span>
                 <Link
-                  href="https://maps.app.goo.gl/wrh41uJTi6Qff58m7"
+                  href="https://maps.app.goo.gl/qpL9z86fgKKsQLcH6"
                   target="_blank"
                   className="no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4 g-external-link"
                 >
-                  292 Brunswick Ave Toronto, ON
+                  6 Sakura Way Toronto, ON
                 </Link>
               </li>
             </ul>
             <span className="text-xs lg:text-sm">
-              Note: The concert starts at 7pm, but Luka&apos;s band will be on
-              from 9pm.
+              Note: Mime dance performance will start at 8:30pm in the JCCC Gallery.
             </span>
           </div>
-          <BorderlineButton
-            url="https://www.tranzac.org/event/luka-kuplowsky-the-ryokan-band-album-release-w-the-heart-of-going-la/"
-            text="More Information"
-          >
-            <IoIosInformationCircleOutline size={20} className="m-2" />
-          </BorderlineButton>
-          <BorderlineButton
-            url="https://www.eventbrite.ca/e/luka-kuplowsky-the-ryokan-band-album-release-w-the-heart-of-going-la-tickets-885287086507"
-            text="Reserve Ticket"
-          >
-            <IoTicketOutline size={20} className="m-2" />
-          </BorderlineButton>
+          <div className="my-auto">
+            <BorderlineButton
+              url="https://jccc.on.ca/event/2024/09/opening-reception-spirit-place-magnificent-woodcut-art-naoko-matsubara"
+              text="More Information About Event"
+            >
+              <IoIosInformationCircleOutline size={20} className="m-2" />
+            </BorderlineButton>
+          </div>
         </TextInfoWrapper>
       </div>
     </SectionwithTitle>
