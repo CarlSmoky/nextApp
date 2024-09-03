@@ -2,6 +2,17 @@ import { PerformanceType } from "../types/Interfaces";
 
 export const performanceData = [
       {
+        id: 14,
+        title: "Internment Camp",
+        subTitle: "",
+        description: "",
+        type: PerformanceType.mimeDance,
+        date: "March 2024",
+        event: "Fading Memories show",
+        location: "Ginza Tokyo, Japan",
+        VideoId: "U2HorerchrY",
+      },
+      {
         id: 13,
         title: "Flower Dance - Spring",
         subTitle: "",
