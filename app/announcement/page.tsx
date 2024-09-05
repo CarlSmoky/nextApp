@@ -18,7 +18,7 @@ const AnnouncementPage: React.FC = async () => {
   );
   const { base64 } = await getPlaiceholder(buffer);
   return (
-    <SectionwithTitle title="Announcement" isPageHeading={false}>
+    <SectionwithTitle title="Announcement">
       <div className="flex-wrapper">
         <div className="w-2/3 sm:w-1/2 md:w-1/3 mx-auto md:mx-0">
           <Image
