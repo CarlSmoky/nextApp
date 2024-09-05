@@ -13,7 +13,9 @@ export const metadata: Metadata = {
 };
 
 const AnnouncementPage: React.FC = async () => {
-  const buffer = await fs.readFile(`./public/images/announcement/Opening_Reception_Spirit_Place_JCCC.jpeg`);
+  const buffer = await fs.readFile(
+    `./public/images/announcement/Opening_Reception_Spirit_Place_JCCC.jpeg`
+  );
   const { base64 } = await getPlaiceholder(buffer);
   return (
     <SectionwithTitle title="Announcement" isPageHeading={false}>
@@ -37,17 +39,8 @@ const AnnouncementPage: React.FC = async () => {
             </h3>
             <p className="text-base lg:text-lg py-2">
               Noriko will be doing a Mime-Dance performance at the opening
-              reception of{" "}
-              <Link
-                href="https://jccc.on.ca/event/2024/09/spirit-place-magnificent-woodcut-art-naoko-matsubara"
-                target="_blank"
-                className="g-external-link"
-              >
-                <span className="italic no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4">
-                  Naoko Matsubara&apos;s art exhibition.
-                </span>
-              </Link>{" "}
-              Attend the reception for a night of art, film, and dance.
+              reception of Naoko Matsubara&apos;s art exhibition. Attend the
+              reception for a night of art, film, and dance.
             </p>
             <ul className="text-base lg:text-lg">
               <li>
@@ -70,12 +63,15 @@ const AnnouncementPage: React.FC = async () => {
               <li>
                 <span className="text-sm font-bold">Reception schedule: </span>
                 <ul>
-                  <li>6:45 pm: Doors Open to Kobayashi Hall</li>
                   <li>
-                    7:00 pm: Premiere of film and Naoko Matsubara in
-                    conversation with Bruce Kuwabara in Kobayashi Hall
+                    6:45 pm: Doors Open to Kobayashi Hall
                   </li>
-                  <li>7:45 pm: Exhibition opening, remarks in JCCC Gallery</li>
+                  <li>
+                    7:00 pm: Premiere of film + Naoko Matsubara in conversation in Kobayashi Hall
+                  </li>
+                  <li>
+                    7:45 pm: Remarks in JCCC Gallery
+                  </li>
                   <li>
                     8:30 pm: Mime-Dance performance by Noriko Yamamoto in JCCC
                     Gallery
