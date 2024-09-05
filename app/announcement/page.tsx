@@ -4,7 +4,6 @@ import Image from "next/image";
 import SectionwithTitle from "../components/SectionwithTitle";
 import TextInfoWrapper from "../components/TextInfoWrapper";
 import BorderlineButton from "../components/BorderlineButton";
-import { IoTicketOutline } from "react-icons/io5";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 export const metadata: Metadata = {
@@ -26,48 +25,56 @@ const AnnouncementPage: React.FC = () => {
         <TextInfoWrapper breakePointWidth="twoThirds">
           <div className="py-4 md:pt-0">
             <h3 className="font-bold text-lg lg:text-xl pb-2">
-              Mime dance performance at JCCC Gallery on September 25!
+              Mime-Dance performance at the JCCC on September 25!
             </h3>
             <p className="text-base lg:text-lg py-2">
-              I will be performing mime dance at the opening reception of {" "}
+              Noriko will be doing a Mime-Dance performance at the opening
+              reception of{" "}
               <Link
                 href="https://jccc.on.ca/event/2024/09/spirit-place-magnificent-woodcut-art-naoko-matsubara"
                 target="_blank"
                 className="g-external-link"
               >
                 <span className="italic no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4">
-                  Spirit Place: The Magnificent Woodcut Art of Naoko
-                  Matsubara.
+                  Naoko Matsubara&apos;s art exhibition.
                 </span>
               </Link>{" "}
-              Please join us for a night of art, film,
-              and dance!
+              Attend the reception for a night of art, film, and dance.
             </p>
             <ul className="text-base lg:text-lg">
               <li>
-                <span className="text-sm">Date: </span>September 25, 2024
+                <span className="text-sm font-bold">Date: </span>Wednesday
+                September 25th, 2024
               </li>
               <li>
-                <span className="text-sm">Time: </span>7:00pm - 9:30pm
+                <span className="text-sm font-bold">Time: </span>7:00 - 9:30pm
               </li>
               <li>
-                <span className="text-sm">Venue: </span>
-                Japanese Canadian Cultural Centre Gallery
-              </li>
-              <li>
-                <span className="text-sm">Address: </span>
+                <span className="text-sm font-bold">Venue: </span>
                 <Link
                   href="https://maps.app.goo.gl/qpL9z86fgKKsQLcH6"
                   target="_blank"
                   className="no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4 g-external-link"
                 >
-                  6 Sakura Way Toronto, ON
+                  Japanese Canadian Cultural Centre, 6 Sakura Way, Toronto ON
                 </Link>
               </li>
+              <li>
+                <span className="text-sm font-bold">Reception schedule: </span>
+                <ul>
+                  <li>6:45 pm: Doors Open to Kobayashi Hall</li>
+                  <li>
+                    7:00 pm: Premiere of film and Naoko Matsubara in
+                    conversation with Bruce Kuwabara in Kobayashi Hall
+                  </li>
+                  <li>7:45 pm: Exhibition opening, remarks in JCCC Gallery</li>
+                  <li>
+                    8:30 pm: Mime-Dance performance by Noriko Yamamoto in JCCC
+                    Gallery
+                  </li>
+                </ul>
+              </li>
             </ul>
-            <span className="text-xs lg:text-sm">
-              Note: Mime dance performance will start at 8:30pm.
-            </span>
           </div>
           <div className="my-auto">
             <BorderlineButton
