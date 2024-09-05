@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { getPlaiceholder } from "plaiceholder";
+import fs from "node:fs/promises";
 import SectionwithTitle from "../components/SectionwithTitle";
 import TextInfoWrapper from "../components/TextInfoWrapper";
 import BorderlineButton from "../components/BorderlineButton";
@@ -10,18 +12,24 @@ export const metadata: Metadata = {
   title: "Anouncement",
 };
 
-const AnnouncementPage: React.FC = () => {
+const AnnouncementPage: React.FC = async () => {
+  const buffer = await fs.readFile(`./public/images/announcement/Opening_Reception_Spirit_Place_JCCC.jpeg`);
+  const { base64 } = await getPlaiceholder(buffer);
   return (
     <SectionwithTitle title="Announcement" isPageHeading={false}>
       <div className="flex-wrapper">
-        <Image
-          src="/images/announcement/Opening_Reception_Spirit_Place_JCCC.jpeg"
-          alt="Spirit Place Opening Reception Flyer"
-          width={300}
-          height={300}
-          className={`w-2/3 sm:w-1/2 md:w-1/3 object-cover mx-auto md:mx-0`}
-          sizes="(max-width: 768px) 100vw, (max-width: 976px) 50vw, 33vw"
-        />
+        <div className="w-2/3 sm:w-1/2 md:w-1/3 mx-auto md:mx-0">
+          <Image
+            src="/images/announcement/Opening_Reception_Spirit_Place_JCCC.jpeg"
+            alt="Spirit Place Opening Reception"
+            width={600}
+            height={800}
+            className={`relative object-contain`}
+            sizes="(max-width: 480px) 66vw, (max-width: 768px) 50vw, 33vw"
+            placeholder="blur"
+            blurDataURL={base64}
+          />
+        </div>
         <TextInfoWrapper breakePointWidth="twoThirds">
           <div className="py-4 md:pt-0">
             <h3 className="font-bold text-lg lg:text-xl pb-2">
