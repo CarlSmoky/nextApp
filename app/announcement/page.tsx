@@ -57,7 +57,7 @@ const AnnouncementPage: React.FC = async () => {
                   target="_blank"
                   className="no-underline hover:underline decoration-grey-100/50 decoration-1 underline-offset-4 g-external-link"
                 >
-                  Japanese Canadian Cultural Centre, 6 Sakura Way, Toronto ON
+                  Japanese Canadian Cultural Centre:  6 Sakura Way, Toronto ON
                 </Link>
               </li>
               <li>
