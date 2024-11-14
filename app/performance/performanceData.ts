@@ -8,7 +8,7 @@ export const performanceData = [
     description: "",
     type: PerformanceType.mimeDance,
     date: "September 2024",
-    event: "A live session for the 2024 Guelph Jazz Festival",
+    event: "Guelph Jazz Festival",
     location: "Guelph, ON",
     VideoId: "yA3Rj2ZAoOI",
   },
